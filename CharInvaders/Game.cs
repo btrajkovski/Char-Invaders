@@ -22,6 +22,7 @@ namespace WindowsFormsApplication1
         private SoundCollection SoundCollection;
 
 
+
         public Game(FormGame form)
         {
             CharPool = new List<Char>();
@@ -117,30 +118,45 @@ namespace WindowsFormsApplication1
             {
                 if (CanonIsHit(Enemies[i]))
                 {
-                    Canon cannon = ClosestCannon(Enemies[i]);
-                    TheForm.GetControls().Remove(cannon);
-                    Cannons.Remove(cannon);
-                    TheForm.GetControls().Remove(Enemies[i]);
-                    Enemies.RemoveAt(i);
-
-                    SoundCollection.PlayerCannonCrush.Play();
-                    ShakeForm();
-                    
+                    RemoveCannon(i);
                     if (Cannons.Count == 0)
-                    {
-                        MessageBox.Show("Game Over !!!");
-                        foreach (Enemy enemy in Enemies)
-                        {
-                            TheForm.GetControls().Remove(enemy);
-                        }
-                        TheForm.menuForm.Show();
-                        TheForm.Hide();
-                        /*FormMenu fm = new FormMenu();
-                        fm.Show();*/
-                    }
+                        EndGame();
                 }
                 else
                     Enemies[i].Top += gameLevel.MOVE_PIXELS;
+            }
+        }
+
+        private void RemoveCannon(int i)
+        {
+            Canon cannon = ClosestCannon(Enemies[i]);
+            TheForm.GetControls().Remove(cannon);
+            Cannons.Remove(cannon);
+            TheForm.GetControls().Remove(Enemies[i]);
+            Enemies.RemoveAt(i);
+
+            SoundCollection.PlayerCannonCrush.Play();
+            ShakeForm();
+        }
+
+        private void EndGame()
+        {
+            MessageBox.Show("Game Over !!!");
+            foreach (Enemy enemy in Enemies)
+            {
+                TheForm.GetControls().Remove(enemy);
+            }
+            TheForm.menuForm.Show();
+            TheForm.Hide();
+            //
+            Form1 fm = new Form1();
+            DialogResult result = fm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string x = fm.playerName;
+                Score sc = new Score(x, TheForm.currentScore);
+                TheForm.menuForm.addScore(sc);
+                MessageBox.Show(TheForm.menuForm.high.ToString());
             }
         }
 

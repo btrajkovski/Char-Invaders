@@ -16,9 +16,11 @@ namespace WindowsFormsApplication1
         public Timer TimerCreateLetter { get; set; }
         public Timer TimerMoveEnemies { get; set; }
         public Random Random { get; set; }
-        public Form menuForm;
+        public FormMenu menuForm;
+        public int currentScore {set; get;}
+        
 
-        public FormGame(Form menuForm)
+        public FormGame(FormMenu menuForm)
         {
             InitializeComponent();
             this.menuForm = menuForm;
@@ -32,6 +34,7 @@ namespace WindowsFormsApplication1
             InitializeTimers();
             Random = new Random();
             groupBox1.BackColor = Color.Transparent;
+            currentScore = 0;
         }
 
         private void InitializeTimers()
@@ -81,13 +84,18 @@ namespace WindowsFormsApplication1
                 if (TheGame.ShootEnemy(e.KeyCode.ToString().ToUpper()))
                 {
                     lblHit.Text = (int.Parse(lblHit.Text) + 1).ToString();
-                    lblScore.Text = (int.Parse(lblScore.Text) + TheGame.gameLevel.POINTS_HIT).ToString();
+                    currentScore += TheGame.gameLevel.POINTS_HIT;
+                    //lblScore.Text = (int.Parse(lblScore.Text) + TheGame.gameLevel.POINTS_HIT).ToString();
+                    lblScore.Text = currentScore.ToString();
                 }
                 else
                 {
                     lblMiss.Text = (int.Parse(lblMiss.Text) + 1).ToString();
-                    lblScore.Text = (int.Parse(lblScore.Text) - TheGame.gameLevel.POINTS_MISS).ToString();
+                    currentScore -= TheGame.gameLevel.POINTS_MISS;
+                   // lblScore.Text = (int.Parse(lblScore.Text) - TheGame.gameLevel.POINTS_MISS).ToString();
+                    lblScore.Text = currentScore.ToString();
                     if (int.Parse(lblScore.Text) < 0)
+                        currentScore = 0;
                         lblScore.Text = "0";
                 }
             }
@@ -102,5 +110,6 @@ namespace WindowsFormsApplication1
         {
             Application.Exit();
         }
+
     }
 }
