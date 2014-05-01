@@ -10,37 +10,37 @@ using System.Drawing.Text;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class FormGame : Form
     {
         public Game TheGame { get; set; }
         public Timer TimerCreateLetter { get; set; }
         public Timer TimerMoveEnemies { get; set; }
         public Random Random { get; set; }
-        public Form1()
+        public Form menuForm;
+
+        public FormGame(Form menuForm)
         {
             InitializeComponent();
+            this.menuForm = menuForm;
             newGame();
-            /*InstalledFontCollection fontsCollection = new InstalledFontCollection();
-            FontFamily[] fontFamilies = fontsCollection.Families;
-            List<string> fonts = new List<string>();
-            foreach (FontFamily font in fontFamilies)
-            {
-                fonts.Add(font.Name);
-                Console.WriteLine(font.Name);
-
-            }*/
-
         }
 
         public void newGame()
         {
-            //this.GetControls().Clear();
             this.KeyPreview = true;
             TheGame = new Game(this);
+            InitializeTimers();
+            Random = new Random();
+            groupBox1.BackColor = Color.Transparent;
+        }
+
+        private void InitializeTimers()
+        {
             if (TimerCreateLetter != null)
                 TimerCreateLetter.Dispose();
-            if(TimerMoveEnemies != null)
+            if (TimerMoveEnemies != null)
                 TimerMoveEnemies.Dispose();
+
             TimerCreateLetter = new Timer();
             TimerCreateLetter.Tick += new EventHandler(TimerCreateLetter_Tick);
             TimerCreateLetter.Interval = TheGame.gameLevel.ENEMY_APPEAR;
@@ -49,10 +49,6 @@ namespace WindowsFormsApplication1
             TimerMoveEnemies.Tick += new EventHandler(TimerMoveEnemies_Tick);
             TimerMoveEnemies.Interval = TheGame.gameLevel.ENEMY_SPEED;
             TimerMoveEnemies.Start();
-            Random = new Random();
-            groupBox1.BackColor = Color.Transparent;
-            lblScore.BackColor = Color.White;
-            lblLevel.ForeColor = Color.White;
         }
 
         void TimerMoveEnemies_Tick(object sender, EventArgs e)
@@ -94,19 +90,17 @@ namespace WindowsFormsApplication1
                     if (int.Parse(lblScore.Text) < 0)
                         lblScore.Text = "0";
                 }
-                //e.Handled = true;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //TheGame.gameLevel.levelUp();
-            
-            foreach (Enemy enemy in TheGame.Enemies)
-            {
-                this.GetControls().Remove(enemy);
-            }
-            newGame();
+            TheGame.gameLevel.levelUp();
+        }
+
+        private void FormGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -27,8 +27,10 @@ namespace WindowsFormsApplication1
 
         public void levelUp()
         {
-            LEVEL++; 
-            ENEMY_SPEED = (int)(ENEMY_SPEED * 0.5);
+            LEVEL++;
+            ENEMY_APPEAR = (int)(ENEMY_APPEAR / 1.25);
+            if(ENEMY_SPEED > 4)
+                ENEMY_SPEED = (int)(ENEMY_SPEED * 0.75);
             POINTS_HIT = (int)(POINTS_HIT * 1.25);
             POINTS_MISS = POINTS_HIT * 3;
         }

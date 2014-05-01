@@ -13,9 +13,11 @@ namespace WindowsFormsApplication1
         {
             int W = f.Size.Width;
             int H = f.Size.Height;
+            this.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Text = letter.ToString().ToUpper();
+            this.Top = 56;
+            this.Left = left;
 
-            this.BringToFront();
-            this.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             Image image = Properties.Resources.testCometResized;
             this.Image = image;
             this.ImageAlign = ContentAlignment.MiddleCenter;
@@ -23,14 +25,7 @@ namespace WindowsFormsApplication1
             this.Height = image.Height;
             this.BackColor = Color.Transparent;
             this.ForeColor = Color.Snow;
-            this.Font = new Font(this.Font, FontStyle.Bold);
-            this.Font = new Font("Verdana", 15, FontStyle.Bold); //new Font(this.Font.FontFamily, 15);
-            Random rnd = new Random();
-            this.Text = letter.ToString().ToUpper();
-            this.Top = 56;
-            this.Left = left;
-            //this.BackColor = Color.FromArgb(rnd.Next(128, 256), rnd.Next(128, 256), rnd.Next(128, 256));
-            
+            this.Font = new Font("Verdana", 15, FontStyle.Bold);
         }
     }
 }
