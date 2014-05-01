@@ -110,7 +110,7 @@ namespace WindowsFormsApplication1
             PathGradientBrush brush = new PathGradientBrush(points);
             brush.CenterPoint = new Point(cannon.Left + cannon.Width / 2, cannon.Top);
             brush.CenterColor = Color.DarkBlue;
-            brush.SurroundColors = new[] { Color.White, Color.LightBlue};
+            brush.SurroundColors = new[] { Color.White, Color.Violet};
             FillMode fillMode = FillMode.Winding;
             graphics.FillPolygon(brush, points, fillMode);
             TimerStrike.Start();

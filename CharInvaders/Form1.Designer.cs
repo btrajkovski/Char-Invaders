@@ -95,7 +95,7 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScore.BackColor = System.Drawing.Color.White;
             this.lblScore.ForeColor = System.Drawing.Color.Black;
             this.lblScore.Location = new System.Drawing.Point(273, 29);
             this.lblScore.Name = "lblScore";
@@ -162,7 +162,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(580, 475);
