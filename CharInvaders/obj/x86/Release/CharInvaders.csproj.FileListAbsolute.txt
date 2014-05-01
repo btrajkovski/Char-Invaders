@@ -1,0 +1,8 @@
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\bin\Release\CharInvaders.exe
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\bin\Release\CharInvaders.pdb
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\obj\x86\Release\CharInvaders.csprojResolveAssemblyReference.cache
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\obj\x86\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\obj\x86\Release\CharInvaders.csproj.GenerateResource.Cache
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\obj\x86\Release\CharInvaders.exe
+C:\Users\Trajkovski\Documents\Visual Studio 2010\Projects\CharInvaders\CharInvaders\obj\x86\Release\CharInvaders.pdb
