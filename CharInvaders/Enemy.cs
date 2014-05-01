@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
             this.Width = image.Width;
             this.Height = image.Height;
             this.BackColor = Color.Transparent;
-            this.ForeColor = Color.White;
+            this.ForeColor = Color.Snow;
             this.Font = new Font(this.Font, FontStyle.Bold);
             this.Font = new Font("Verdana", 15, FontStyle.Bold); //new Font(this.Font.FontFamily, 15);
             Random rnd = new Random();
