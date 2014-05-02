@@ -127,7 +127,7 @@
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.LightBlue;
-            this.lblScore.Location = new System.Drawing.Point(520, 21);
+            this.lblScore.Location = new System.Drawing.Point(486, 21);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(25, 25);
             this.lblScore.TabIndex = 9;
@@ -140,7 +140,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightBlue;
-            this.label5.Location = new System.Drawing.Point(440, 21);
+            this.label5.Location = new System.Drawing.Point(402, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 25);
             this.label5.TabIndex = 8;
@@ -152,7 +152,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label1.Location = new System.Drawing.Point(318, 21);
+            this.label1.Location = new System.Drawing.Point(271, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 7;
@@ -164,7 +164,7 @@
             this.lblLevel.BackColor = System.Drawing.Color.Transparent;
             this.lblLevel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevel.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lblLevel.Location = new System.Drawing.Point(398, 21);
+            this.lblLevel.Location = new System.Drawing.Point(351, 21);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(25, 25);
             this.lblLevel.TabIndex = 6;
@@ -213,6 +213,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblLevel);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormGame";
             this.Text = "Char Ivaders";
             this.TransparencyKey = System.Drawing.Color.White;

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.igrac = new System.Windows.Forms.TextBox();
-            this.saveHighscore = new System.Windows.Forms.Button();
+            this.btnSaveHighscore = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // igrac
@@ -41,15 +41,15 @@
             this.igrac.Size = new System.Drawing.Size(339, 20);
             this.igrac.TabIndex = 0;
             // 
-            // saveHighscore
+            // btnSaveHighscore
             // 
-            this.saveHighscore.Location = new System.Drawing.Point(28, 86);
-            this.saveHighscore.Name = "saveHighscore";
-            this.saveHighscore.Size = new System.Drawing.Size(127, 28);
-            this.saveHighscore.TabIndex = 1;
-            this.saveHighscore.Text = "Save my highscore";
-            this.saveHighscore.UseVisualStyleBackColor = true;
-            this.saveHighscore.Click += new System.EventHandler(this.saveHighscore_Click);
+            this.btnSaveHighscore.Location = new System.Drawing.Point(28, 86);
+            this.btnSaveHighscore.Name = "btnSaveHighscore";
+            this.btnSaveHighscore.Size = new System.Drawing.Size(127, 28);
+            this.btnSaveHighscore.TabIndex = 1;
+            this.btnSaveHighscore.Text = "Save my highscore";
+            this.btnSaveHighscore.UseVisualStyleBackColor = true;
+            this.btnSaveHighscore.Click += new System.EventHandler(this.saveHighscore_Click);
             // 
             // label1
             // 
@@ -60,24 +60,27 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter your name:";
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(221, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 27);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(221, 86);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(127, 27);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnSaveHighscore;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(409, 133);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.saveHighscore);
+            this.Controls.Add(this.btnSaveHighscore);
             this.Controls.Add(this.igrac);
             this.Name = "Form1";
             this.Text = "Form2";
@@ -89,8 +92,8 @@
         #endregion
 
         private System.Windows.Forms.TextBox igrac;
-        private System.Windows.Forms.Button saveHighscore;
+        private System.Windows.Forms.Button btnSaveHighscore;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

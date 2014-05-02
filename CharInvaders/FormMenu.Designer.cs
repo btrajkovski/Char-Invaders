@@ -158,6 +158,7 @@
             this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnHighScore);
             this.Controls.Add(this.btnPlay);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenu";
             this.Text = "FormMenu";
             this.ResumeLayout(false);

@@ -144,7 +144,6 @@ namespace WindowsFormsApplication1
 
         public void EndGame()
         {
-            MessageBox.Show("Game Over !!!");
             TheForm.isPaused = true;
             foreach (Enemy enemy in Enemies)
             {
@@ -154,7 +153,7 @@ namespace WindowsFormsApplication1
             gameLevel = new GameLevel();
             TheForm.menuForm.Show();
             TheForm.Hide();
-            //
+
             if (TheForm.menuForm.checkIfHighscore(TheForm.currentScore))
             {
                 Form1 fm = new Form1();
@@ -167,7 +166,7 @@ namespace WindowsFormsApplication1
                     MessageBox.Show(TheForm.menuForm.high.ToString());
                 }
             }
-            else MessageBox.Show("You didn't made it in the first 5 :(");
+            else MessageBox.Show("You did not make it in the first 5 :(");
         }
 
         private void ShakeForm()
