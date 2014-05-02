@@ -33,11 +33,16 @@
             this.btnCredits = new System.Windows.Forms.Button();
             this.lblScores = new System.Windows.Forms.Label();
             this.back = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnHowToPlay = new System.Windows.Forms.Button();
+            this.lblOn = new System.Windows.Forms.Label();
+            this.lblOff = new System.Windows.Forms.Label();
+            this.lblsound = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(187, 95);
+            this.btnPlay.Location = new System.Drawing.Point(187, 44);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(179, 53);
             this.btnPlay.TabIndex = 0;
@@ -47,7 +52,7 @@
             // 
             // btnHighScore
             // 
-            this.btnHighScore.Location = new System.Drawing.Point(187, 182);
+            this.btnHighScore.Location = new System.Drawing.Point(187, 124);
             this.btnHighScore.Name = "btnHighScore";
             this.btnHighScore.Size = new System.Drawing.Size(179, 53);
             this.btnHighScore.TabIndex = 1;
@@ -57,7 +62,7 @@
             // 
             // btnCredits
             // 
-            this.btnCredits.Location = new System.Drawing.Point(187, 269);
+            this.btnCredits.Location = new System.Drawing.Point(187, 201);
             this.btnCredits.Name = "btnCredits";
             this.btnCredits.Size = new System.Drawing.Size(179, 53);
             this.btnCredits.TabIndex = 2;
@@ -84,12 +89,70 @@
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(187, 281);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(178, 62);
+            this.btnSettings.TabIndex = 5;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnHowToPlay
+            // 
+            this.btnHowToPlay.Location = new System.Drawing.Point(184, 367);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(180, 64);
+            this.btnHowToPlay.TabIndex = 6;
+            this.btnHowToPlay.Text = "How to play?";
+            this.btnHowToPlay.UseVisualStyleBackColor = true;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
+            // 
+            // lblOn
+            // 
+            this.lblOn.AutoSize = true;
+            this.lblOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOn.Location = new System.Drawing.Point(343, 206);
+            this.lblOn.Name = "lblOn";
+            this.lblOn.Size = new System.Drawing.Size(46, 31);
+            this.lblOn.TabIndex = 7;
+            this.lblOn.Text = "on";
+            this.lblOn.Click += new System.EventHandler(this.lblOn_Click);
+            // 
+            // lblOff
+            // 
+            this.lblOff.AutoSize = true;
+            this.lblOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOff.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblOff.Location = new System.Drawing.Point(405, 207);
+            this.lblOff.Name = "lblOff";
+            this.lblOff.Size = new System.Drawing.Size(45, 31);
+            this.lblOff.TabIndex = 8;
+            this.lblOff.Text = "off";
+            this.lblOff.Click += new System.EventHandler(this.lblOff_Click);
+            // 
+            // lblsound
+            // 
+            this.lblsound.AutoSize = true;
+            this.lblsound.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsound.Location = new System.Drawing.Point(133, 205);
+            this.lblsound.Name = "lblsound";
+            this.lblsound.Size = new System.Drawing.Size(98, 33);
+            this.lblsound.TabIndex = 9;
+            this.lblsound.Text = "Sound";
+            // 
             // FormMenu
             // 
             this.AcceptButton = this.btnPlay;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 475);
+            this.Controls.Add(this.lblsound);
+            this.Controls.Add(this.lblOff);
+            this.Controls.Add(this.lblOn);
+            this.Controls.Add(this.btnHowToPlay);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.back);
             this.Controls.Add(this.lblScores);
             this.Controls.Add(this.btnCredits);
@@ -97,7 +160,6 @@
             this.Controls.Add(this.btnPlay);
             this.Name = "FormMenu";
             this.Text = "FormMenu";
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +172,10 @@
         private System.Windows.Forms.Button btnCredits;
         private System.Windows.Forms.Label lblScores;
         private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnHowToPlay;
+        private System.Windows.Forms.Label lblOn;
+        private System.Windows.Forms.Label lblOff;
+        private System.Windows.Forms.Label lblsound;
     }
 }

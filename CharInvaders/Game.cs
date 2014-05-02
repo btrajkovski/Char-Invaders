@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
         public List<Canon> Cannons { get; set; }
         public Timer TimerStrike  { get; set; }
         private SoundCollection SoundCollection;
+        public bool shouldPlay { set; get; }
 
 
 
@@ -36,6 +37,7 @@ namespace WindowsFormsApplication1
             TimerStrike = new Timer();
             TimerStrike.Interval = 100;
             TimerStrike.Tick += new EventHandler(TimerStrike_Tick);
+            this.shouldPlay = TheForm.menuForm.shouldPlay;
         }
 
         private void InitializeCannons()
@@ -89,6 +91,7 @@ namespace WindowsFormsApplication1
                 Enemies.Remove(res);
                 TheForm.GetControls().Remove(res);
                 DrawStrike(res);
+                if(shouldPlay)
                 SoundCollection.PlayerLaserSound.Play();
                 return true;
             }
@@ -134,30 +137,37 @@ namespace WindowsFormsApplication1
             Cannons.Remove(cannon);
             TheForm.GetControls().Remove(Enemies[i]);
             Enemies.RemoveAt(i);
-
+            if(shouldPlay)
             SoundCollection.PlayerCannonCrush.Play();
             ShakeForm();
         }
 
-        private void EndGame()
+        public void EndGame()
         {
             MessageBox.Show("Game Over !!!");
+            TheForm.isPaused = true;
             foreach (Enemy enemy in Enemies)
             {
                 TheForm.GetControls().Remove(enemy);
             }
+            Enemies = new List<Enemy>();
+            gameLevel = new GameLevel();
             TheForm.menuForm.Show();
             TheForm.Hide();
             //
-            Form1 fm = new Form1();
-            DialogResult result = fm.ShowDialog();
-            if (result == DialogResult.OK)
+            if (TheForm.menuForm.checkIfHighscore(TheForm.currentScore))
             {
-                string x = fm.playerName;
-                Score sc = new Score(x, TheForm.currentScore);
-                TheForm.menuForm.addScore(sc);
-                MessageBox.Show(TheForm.menuForm.high.ToString());
+                Form1 fm = new Form1();
+                DialogResult result = fm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string x = fm.playerName;
+                    Score sc = new Score(x, TheForm.currentScore);
+                    TheForm.menuForm.addScore(sc);
+                    MessageBox.Show(TheForm.menuForm.high.ToString());
+                }
             }
+            else MessageBox.Show("You didn't made it in the first 5 :(");
         }
 
         private void ShakeForm()

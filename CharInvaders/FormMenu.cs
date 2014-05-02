@@ -14,12 +14,18 @@ namespace WindowsFormsApplication1
     public  partial  class FormMenu : Form
     {
         public Highscores high { set; get; }
+        public bool shouldPlay { set; get; }
         public FormMenu()
         {
             InitializeComponent();
             lblScores.Hide();
             back.Hide();
+            lblOff.Hide();
+            lblOn.Hide();
+            lblsound.Hide();
+
             high = BinaryDeserializeScores();
+            shouldPlay = true;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -34,6 +40,11 @@ namespace WindowsFormsApplication1
             high.addHighscore(sc);
             BinarySerializeScores(high);
         }
+        public bool checkIfHighscore(int sc) 
+        {
+            return high.checkScore(sc);
+        }
+
         private static void BinarySerializeScores(Highscores HS)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -72,13 +83,11 @@ namespace WindowsFormsApplication1
 
         private void btnHighScore_Click(object sender, EventArgs e)
         {
-            back.Show();
-            btnCredits.Hide();
-            btnHighScore.Hide();
-            btnPlay.Hide();
+            hideMenu();
+
             lblScores.Text = high.ToString();
-            
             lblScores.Show();
+
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -86,9 +95,63 @@ namespace WindowsFormsApplication1
             btnPlay.Show();
             btnHighScore.Show();
             btnCredits.Show();
+            btnHowToPlay.Show();
+            btnSettings.Show();
+
+            lblsound.Hide();
             lblScores.Hide();
             back.Hide();
+            lblOff.Hide();
+            lblOn.Hide();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+
+            lblsound.Show();
+            lblOff.Show();
+            lblOn.Show();
+
+        }
+        private void hideMenu() 
+        {
+            btnCredits.Hide();
+            btnHighScore.Hide();
+            btnPlay.Hide();
+            btnSettings.Hide();
+            btnHowToPlay.Hide();
+            back.Show();
+        }
+
+        private void lblOn_Click(object sender, EventArgs e)
+        {
+            
+            if (!shouldPlay)
+            {
+                lblOn.ForeColor = Color.Black;
+                lblOff.ForeColor = Color.DarkGray;
+            }
+            shouldPlay = true;
+        }
+
+        private void lblOff_Click(object sender, EventArgs e)
+        {
+            
+            if (shouldPlay)
+            {
+                lblOn.ForeColor = Color.DarkGray;
+                lblOff.ForeColor = Color.Black;
+            }
+            shouldPlay = false;
+        }
+
+        private void btnHowToPlay_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+
 
 
     }

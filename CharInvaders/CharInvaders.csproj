@@ -161,6 +161,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\background.jpg" />
+    <None Include="Resources\rsz_pause.png" />
+    <None Include="Resources\rsz_1note.png" />
+    <None Include="Resources\rsz_note.png" />
+    <None Include="Resources\rsz_music_note.png" />
+    <None Include="Resources\rsz_exit.png" />
+    <None Include="Resources\Music Note.png" />
+    <None Include="Resources\sound.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

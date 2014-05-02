@@ -21,6 +21,13 @@ namespace WindowsFormsApplication1
             if (highScores.Count > 5)
                 highScores.RemoveAt(5);
         }
+        public bool checkScore(int sc)
+        { 
+            if(highScores.Count >= 5 && sc > highScores[4].score) return true;
+            if (highScores.Count < 5) return true;
+            return false;
+        }
+
         public override string ToString()
         {
             int i = 1;

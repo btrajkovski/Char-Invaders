@@ -32,14 +32,20 @@
             this.lblHit = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblMiss = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
-            this.lblMiss = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pbSound = new System.Windows.Forms.PictureBox();
+            this.pbExit = new System.Windows.Forms.PictureBox();
+            this.pbPause = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPause)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -87,6 +93,33 @@
             this.button2.Text = "New Game";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblMiss
+            // 
+            this.lblMiss.AutoSize = true;
+            this.lblMiss.Location = new System.Drawing.Point(195, 29);
+            this.lblMiss.Name = "lblMiss";
+            this.lblMiss.Size = new System.Drawing.Size(13, 13);
+            this.lblMiss.TabIndex = 5;
+            this.lblMiss.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(168, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Miss:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(168, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Hit:";
             // 
             // lblScore
             // 
@@ -137,32 +170,32 @@
             this.lblLevel.TabIndex = 6;
             this.lblLevel.Text = "1";
             // 
-            // lblMiss
+            // pbSound
             // 
-            this.lblMiss.AutoSize = true;
-            this.lblMiss.Location = new System.Drawing.Point(195, 29);
-            this.lblMiss.Name = "lblMiss";
-            this.lblMiss.Size = new System.Drawing.Size(13, 13);
-            this.lblMiss.TabIndex = 5;
-            this.lblMiss.Text = "0";
+            this.pbSound.Location = new System.Drawing.Point(45, 12);
+            this.pbSound.Name = "pbSound";
+            this.pbSound.Size = new System.Drawing.Size(28, 28);
+            this.pbSound.TabIndex = 12;
+            this.pbSound.TabStop = false;
+            this.pbSound.Click += new System.EventHandler(this.pbSound_Click);
             // 
-            // label3
+            // pbExit
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Miss:";
+            this.pbExit.Location = new System.Drawing.Point(10, 13);
+            this.pbExit.Name = "pbExit";
+            this.pbExit.Size = new System.Drawing.Size(29, 27);
+            this.pbExit.TabIndex = 13;
+            this.pbExit.TabStop = false;
+            this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
             // 
-            // label2
+            // pbPause
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Hit:";
+            this.pbPause.Location = new System.Drawing.Point(79, 13);
+            this.pbPause.Name = "pbPause";
+            this.pbPause.Size = new System.Drawing.Size(32, 27);
+            this.pbPause.TabIndex = 14;
+            this.pbPause.TabStop = false;
+            this.pbPause.Click += new System.EventHandler(this.pbPause_Click);
             // 
             // FormGame
             // 
@@ -171,6 +204,9 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(580, 475);
+            this.Controls.Add(this.pbPause);
+            this.Controls.Add(this.pbExit);
+            this.Controls.Add(this.pbSound);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.label1);
@@ -180,10 +216,15 @@
             this.Name = "FormGame";
             this.Text = "Char Ivaders";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Activated += new System.EventHandler(this.FormGame_Activated);
+            this.Deactivate += new System.EventHandler(this.FormGame_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGame_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSound)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPause)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +243,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pbSound;
+        private System.Windows.Forms.PictureBox pbExit;
+        private System.Windows.Forms.PictureBox pbPause;
     }
 }
 

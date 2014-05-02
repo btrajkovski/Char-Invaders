@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
         public Random Random { get; set; }
         public FormMenu menuForm;
         public int currentScore {set; get;}
+        public bool isPaused { set; get; }
         
 
         public FormGame(FormMenu menuForm)
@@ -25,6 +26,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             this.menuForm = menuForm;
             newGame();
+
         }
 
         public void newGame()
@@ -35,6 +37,25 @@ namespace WindowsFormsApplication1
             Random = new Random();
             groupBox1.BackColor = Color.Transparent;
             currentScore = 0;
+            Image i = Properties.Resources.rsz_exit;
+            pbExit.Image = i;
+            pbExit.Width = i.Width;
+            pbExit.Height = i.Height;
+            pbExit.BackColor = Color.Transparent;
+
+            Image ii = Properties.Resources.rsz_note;
+            pbSound.Image = ii;
+            pbSound.Width = ii.Width;
+            pbSound.Height = ii.Height;
+            pbSound.BackColor = Color.Transparent;
+
+            Image iii = Properties.Resources.rsz_pause;
+            pbPause.Image = iii;
+            pbPause.Width = iii.Width;
+            pbPause.Height = iii.Height;
+            pbPause.BackColor = Color.Transparent;
+
+            isPaused = false;
         }
 
         private void InitializeTimers()
@@ -56,13 +77,17 @@ namespace WindowsFormsApplication1
 
         void TimerMoveEnemies_Tick(object sender, EventArgs e)
         {
-            TheGame.MoveEnemies();
+            if(!isPaused)
+                TheGame.MoveEnemies();
         }
 
         void TimerCreateLetter_Tick(object sender, EventArgs e)
         {
-            TheGame.AddEnemy();
-            lblLevel.Text = TheGame.gameLevel.LEVEL.ToString();
+            if (!isPaused)
+            {
+                TheGame.AddEnemy();
+                lblLevel.Text = TheGame.gameLevel.LEVEL.ToString();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,8 +120,10 @@ namespace WindowsFormsApplication1
                    // lblScore.Text = (int.Parse(lblScore.Text) - TheGame.gameLevel.POINTS_MISS).ToString();
                     lblScore.Text = currentScore.ToString();
                     if (int.Parse(lblScore.Text) < 0)
+                    {
                         currentScore = 0;
                         lblScore.Text = "0";
+                    }
                 }
             }
         }
@@ -108,7 +135,36 @@ namespace WindowsFormsApplication1
 
         private void FormGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            TheGame.EndGame();
+        }
+
+
+
+
+
+        private void pbSound_Click(object sender, EventArgs e)
+        {
+            TheGame.shouldPlay = !TheGame.shouldPlay;
+        }
+
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            TheGame.EndGame();
+        }
+
+        private void pbPause_Click(object sender, EventArgs e)
+        {
+            isPaused = !isPaused;
+        }
+
+        private void FormGame_Deactivate(object sender, EventArgs e)
+        {
+            isPaused = true;
+        }
+
+        private void FormGame_Activated(object sender, EventArgs e)
+        {
+            isPaused = false;
         }
 
     }
