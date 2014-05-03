@@ -160,7 +160,7 @@ namespace WindowsFormsApplication1
                 if (result == DialogResult.OK)
                 {
                     string x = fm.playerName;
-                    Score sc = new Score(x, TheForm.currentScore);
+                    ScoreItem sc = new ScoreItem(x, TheForm.currentScore);
                     fhs.addScore(sc);
                     //MessageBox.Show(TheForm.menuForm.high.ToString());
                 }

@@ -14,26 +14,26 @@ namespace WindowsFormsApplication1
     public partial class FormHighScore : Form
     {
         private Form menuForm;
-        public Highscores high { set; get; }
+        public HighScores HighScore { set; get; }
 
         public FormHighScore(Form menuForm)
         {
             InitializeComponent();
             this.menuForm = menuForm;
-            high = BinaryDeserializeScores();
+            HighScore = BinaryDeserializeScores();
             updateHighScore();
             this.Location = menuForm.Location;
         }
 
-        public void addScore(Score sc)
+        public void addScore(ScoreItem sc)
         {
             if (sc != null)
-                high.addHighscore(sc);
-            BinarySerializeScores(high);
+                HighScore.addHighscore(sc);
+            BinarySerializeScores(HighScore);
             updateHighScore();
         }
 
-        private static void BinarySerializeScores(Highscores HS)
+        private static void BinarySerializeScores(HighScores HS)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             using (FileStream str = File.Open(path + "\\HighScoresCharInvaders.hs", FileMode.OpenOrCreate))
@@ -43,31 +43,33 @@ namespace WindowsFormsApplication1
                 bf.Serialize(str, HS);
             }
         }
-        private static Highscores BinaryDeserializeScores()
+
+
+        private static HighScores BinaryDeserializeScores()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            Highscores HS = null;
+            HighScores HS = null;
             try
             {
 
                 using (FileStream str = File.OpenRead(path + "\\HighScoresCharInvaders.hs"))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
-                    HS = (Highscores)bf.Deserialize(str);
+                    HS = (HighScores)bf.Deserialize(str);
                 }
 
                 return HS;
             }
             catch (FileNotFoundException)
             {
-                return new Highscores();
+                return new HighScores();
             }
 
         }
 
         public bool checkIfHighscore(int sc)
         {
-            return high.checkScore(sc);
+            return HighScore.checkScore(sc);
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -79,7 +81,7 @@ namespace WindowsFormsApplication1
 
         private void updateHighScore()
         {
-            lblScores.Text = high.ToString();
+            lblScores.Text = HighScore.ToString();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace WindowsFormsApplication1
                 finally
                 {
                     lblScores.Text = "";
-                    high = new Highscores();
+                    HighScore = new HighScores();
                 }
             }
         }

@@ -6,15 +6,15 @@ using System.Text;
 namespace WindowsFormsApplication1
 {
     [Serializable]
-    public class Highscores
+    public class HighScores
     {
-        public List<Score> highScores;
+        public List<ScoreItem> highScores;
 
-        public Highscores()
+        public HighScores()
         {
-            highScores = new List<Score>();
+            highScores = new List<ScoreItem>();
         }
-        public void addHighscore(Score sc)
+        public void addHighscore(ScoreItem sc)
         {
             highScores.Add(sc);
             highScores = highScores.OrderByDescending(x => x.score).ToList();
@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
         {
             int i = 1;
             StringBuilder sb = new StringBuilder();
-            foreach (Score s in highScores)
+            foreach (ScoreItem s in highScores)
             {
                 sb.Append(i + ". " + s);
                 i++;

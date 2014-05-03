@@ -6,12 +6,12 @@ using System.Text;
 namespace WindowsFormsApplication1
 {
     [Serializable]
-    public class Score
+    public class ScoreItem
     {
         public string playerName { set; get; }
         public int score { set; get; }
 
-        public Score(string name, int score)
+        public ScoreItem(string name, int score)
         {
             this.playerName = name;
             this.score = score;

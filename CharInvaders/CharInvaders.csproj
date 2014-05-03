@@ -103,10 +103,10 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="GameLevel.cs" />
-    <Compile Include="Highscores.cs" />
+    <Compile Include="HighScores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Score.cs" />
+    <Compile Include="ScoreItem.cs" />
     <Compile Include="SoundCollection.cs" />
     <EmbeddedResource Include="FormAddScore.resx">
       <DependentUpon>FormAddScore.cs</DependentUpon>
