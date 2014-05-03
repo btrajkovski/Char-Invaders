@@ -13,10 +13,12 @@ namespace WindowsFormsApplication1
 {
     public  partial  class FormMenu : Form
     {
+        public SoundCollection SoundCollection;
         public bool shouldPlay { set; get; }
         public FormMenu()
         {
             InitializeComponent();
+            SoundCollection = new SoundCollection();
             shouldPlay = true;
         }
 
@@ -46,6 +48,11 @@ namespace WindowsFormsApplication1
         {
             // TO DO
             // Implement FormHowTo
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            SoundCollection.PlayerThemeSong.PlayLooping();
         }
     }
 }
