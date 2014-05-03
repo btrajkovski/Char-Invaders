@@ -22,8 +22,6 @@ namespace WindowsFormsApplication1
         private SoundCollection SoundCollection;
         public bool shouldPlay { set; get; }
 
-
-
         public Game(FormGame form)
         {
             CharPool = new List<Char>();
@@ -151,19 +149,20 @@ namespace WindowsFormsApplication1
             }
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
-            TheForm.menuForm.Show();
+            FormHighScore fhs = new FormHighScore(TheForm.menuForm);
+            fhs.Show();
             TheForm.Hide();
 
-            if (TheForm.menuForm.checkIfHighscore(TheForm.currentScore))
+            if (fhs.checkIfHighscore(TheForm.currentScore))
             {
-                Form1 fm = new Form1();
+                FormAddScore fm = new FormAddScore();
                 DialogResult result = fm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     string x = fm.playerName;
                     Score sc = new Score(x, TheForm.currentScore);
-                    TheForm.menuForm.addScore(sc);
-                    MessageBox.Show(TheForm.menuForm.high.ToString());
+                    fhs.addScore(sc);
+                    //MessageBox.Show(TheForm.menuForm.high.ToString());
                 }
             }
             else MessageBox.Show("You did not make it in the first 5 :(");

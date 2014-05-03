@@ -215,6 +215,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Char Ivaders";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Activated += new System.EventHandler(this.FormGame_Activated);

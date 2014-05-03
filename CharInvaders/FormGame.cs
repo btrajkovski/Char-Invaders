@@ -25,8 +25,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             this.menuForm = menuForm;
+            this.Location = menuForm.Location;
             newGame();
-
         }
 
         public void newGame()
@@ -137,10 +137,6 @@ namespace WindowsFormsApplication1
         {
             TheGame.EndGame();
         }
-
-
-
-
 
         private void pbSound_Click(object sender, EventArgs e)
         {
