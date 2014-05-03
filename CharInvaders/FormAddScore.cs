@@ -13,7 +13,6 @@ namespace WindowsFormsApplication1
     {
         public string playerName {set; get;}
 
-        public Form form;
         public FormAddScore()
         {
             InitializeComponent();
@@ -23,7 +22,6 @@ namespace WindowsFormsApplication1
         {
             playerName = igrac.Text;
             this.DialogResult = DialogResult.OK;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
