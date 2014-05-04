@@ -46,12 +46,6 @@ namespace WindowsFormsApplication1
             SetSoundImage();
             SetPauseImage();
 
-            /*Image iv = Properties.Resources.rsz_note3;
-            pbMusic.Image = iv;
-            pbMusic.Width = iv.Width;
-            pbMusic.Height = iv.Height;
-            pbMusic.BackColor = Color.Transparent;*/
-
             lblPause.Visible = isPaused = false;
         }
 
@@ -109,14 +103,12 @@ namespace WindowsFormsApplication1
                     {
                         lblHit.Text = (int.Parse(lblHit.Text) + 1).ToString();
                         currentScore += TheGame.gameLevel.POINTS_HIT;
-                        //lblScore.Text = (int.Parse(lblScore.Text) + TheGame.gameLevel.POINTS_HIT).ToString();
                         lblScore.Text = currentScore.ToString();
                     }
                     else
                     {
                         lblMiss.Text = (int.Parse(lblMiss.Text) + 1).ToString();
                         currentScore -= TheGame.gameLevel.POINTS_MISS;
-                        // lblScore.Text = (int.Parse(lblScore.Text) - TheGame.gameLevel.POINTS_MISS).ToString();
                         lblScore.Text = currentScore.ToString();
                         if (int.Parse(lblScore.Text) < 0)
                         {
@@ -194,28 +186,6 @@ namespace WindowsFormsApplication1
                 pbPause.BackColor = Color.Transparent;
             }
         }
-        /*private void pbMusic_Click(object sender, EventArgs e)
-        {
-
-            menuForm.playThemeSong =  menuForm.playThemeSong = !menuForm.playThemeSong;
-            if (menuForm.playThemeSong)
-            {
-                Image iv = Properties.Resources.rsz_note3;
-                pbMusic.Image = iv;
-                pbMusic.Width = iv.Width;
-                pbMusic.Height = iv.Height;
-                pbMusic.BackColor = Color.Transparent;
-            }
-            else
-            {
-                Image iv = Properties.Resources.rsz_note;
-                pbMusic.Image = iv;
-                pbMusic.Width = iv.Width;
-                pbMusic.Height = iv.Height;
-                pbMusic.BackColor = Color.Transparent;
-            }
-            menuForm.playMusic();
-        }*/
 
         private void FormGame_Deactivate(object sender, EventArgs e)
         {
@@ -244,8 +214,5 @@ namespace WindowsFormsApplication1
             pbExit.Height = i.Height;
             pbExit.BackColor = Color.Transparent;
         }
-
-
-
     }
 }
