@@ -1,0 +1,41 @@
+[33mcommit 65a6cb34746416afd0dcd6e88054a673046f5a3c[m
+Author: stojkowski <martin_s_ku@hotmail.com>
+Date:   Sat May 3 03:24:18 2014 +0200
+
+    Added theme song
+
+[33mcommit c482560c08c9a085884ddc3afa53d9ad04f8d67e[m
+Author: Bojan Trajkovski <leetz.spy@gmail.com>
+Date:   Sat May 3 03:00:41 2014 +0200
+
+    Added TODO list
+
+[33mcommit 1ee4c789fad4e776088b8139f0d5e2ff8f5bee83[m
+Author: btrajkovski <leetz.spy@gmail.com>
+Date:   Sat May 3 02:36:42 2014 +0200
+
+    Rename Highscores.cs to HighScores.cs
+
+[33mcommit 58210346d9385e6a812ba85609120eef0db00220[m
+Author: btrajkovski <leetz.spy@gmail.com>
+Date:   Sat May 3 02:34:21 2014 +0200
+
+    Menu code refactor
+
+[33mcommit 7363362f3ffbc12d6f1fe9470251b1793331e668[m
+Author: btrajkovski <leetz.spy@gmail.com>
+Date:   Sat May 3 02:26:18 2014 +0200
+
+    minor changes
+
+[33mcommit b7a295865c49c935a4490b862d08980cc8ce2042[m
+Author: btrajkovski <leetz.spy@gmail.com>
+Date:   Sat May 3 02:22:37 2014 +0200
+
+    Menu code refactor
+
+[33mcommit a23e3a61ba141af6a6c6ef85e65fde6b0186432b[m
+Author: btrajkovski <leetz.spy@gmail.com>
+Date:   Fri May 2 23:24:34 2014 +0200
+
+    minor changes

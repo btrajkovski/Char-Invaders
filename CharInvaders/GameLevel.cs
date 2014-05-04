@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
             LEVEL = 1;
             POINTS_HIT = 100;
             POINTS_MISS = 300;
-            MOVE_PIXELS = 5;
+            MOVE_PIXELS = 2;
         }
 
         public void levelUp()
