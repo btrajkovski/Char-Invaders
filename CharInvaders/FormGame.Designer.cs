@@ -42,6 +42,7 @@
             this.pbSound = new System.Windows.Forms.PictureBox();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.pbPause = new System.Windows.Forms.PictureBox();
+            this.lblPause = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
@@ -187,6 +188,8 @@
             this.pbExit.TabIndex = 13;
             this.pbExit.TabStop = false;
             this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
+            this.pbExit.MouseEnter += new System.EventHandler(this.pbExit_MouseEnter);
+            this.pbExit.MouseLeave += new System.EventHandler(this.pbExit_MouseLeave);
             // 
             // pbPause
             // 
@@ -197,6 +200,19 @@
             this.pbPause.TabStop = false;
             this.pbPause.Click += new System.EventHandler(this.pbPause_Click);
             // 
+            // lblPause
+            // 
+            this.lblPause.AutoSize = true;
+            this.lblPause.BackColor = System.Drawing.Color.Transparent;
+            this.lblPause.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPause.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lblPause.Location = new System.Drawing.Point(154, 174);
+            this.lblPause.Name = "lblPause";
+            this.lblPause.Size = new System.Drawing.Size(272, 45);
+            this.lblPause.TabIndex = 17;
+            this.lblPause.Text = "Game Paused";
+            this.lblPause.Visible = false;
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +220,7 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(580, 475);
+            this.Controls.Add(this.lblPause);
             this.Controls.Add(this.pbPause);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.pbSound);
@@ -248,6 +265,7 @@
         private System.Windows.Forms.PictureBox pbSound;
         private System.Windows.Forms.PictureBox pbExit;
         private System.Windows.Forms.PictureBox pbPause;
+        private System.Windows.Forms.Label lblPause;
     }
 }
 

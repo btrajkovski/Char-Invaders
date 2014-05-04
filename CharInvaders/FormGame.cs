@@ -43,19 +43,16 @@ namespace WindowsFormsApplication1
             pbExit.Height = i.Height;
             pbExit.BackColor = Color.Transparent;
 
-            Image ii = Properties.Resources.rsz_note;
-            pbSound.Image = ii;
-            pbSound.Width = ii.Width;
-            pbSound.Height = ii.Height;
-            pbSound.BackColor = Color.Transparent;
+            SetSoundImage();
+            SetPauseImage();
 
-            Image iii = Properties.Resources.rsz_pause;
-            pbPause.Image = iii;
-            pbPause.Width = iii.Width;
-            pbPause.Height = iii.Height;
-            pbPause.BackColor = Color.Transparent;
+            /*Image iv = Properties.Resources.rsz_note3;
+            pbMusic.Image = iv;
+            pbMusic.Width = iv.Width;
+            pbMusic.Height = iv.Height;
+            pbMusic.BackColor = Color.Transparent;*/
 
-            isPaused = false;
+            lblPause.Visible = isPaused = false;
         }
 
         private void InitializeTimers()
@@ -104,25 +101,28 @@ namespace WindowsFormsApplication1
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
+            if (!isPaused)
             {
-                if (TheGame.ShootEnemy(e.KeyCode.ToString().ToUpper()))
+                if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
                 {
-                    lblHit.Text = (int.Parse(lblHit.Text) + 1).ToString();
-                    currentScore += TheGame.gameLevel.POINTS_HIT;
-                    //lblScore.Text = (int.Parse(lblScore.Text) + TheGame.gameLevel.POINTS_HIT).ToString();
-                    lblScore.Text = currentScore.ToString();
-                }
-                else
-                {
-                    lblMiss.Text = (int.Parse(lblMiss.Text) + 1).ToString();
-                    currentScore -= TheGame.gameLevel.POINTS_MISS;
-                   // lblScore.Text = (int.Parse(lblScore.Text) - TheGame.gameLevel.POINTS_MISS).ToString();
-                    lblScore.Text = currentScore.ToString();
-                    if (int.Parse(lblScore.Text) < 0)
+                    if (TheGame.ShootEnemy(e.KeyCode.ToString().ToUpper()))
                     {
-                        currentScore = 0;
-                        lblScore.Text = "0";
+                        lblHit.Text = (int.Parse(lblHit.Text) + 1).ToString();
+                        currentScore += TheGame.gameLevel.POINTS_HIT;
+                        //lblScore.Text = (int.Parse(lblScore.Text) + TheGame.gameLevel.POINTS_HIT).ToString();
+                        lblScore.Text = currentScore.ToString();
+                    }
+                    else
+                    {
+                        lblMiss.Text = (int.Parse(lblMiss.Text) + 1).ToString();
+                        currentScore -= TheGame.gameLevel.POINTS_MISS;
+                        // lblScore.Text = (int.Parse(lblScore.Text) - TheGame.gameLevel.POINTS_MISS).ToString();
+                        lblScore.Text = currentScore.ToString();
+                        if (int.Parse(lblScore.Text) < 0)
+                        {
+                            currentScore = 0;
+                            lblScore.Text = "0";
+                        }
                     }
                 }
             }
@@ -135,33 +135,117 @@ namespace WindowsFormsApplication1
 
         private void FormGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            TheGame.EndGame();
+            TheGame.EndGame(false);
         }
 
         private void pbSound_Click(object sender, EventArgs e)
         {
-            TheGame.shouldPlay = !TheGame.shouldPlay;
+            menuForm.shouldPlay = TheGame.shouldPlay = !TheGame.shouldPlay;
+            SetSoundImage();
+        }
+
+        private void SetSoundImage()
+        {
+            if (TheGame.shouldPlay)
+            {
+                Image ii = Properties.Resources.rsz_soundon;
+                pbSound.Image = ii;
+                pbSound.Width = ii.Width;
+                pbSound.Height = ii.Height;
+                pbSound.BackColor = Color.Transparent;
+            }
+            else
+            {
+                Image ii = Properties.Resources.rsz_soundoff;
+                pbSound.Image = ii;
+                pbSound.Width = ii.Width;
+                pbSound.Height = ii.Height;
+                pbSound.BackColor = Color.Transparent;
+            }
         }
 
         private void pbExit_Click(object sender, EventArgs e)
         {
-            TheGame.EndGame();
+            TheGame.EndGame(false);
         }
 
         private void pbPause_Click(object sender, EventArgs e)
         {
-            isPaused = !isPaused;
+            lblPause.Visible = isPaused = !isPaused;
+            SetPauseImage();
         }
+
+        private void SetPauseImage()
+        {
+            if (isPaused)
+            {
+                Image iii = Properties.Resources.rsz_pause3;
+                pbPause.Image = iii;
+                pbPause.Width = iii.Width;
+                pbPause.Height = iii.Height;
+                pbPause.BackColor = Color.Transparent;
+            }
+            else
+            {
+                Image iii = Properties.Resources.rsz_pause;
+                pbPause.Image = iii;
+                pbPause.Width = iii.Width;
+                pbPause.Height = iii.Height;
+                pbPause.BackColor = Color.Transparent;
+            }
+        }
+        /*private void pbMusic_Click(object sender, EventArgs e)
+        {
+
+            menuForm.playThemeSong =  menuForm.playThemeSong = !menuForm.playThemeSong;
+            if (menuForm.playThemeSong)
+            {
+                Image iv = Properties.Resources.rsz_note3;
+                pbMusic.Image = iv;
+                pbMusic.Width = iv.Width;
+                pbMusic.Height = iv.Height;
+                pbMusic.BackColor = Color.Transparent;
+            }
+            else
+            {
+                Image iv = Properties.Resources.rsz_note;
+                pbMusic.Image = iv;
+                pbMusic.Width = iv.Width;
+                pbMusic.Height = iv.Height;
+                pbMusic.BackColor = Color.Transparent;
+            }
+            menuForm.playMusic();
+        }*/
 
         private void FormGame_Deactivate(object sender, EventArgs e)
         {
-            isPaused = true;
+            lblPause.Visible = isPaused = true;
         }
 
         private void FormGame_Activated(object sender, EventArgs e)
         {
-            isPaused = false;
+            lblPause.Visible = isPaused = false;
         }
+
+        private void pbExit_MouseEnter(object sender, EventArgs e)
+        {
+            Image i = Properties.Resources.rsz_exit3;
+            pbExit.Image = i;
+            pbExit.Width = i.Width;
+            pbExit.Height = i.Height;
+            pbExit.BackColor = Color.Transparent;
+        }
+
+        private void pbExit_MouseLeave(object sender, EventArgs e)
+        {
+            Image i = Properties.Resources.rsz_exit;
+            pbExit.Image = i;
+            pbExit.Width = i.Width;
+            pbExit.Height = i.Height;
+            pbExit.BackColor = Color.Transparent;
+        }
+
+
 
     }
 }

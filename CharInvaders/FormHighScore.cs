@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
         private static void BinarySerializeScores(HighScores HS)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            
             using (FileStream str = File.Open(path + "\\HighScoresCharInvaders.hs", FileMode.OpenOrCreate))
             {
                 File.SetAttributes(path + "\\HighScoresCharInvaders.hs", File.GetAttributes(path + "\\HighScoresCharInvaders.hs") | FileAttributes.Hidden);

@@ -121,7 +121,7 @@ namespace WindowsFormsApplication1
                 {
                     RemoveCannon(i);
                     if (Cannons.Count == 0)
-                        EndGame();
+                        EndGame(true);
                 }
                 else
                     Enemies[i].Top += gameLevel.MOVE_PIXELS;
@@ -140,7 +140,7 @@ namespace WindowsFormsApplication1
             ShakeForm();
         }
 
-        public void EndGame()
+        public void EndGame(bool activateHighScore)
         {
             TheForm.isPaused = true;
             foreach (Enemy enemy in Enemies)
@@ -149,23 +149,34 @@ namespace WindowsFormsApplication1
             }
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
-            FormHighScore fhs = new FormHighScore(TheForm.menuForm);
-            fhs.Show();
-            TheForm.Hide();
 
-            if (fhs.checkIfHighscore(TheForm.currentScore))
+            if (activateHighScore)
             {
-                FormAddScore fm = new FormAddScore();
-                DialogResult result = fm.ShowDialog();
-                if (result == DialogResult.OK)
+                FormHighScore fhs = new FormHighScore(TheForm.menuForm);
+                fhs.Show();
+                TheForm.Hide();
+
+                if (fhs.checkIfHighscore(TheForm.currentScore))
                 {
-                    string x = fm.playerName;
-                    ScoreItem sc = new ScoreItem(x, TheForm.currentScore);
-                    fhs.addScore(sc);
-                    //MessageBox.Show(TheForm.menuForm.high.ToString());
+                    FormAddScore fm = new FormAddScore();
+                    DialogResult result = fm.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string x = fm.playerName;
+                        ScoreItem sc = new ScoreItem(x, TheForm.currentScore);
+                        fhs.addScore(sc);
+                        //MessageBox.Show(TheForm.menuForm.high.ToString());
+                    }
                 }
+                else MessageBox.Show("You did not make it in the first 5 :(");
             }
-            else MessageBox.Show("You did not make it in the first 5 :(");
+            else
+            {
+                TheForm.Hide();
+                TheForm.menuForm.Show();
+            }
+            
+            
         }
 
         private void ShakeForm()

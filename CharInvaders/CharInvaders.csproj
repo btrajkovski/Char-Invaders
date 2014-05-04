@@ -179,12 +179,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\background.jpg" />
+    <None Include="Resources\rsz_exit3.png" />
+    <None Include="Resources\rsz_exit.png" />
+    <None Include="Resources\rsz_note3.png" />
+    <None Include="Resources\rsz_pause3.png" />
+    <None Include="Resources\rsz_pause2.png" />
+    <None Include="Resources\rsz_1note2.png" />
+    <None Include="Resources\rsz_soundoff.png" />
+    <None Include="Resources\rsz_soundon.png" />
     <None Include="Resources\protect_my_balls.wav" />
     <None Include="Resources\rsz_pause.png" />
     <None Include="Resources\rsz_1note.png" />
     <None Include="Resources\rsz_note.png" />
     <None Include="Resources\rsz_music_note.png" />
-    <None Include="Resources\rsz_exit.png" />
     <None Include="Resources\Music Note.png" />
     <None Include="Resources\sound.png" />
   </ItemGroup>

@@ -15,15 +15,18 @@ namespace WindowsFormsApplication1
     {
         public SoundCollection SoundCollection;
         public bool shouldPlay { set; get; }
+        public bool playThemeSong;
         public FormMenu()
         {
             InitializeComponent();
             SoundCollection = new SoundCollection();
             shouldPlay = true;
+            playThemeSong = true;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            SoundCollection.PlayerThemeSong.Stop();
             FormGame fg = new FormGame(this);
             fg.Show();
             this.Hide();
@@ -50,9 +53,17 @@ namespace WindowsFormsApplication1
             // Implement FormHowTo
         }
 
-        private void FormMenu_Load(object sender, EventArgs e)
+        public void playMusic()
         {
-            SoundCollection.PlayerThemeSong.PlayLooping();
+            if (playThemeSong)
+                SoundCollection.PlayerThemeSong.PlayLooping();
+            else
+                SoundCollection.PlayerThemeSong.Stop();
+        }
+
+        private void FormMenu_Activated(object sender, EventArgs e)
+        {
+            playMusic();
         }
     }
 }

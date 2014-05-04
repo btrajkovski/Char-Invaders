@@ -30,6 +30,7 @@
         {
             this.chkSound = new System.Windows.Forms.CheckBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.chkPlayMusic = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // chkSound
@@ -56,11 +57,26 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // chkPlayMusic
+            // 
+            this.chkPlayMusic.AutoSize = true;
+            this.chkPlayMusic.Checked = true;
+            this.chkPlayMusic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPlayMusic.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.chkPlayMusic.Location = new System.Drawing.Point(58, 136);
+            this.chkPlayMusic.Name = "chkPlayMusic";
+            this.chkPlayMusic.Size = new System.Drawing.Size(115, 27);
+            this.chkPlayMusic.TabIndex = 7;
+            this.chkPlayMusic.Text = "Play Music";
+            this.chkPlayMusic.UseVisualStyleBackColor = true;
+            this.chkPlayMusic.CheckedChanged += new System.EventHandler(this.chkPlayMusic_CheckedChanged);
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 465);
+            this.Controls.Add(this.chkPlayMusic);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.chkSound);
             this.Name = "FormSettings";
@@ -76,5 +92,6 @@
 
         private System.Windows.Forms.CheckBox chkSound;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.CheckBox chkPlayMusic;
     }
 }

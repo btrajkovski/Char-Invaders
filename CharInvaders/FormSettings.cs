@@ -19,17 +19,19 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             this.Location = menuForm.Location;
             this.menuForm = menuForm;
-            shouldPlay = true;
+            chkPlayMusic.Checked = menuForm.playThemeSong;
+            chkSound.Checked = menuForm.shouldPlay;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             shouldPlay = chkSound.Checked;
+            menuForm.shouldPlay = shouldPlay;
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            menuForm.shouldPlay = shouldPlay;
             this.Hide();
             menuForm.Location = this.Location;
             menuForm.Show();
@@ -38,6 +40,12 @@ namespace WindowsFormsApplication1
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void chkPlayMusic_CheckedChanged(object sender, EventArgs e)
+        {
+            menuForm.playThemeSong = chkPlayMusic.Checked;
+            menuForm.playMusic();
         }
     }
 }

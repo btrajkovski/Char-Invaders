@@ -98,7 +98,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenu";
             this.Text = "FormMenu";
-            this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.Activated += new System.EventHandler(this.FormMenu_Activated);
             this.ResumeLayout(false);
 
         }
