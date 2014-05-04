@@ -22,16 +22,15 @@ namespace WindowsFormsApplication1
             LEVEL = 1;
             POINTS_HIT = 100;
             POINTS_MISS = 300;
-            MOVE_PIXELS = 2;
+            MOVE_PIXELS = 3;
         }
 
         public void levelUp()
         {
             LEVEL++;
-            if(ENEMY_APPEAR > 4)
+            if(LEVEL % 3 == 0)
 				ENEMY_APPEAR = (int)(ENEMY_APPEAR / 1.25);
-            if(ENEMY_SPEED > 4)
-                ENEMY_SPEED = (int)(ENEMY_SPEED * 0.75);
+            MOVE_PIXELS += LEVEL < 3 ? 2 : 1;
             POINTS_HIT = (int)(POINTS_HIT * 1.25);
             POINTS_MISS = POINTS_HIT * 3;
         }
