@@ -13,5 +13,6 @@ C# game where you hit letters, inspired by Space Invaders
 > * Change visual appearnce of in-game buttons
 > * Add HowTo play?
 > * <del>Try to optimize the game???</del>
+> * Add Documentation
 
 
