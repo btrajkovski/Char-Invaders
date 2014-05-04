@@ -149,6 +149,7 @@ namespace WindowsFormsApplication1
             }
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
+            TheForm.menuForm.playMusic();
 
             if (activateHighScore)
             {

@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
                 SoundCollection.PlayerThemeSong.Stop();
         }
 
-        private void FormMenu_Activated(object sender, EventArgs e)
+        private void FormMenu_Load(object sender, EventArgs e)
         {
             playMusic();
         }
