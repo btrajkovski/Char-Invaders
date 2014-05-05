@@ -11,11 +11,10 @@ namespace WindowsFormsApplication1
 {
     public class Game
     {
-        //public Dictionary<Char, Enemy> Enemies { get; set; }
         public List<Enemy> Enemies { get; set; }
         public List<Char> CharPool { get; set; }
         private FormGame TheForm;
-        public Random random { get; set; }
+        public Random Random { get; set; }
         public GameLevel gameLevel;
         public List<Canon> Cannons { get; set; }
         public Timer TimerStrike  { get; set; }
@@ -28,14 +27,14 @@ namespace WindowsFormsApplication1
             Enemies = new List<Enemy>();
             generatePool();
             TheForm = form;
-            random = new Random();
+            Random = new Random();
             gameLevel = new GameLevel();
             InitializeCannons();
             SoundCollection = new SoundCollection();
             TimerStrike = new Timer();
             TimerStrike.Interval = 100;
             TimerStrike.Tick += new EventHandler(TimerStrike_Tick);
-            this.shouldPlay = TheForm.menuForm.shouldPlay;
+            this.shouldPlay = TheForm.MenuForm.shouldPlay;
         }
 
         private void InitializeCannons()
@@ -65,12 +64,11 @@ namespace WindowsFormsApplication1
                 TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
                 generatePool();
             }
-            int i = random.Next(0, CharPool.Count);
+            int i = Random.Next(0, CharPool.Count);
             Char selected = CharPool[i];
             CharPool.RemoveAt(i);
             Enemy enemy = new Enemy(TheForm, findValidSpawn(), selected);
             Enemies.Add(enemy);
-            //TheForm.GetControls().Add(enemy);
         }
 
         public bool ShootEnemy(string enemy)
@@ -87,10 +85,9 @@ namespace WindowsFormsApplication1
             if (res != null)
             {
                 Enemies.Remove(res);
-                //TheForm.GetControls().Remove(res);
                 DrawStrike(res);
                 if(shouldPlay)
-                SoundCollection.PlayerLaserSound.Play();
+                    SoundCollection.PlayerLaserSound.Play();
                 return true;
             }
             else
@@ -110,6 +107,7 @@ namespace WindowsFormsApplication1
             brush.SurroundColors = new[] { Color.White, Color.Violet};
             FillMode fillMode = FillMode.Winding;
             graphics.FillPolygon(brush, points, fillMode);
+            brush.Dispose();
             TimerStrike.Start();
         }
 
@@ -124,7 +122,7 @@ namespace WindowsFormsApplication1
                         EndGame(true);
                 }
                 else
-                    Enemies[i].Top += gameLevel.MOVE_PIXELS;
+                    Enemies[i].MoveEnemy(gameLevel.MOVE_PIXELS);
             }
         }
 
@@ -133,40 +131,34 @@ namespace WindowsFormsApplication1
             Canon cannon = ClosestCannon(Enemies[i]);
             TheForm.GetControls().Remove(cannon);
             Cannons.Remove(cannon);
-            //TheForm.GetControls().Remove(Enemies[i]);
             Enemies.RemoveAt(i);
             if(shouldPlay)
-            SoundCollection.PlayerCannonCrush.Play();
+                SoundCollection.PlayerCannonCrush.Play();
             ShakeForm();
         }
 
         public void EndGame(bool activateHighScore)
         {
-            TheForm.isPaused = true;
-            /*foreach (Enemy enemy in Enemies)
-            {
-                TheForm.GetControls().Remove(enemy);
-            }*/
+            TheForm.IsPaused = true;
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
-            TheForm.menuForm.playMusic();
+            TheForm.MenuForm.playMusic();
 
             if (activateHighScore)
             {
-                FormHighScore fhs = new FormHighScore(TheForm.menuForm);
+                FormHighScore fhs = new FormHighScore(TheForm.MenuForm);
                 fhs.Show();
                 TheForm.Hide();
 
-                if (fhs.checkIfHighscore(TheForm.currentScore))
+                if (fhs.checkIfHighscore(TheForm.CurrentScore))
                 {
                     FormAddScore fm = new FormAddScore();
                     DialogResult result = fm.ShowDialog();
                     if (result == DialogResult.OK)
                     {
                         string x = fm.playerName;
-                        ScoreItem sc = new ScoreItem(x, TheForm.currentScore);
+                        ScoreItem sc = new ScoreItem(x, TheForm.CurrentScore);
                         fhs.addScore(sc);
-                        //MessageBox.Show(TheForm.menuForm.high.ToString());
                     }
                 }
                 else MessageBox.Show("You did not make it in the first 5 :(");
@@ -174,7 +166,7 @@ namespace WindowsFormsApplication1
             else
             {
                 TheForm.Hide();
-                TheForm.menuForm.Show();
+                TheForm.MenuForm.Show();
             }
             
             
@@ -203,11 +195,11 @@ namespace WindowsFormsApplication1
         private Canon CannonToShot(Enemy enemy)
         {
             if (enemy.Left <= TheForm.Width / 3)
-                return Cannons[random.Next(Cannons.Count == 1 ? 0 : 1, Cannons.Count)];
+                return Cannons[Random.Next(Cannons.Count == 1 ? 0 : 1, Cannons.Count)];
             else if (enemy.Left > 2 / 3 * TheForm.Width)
-                return Cannons[random.Next(0, Cannons.Count - 1)];
+                return Cannons[Random.Next(0, Cannons.Count - 1)];
             else
-                return Cannons[random.Next(0, Cannons.Count)];
+                return Cannons[Random.Next(0, Cannons.Count)];
         }
 
         private Canon ClosestCannon(Enemy enemy)
@@ -241,10 +233,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        /// <summary>
-        /// Returns a valid (non overlapping) position for an enemy to spawn
-        /// </summary>
-        /// <returns>Value for the left coordinate</returns>
         private int findValidSpawn()
         {
             int left = 0;
@@ -252,7 +240,7 @@ namespace WindowsFormsApplication1
             int count = 0;
             while (!found && count < 20)
             {
-                left = random.Next((int)(TheForm.Width * 0.05), (int)(TheForm.Width * 0.9));
+                left = Random.Next((int)(TheForm.Width * 0.05), (int)(TheForm.Width * 0.9));
                 found = true;
                 foreach (Enemy enemy in Enemies)
                 {
@@ -266,12 +254,6 @@ namespace WindowsFormsApplication1
             return left;
         }
 
-        /// <summary>
-        /// Checks if the spawn position does not overlap with the other letter
-        /// </summary>
-        /// <param name="left">Left coordinate for the test enemy</param>
-        /// <param name="enemy">Position of the already spawned enemy</param>
-        /// <returns>True if invalid position, false otherwise</returns>
         private static bool checkInvalidSpawn(int left, Enemy enemy)
         {
             return ((left >= enemy.Left) && (left <= (enemy.Left + enemy.Width)) ||

@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         }
         public override string ToString()
         {
-            return playerName + " " + score+"\n";
+            return playerName + " " + score + "\n";
         }
 
     }

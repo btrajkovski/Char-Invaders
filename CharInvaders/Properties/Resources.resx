@@ -130,23 +130,11 @@
   <data name="protect_my_balls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\protect_my_balls.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="rsz_1note2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_1note2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rsz_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_exit3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_exit3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rsz_music_note" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_music_note.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rsz_note" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_1note.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rsz_note3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_note3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

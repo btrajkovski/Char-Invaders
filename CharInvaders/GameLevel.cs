@@ -18,19 +18,18 @@ namespace WindowsFormsApplication1
         {
             // Default values
             ENEMY_SPEED = 25;
-            ENEMY_APPEAR = 1000;
+            ENEMY_APPEAR = 700;
             LEVEL = 1;
             POINTS_HIT = 100;
             POINTS_MISS = 300;
-            MOVE_PIXELS = 3;
+            MOVE_PIXELS = 2;
         }
 
         public void levelUp()
         {
             LEVEL++;
-            if(LEVEL % 3 == 0)
-				ENEMY_APPEAR = (int)(ENEMY_APPEAR / 1.25);
-            MOVE_PIXELS += LEVEL < 3 ? 2 : 1;
+            ENEMY_APPEAR = ENEMY_APPEAR < 50 ? (int)(ENEMY_APPEAR / 1.25) : ENEMY_APPEAR;
+            MOVE_PIXELS += 1;
             POINTS_HIT = (int)(POINTS_HIT * 1.25);
             POINTS_MISS = POINTS_HIT * 3;
         }

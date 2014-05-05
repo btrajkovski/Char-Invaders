@@ -22,15 +22,11 @@ namespace WindowsFormsApplication1
         {
             int W = f.Size.Width;
             int H = f.Size.Height;
-            //this.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Letter = letter.ToString().ToUpper();
             this.Top = 56;
             this.Left = left;
 
             Image = Properties.Resources.testCometResized;
-            /*this.Image = (Bitmap)image;
-            this.ImageAlign = ContentAlignment.MiddleCenter;
-            this.BackColor = Color.Transparent;*/
             this.Width = Image.Width;
             this.Height = Image.Height;
             Brush = Brushes.Snow;

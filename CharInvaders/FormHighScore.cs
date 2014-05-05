@@ -56,7 +56,14 @@ namespace WindowsFormsApplication1
                 using (FileStream str = File.OpenRead(path + "\\HighScoresCharInvaders.hs"))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
-                    HS = (HighScores)bf.Deserialize(str);
+                    try
+                    {
+                        HS = (HighScores)bf.Deserialize(str);
+                    }
+                    catch (Exception)
+                    {
+                        return new HighScores();
+                    }
                 }
 
                 return HS;
@@ -87,7 +94,7 @@ namespace WindowsFormsApplication1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure that you want to delete all the high scores?", "Confirm delete", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are you sure that you want to delete all scores?", "Confirm Delete", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
