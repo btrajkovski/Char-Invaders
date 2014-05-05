@@ -4,6 +4,7 @@ Char Invaders
 C# game where you hit letters, inspired by Space Invaders 
 
 > <b>TODO list</b>
+> * <del> Replace labels with graphics - Enemies.cs</del>
 > * <del> Refactor menu code </del>
 > * Change visual apperance of menus
 > * Change sound effects, also add sound effect for miss
