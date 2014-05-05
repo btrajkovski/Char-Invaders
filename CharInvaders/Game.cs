@@ -70,7 +70,7 @@ namespace WindowsFormsApplication1
             CharPool.RemoveAt(i);
             Enemy enemy = new Enemy(TheForm, findValidSpawn(), selected);
             Enemies.Add(enemy);
-            TheForm.GetControls().Add(enemy);
+            //TheForm.GetControls().Add(enemy);
         }
 
         public bool ShootEnemy(string enemy)
@@ -78,7 +78,7 @@ namespace WindowsFormsApplication1
             Enemy res = null;
             foreach (Enemy enemyIterator in Enemies)
             {
-                if (enemyIterator.Text.ToString() == enemy)
+                if (enemyIterator.Letter.ToString() == enemy)
                 {
                     res = enemyIterator;
                     break;
@@ -87,7 +87,7 @@ namespace WindowsFormsApplication1
             if (res != null)
             {
                 Enemies.Remove(res);
-                TheForm.GetControls().Remove(res);
+                //TheForm.GetControls().Remove(res);
                 DrawStrike(res);
                 if(shouldPlay)
                 SoundCollection.PlayerLaserSound.Play();
@@ -133,7 +133,7 @@ namespace WindowsFormsApplication1
             Canon cannon = ClosestCannon(Enemies[i]);
             TheForm.GetControls().Remove(cannon);
             Cannons.Remove(cannon);
-            TheForm.GetControls().Remove(Enemies[i]);
+            //TheForm.GetControls().Remove(Enemies[i]);
             Enemies.RemoveAt(i);
             if(shouldPlay)
             SoundCollection.PlayerCannonCrush.Play();
@@ -143,10 +143,10 @@ namespace WindowsFormsApplication1
         public void EndGame(bool activateHighScore)
         {
             TheForm.isPaused = true;
-            foreach (Enemy enemy in Enemies)
+            /*foreach (Enemy enemy in Enemies)
             {
                 TheForm.GetControls().Remove(enemy);
-            }
+            }*/
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
             TheForm.menuForm.playMusic();
@@ -276,6 +276,14 @@ namespace WindowsFormsApplication1
         {
             return ((left >= enemy.Left) && (left <= (enemy.Left + enemy.Width)) ||
                    (left <= enemy.Left) && (left >= (enemy.Left - enemy.Width))) && (enemy.Top <= ( enemy.Height + 56));
+        }
+
+        public void Draw(Graphics g)
+        {
+            foreach (Enemy e in Enemies)
+            {
+                e.DrawEnemy(g);
+            }
         }
     }
 }

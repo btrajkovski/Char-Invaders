@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
         public FormGame(FormMenu menuForm)
         {
             InitializeComponent();
+            DoubleBuffered = true;
             this.menuForm = menuForm;
             this.Location = menuForm.Location;
             newGame();
@@ -68,8 +69,11 @@ namespace WindowsFormsApplication1
 
         void TimerMoveEnemies_Tick(object sender, EventArgs e)
         {
-            if(!isPaused)
+            if (!isPaused)
+            {
                 TheGame.MoveEnemies();
+                Invalidate();
+            }
         }
 
         void TimerCreateLetter_Tick(object sender, EventArgs e)
@@ -213,6 +217,11 @@ namespace WindowsFormsApplication1
             pbExit.Width = i.Width;
             pbExit.Height = i.Height;
             pbExit.BackColor = Color.Transparent;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            TheGame.Draw(e.Graphics);
         }
     }
 }

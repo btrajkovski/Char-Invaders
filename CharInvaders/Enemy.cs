@@ -7,25 +7,45 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    public class Enemy : Label
+    public class Enemy
     {
+        public string Letter { get; set; }
+        public int Top { get; set; }
+        public int Left { get; set; }
+        public Image Image { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        private Font Font;
+        private Brush Brush;
+
         public Enemy(Form f, int left, char letter)
         {
             int W = f.Size.Width;
             int H = f.Size.Height;
-            this.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Text = letter.ToString().ToUpper();
+            //this.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Letter = letter.ToString().ToUpper();
             this.Top = 56;
             this.Left = left;
 
-            Image image = Properties.Resources.testCometResized;
-            this.Image = image;
+            Image = Properties.Resources.testCometResized;
+            /*this.Image = (Bitmap)image;
             this.ImageAlign = ContentAlignment.MiddleCenter;
-            this.Width = image.Width;
-            this.Height = image.Height;
-            this.BackColor = Color.Transparent;
-            this.ForeColor = Color.Snow;
-            this.Font = new Font("Verdana", 15, FontStyle.Bold);
+            this.BackColor = Color.Transparent;*/
+            this.Width = Image.Width;
+            this.Height = Image.Height;
+            Brush = Brushes.Snow;
+            Font = new Font("Verdana", 15, FontStyle.Bold);
+        }
+
+        public void DrawEnemy(Graphics g)
+        {
+            g.DrawImage(Image, new Rectangle(Left, Top, 30, 50));
+            g.DrawString(Letter, Font, Brush, Left + 5, Top + 25);
+        }
+
+        public void MoveEnemy(int value)
+        {
+            Top += value;
         }
     }
 }
