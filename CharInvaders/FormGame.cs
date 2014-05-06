@@ -31,6 +31,7 @@ namespace WindowsFormsApplication1
 
         public void newGame()
         {
+            this.BackgroundImage = MenuForm.Theme == 1 ? Properties.Resources.background2 : Properties.Resources.background;
             this.KeyPreview = true;
             TheGame = new Game(this);
             InitializeTimers();

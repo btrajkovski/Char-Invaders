@@ -71,7 +71,7 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // FormAddScore
             // 
             this.AcceptButton = this.btnSaveHighscore;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,7 +82,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveHighscore);
             this.Controls.Add(this.igrac);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FormAddScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();

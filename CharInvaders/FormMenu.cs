@@ -16,12 +16,16 @@ namespace WindowsFormsApplication1
         public SoundCollection SoundCollection;
         public bool shouldPlay { set; get; }
         public bool playThemeSong;
+        public int Theme;
+
         public FormMenu()
         {
             InitializeComponent();
             SoundCollection = new SoundCollection();
             shouldPlay = true;
             playThemeSong = true;
+            Theme = 1;
+            setTheme();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -49,9 +53,9 @@ namespace WindowsFormsApplication1
 
         private void btnHowToPlay_Click(object sender, EventArgs e)
         {
-            // TO DO
-            // Implement FormHowTo
-
+            FormHowTo fh = new FormHowTo(this);
+            this.Hide();
+            fh.Show();
         }
 
         public void playMusic()
@@ -65,6 +69,27 @@ namespace WindowsFormsApplication1
         private void FormMenu_Load(object sender, EventArgs e)
         {
             playMusic();
+        }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+            FormCredits fc = new FormCredits(this);
+            this.Hide();
+            fc.Show();
+        }
+        public void setTheme() {
+            if (Theme == 1) setTheme1();
+            else setTheme2();
+        }
+        private void setTheme1() 
+        {
+            
+        
+        }
+        
+        private void setTheme2() 
+        { 
+            //ovoj tema za Martina
         }
     }
 }

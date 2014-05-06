@@ -68,12 +68,24 @@
     <Compile Include="Canon.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormHowTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHowTo.Designer.cs">
+      <DependentUpon>FormHowTo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enemy.cs" />
     <Compile Include="FormAddScore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddScore.Designer.cs">
       <DependentUpon>FormAddScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCredits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCredits.Designer.cs">
+      <DependentUpon>FormCredits.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGame.cs">
       <SubType>Form</SubType>
@@ -111,8 +123,14 @@
     </Compile>
     <Compile Include="ScoreItem.cs" />
     <Compile Include="SoundCollection.cs" />
+    <EmbeddedResource Include="FormHowTo.resx">
+      <DependentUpon>FormHowTo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddScore.resx">
       <DependentUpon>FormAddScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCredits.resx">
+      <DependentUpon>FormCredits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
@@ -176,7 +194,8 @@
     <None Include="Resources\tower2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\background.jpg" />
+    <None Include="Resources\meteor2.png" />
+    <None Include="Resources\meteor.png" />
     <None Include="Resources\rsz_exit3.png" />
     <None Include="Resources\rsz_exit.png" />
     <None Include="Resources\rsz_pause3.png" />
@@ -185,6 +204,27 @@
     <None Include="Resources\rsz_soundon.png" />
     <None Include="Resources\protect_my_balls.wav" />
     <None Include="Resources\rsz_pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highscore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\howtoplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

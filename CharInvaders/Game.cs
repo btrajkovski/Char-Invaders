@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
             int i = Random.Next(0, CharPool.Count);
             Char selected = CharPool[i];
             CharPool.RemoveAt(i);
-            Enemy enemy = new Enemy(TheForm, findValidSpawn(), selected);
+            Enemy enemy = new Enemy(TheForm, findValidSpawn(), selected, TheForm.MenuForm.Theme);
             Enemies.Add(enemy);
         }
 
