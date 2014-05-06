@@ -244,6 +244,33 @@
   <ItemGroup>
     <None Include="Resources\b5_2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_background2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_background3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_background4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credits_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\howto_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\score_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.btnPlay = new System.Windows.Forms.PictureBox();
             this.btnHighScore = new System.Windows.Forms.PictureBox();
             this.btnSettings = new System.Windows.Forms.PictureBox();
             this.btnHowToPlay = new System.Windows.Forms.PictureBox();
             this.btnCredits = new System.Windows.Forms.PictureBox();
+            this.TimerBackgroundLoop = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHighScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
@@ -86,6 +88,11 @@
             this.btnCredits.TabStop = false;
             this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
             // 
+            // TimerBackgroundLoop
+            // 
+            this.TimerBackgroundLoop.Interval = 150;
+            this.TimerBackgroundLoop.Tick += new System.EventHandler(this.TimerBackgroundLoop_Tick);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,5 +125,6 @@
         private System.Windows.Forms.PictureBox btnSettings;
         private System.Windows.Forms.PictureBox btnHowToPlay;
         private System.Windows.Forms.PictureBox btnCredits;
+        private System.Windows.Forms.Timer TimerBackgroundLoop;
     }
 }
