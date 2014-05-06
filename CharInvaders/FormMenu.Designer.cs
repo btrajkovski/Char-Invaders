@@ -28,90 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHighScore = new System.Windows.Forms.Button();
-            this.btnCredits = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnHowToPlay = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.btnPlay = new System.Windows.Forms.PictureBox();
+            this.btnHighScore = new System.Windows.Forms.PictureBox();
+            this.btnSettings = new System.Windows.Forms.PictureBox();
+            this.btnHowToPlay = new System.Windows.Forms.PictureBox();
+            this.btnCredits = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHighScore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHowToPlay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCredits)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnHighScore
-            // 
-            this.btnHighScore.Location = new System.Drawing.Point(187, 124);
-            this.btnHighScore.Name = "btnHighScore";
-            this.btnHighScore.Size = new System.Drawing.Size(179, 53);
-            this.btnHighScore.TabIndex = 1;
-            this.btnHighScore.Text = "High Score";
-            this.btnHighScore.UseVisualStyleBackColor = true;
-            this.btnHighScore.Click += new System.EventHandler(this.btnHighScore_Click);
-            // 
-            // btnCredits
-            // 
-            this.btnCredits.Location = new System.Drawing.Point(186, 372);
-            this.btnCredits.Name = "btnCredits";
-            this.btnCredits.Size = new System.Drawing.Size(179, 53);
-            this.btnCredits.TabIndex = 2;
-            this.btnCredits.Text = "Credits";
-            this.btnCredits.UseVisualStyleBackColor = true;
-            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Location = new System.Drawing.Point(187, 205);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(178, 62);
-            this.btnSettings.TabIndex = 5;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // btnHowToPlay
-            // 
-            this.btnHowToPlay.Location = new System.Drawing.Point(185, 289);
-            this.btnHowToPlay.Name = "btnHowToPlay";
-            this.btnHowToPlay.Size = new System.Drawing.Size(180, 59);
-            this.btnHowToPlay.TabIndex = 6;
-            this.btnHowToPlay.Text = "How to play?";
-            this.btnHowToPlay.UseVisualStyleBackColor = true;
-            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(189, 44);
+            this.btnPlay.Location = new System.Drawing.Point(182, 13);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(175, 56);
             this.btnPlay.TabIndex = 7;
             this.btnPlay.TabStop = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
+            // btnHighScore
+            // 
+            this.btnHighScore.Location = new System.Drawing.Point(178, 102);
+            this.btnHighScore.Name = "btnHighScore";
+            this.btnHighScore.Size = new System.Drawing.Size(177, 53);
+            this.btnHighScore.TabIndex = 8;
+            this.btnHighScore.TabStop = false;
+            this.btnHighScore.Click += new System.EventHandler(this.btnHighScore_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(182, 187);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(175, 57);
+            this.btnSettings.TabIndex = 9;
+            this.btnSettings.TabStop = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnHowToPlay
+            // 
+            this.btnHowToPlay.Location = new System.Drawing.Point(178, 272);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(177, 57);
+            this.btnHowToPlay.TabIndex = 10;
+            this.btnHowToPlay.TabStop = false;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
+            // 
+            // btnCredits
+            // 
+            this.btnCredits.Location = new System.Drawing.Point(178, 361);
+            this.btnCredits.Name = "btnCredits";
+            this.btnCredits.Size = new System.Drawing.Size(177, 58);
+            this.btnCredits.TabIndex = 11;
+            this.btnCredits.TabStop = false;
+            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background2;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(580, 475);
-            this.Controls.Add(this.btnPlay);
+            this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnSettings);
-            this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnHighScore);
+            this.Controls.Add(this.btnPlay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHighScore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHowToPlay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCredits)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnHighScore;
-        private System.Windows.Forms.Button btnCredits;
-        private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button btnHowToPlay;
         private System.Windows.Forms.PictureBox btnPlay;
+        private System.Windows.Forms.PictureBox btnHighScore;
+        private System.Windows.Forms.PictureBox btnSettings;
+        private System.Windows.Forms.PictureBox btnHowToPlay;
+        private System.Windows.Forms.PictureBox btnCredits;
     }
 }

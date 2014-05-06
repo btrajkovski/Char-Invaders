@@ -226,6 +226,24 @@
   <ItemGroup>
     <None Include="Resources\settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_credits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_highscore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_howtoplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b5_2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

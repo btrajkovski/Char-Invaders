@@ -81,41 +81,11 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap credits {
-            get {
-                object obj = ResourceManager.GetObject("credits", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream explosion_iceman {
             get {
                 return ResourceManager.GetStream("explosion_iceman", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap highscore {
-            get {
-                object obj = ResourceManager.GetObject("highscore", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap howtoplay {
-            get {
-                object obj = ResourceManager.GetObject("howtoplay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -139,21 +109,21 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap play {
-            get {
-                object obj = ResourceManager.GetObject("play", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream protect_my_balls {
             get {
                 return ResourceManager.GetStream("protect_my_balls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_credits {
+            get {
+                object obj = ResourceManager.GetObject("rsz_credits", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -173,6 +143,26 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap rsz_exit3 {
             get {
                 object obj = ResourceManager.GetObject("rsz_exit3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_highscore {
+            get {
+                object obj = ResourceManager.GetObject("rsz_highscore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_howtoplay {
+            get {
+                object obj = ResourceManager.GetObject("rsz_howtoplay", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -210,6 +200,26 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_play {
+            get {
+                object obj = ResourceManager.GetObject("rsz_play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_settings {
+            get {
+                object obj = ResourceManager.GetObject("rsz_settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_soundoff {
             get {
                 object obj = ResourceManager.GetObject("rsz_soundoff", resourceCulture);
@@ -223,16 +233,6 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap rsz_soundon {
             get {
                 object obj = ResourceManager.GetObject("rsz_soundon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings {
-            get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

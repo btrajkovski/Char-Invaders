@@ -122,19 +122,10 @@
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="credits" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\credits.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\b5_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="explosion_iceman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explosion_iceman.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="highscore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\highscore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="howtoplay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\howtoplay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="meteor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meteor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,17 +133,23 @@
   <data name="mywavfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mywavfile.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="protect_my_balls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\protect_my_balls.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rsz_credits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_credits.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_exit3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_exit3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_highscore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_highscore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_howtoplay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_howtoplay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +160,17 @@
   <data name="rsz_pause3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_pause3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rsz_play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="rsz_soundoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_soundoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_soundon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_soundon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="testCometResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testCometResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
