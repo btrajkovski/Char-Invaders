@@ -21,8 +21,6 @@ namespace WindowsFormsApplication1
             this.menuForm = menuForm;
             chkPlayMusic.Checked = menuForm.PlayThemeSong;
             chkSound.Checked = menuForm.PlaySounds;
-            radioButton1.Checked = menuForm.Theme == 1;
-            radioButton2.Checked = !radioButton1.Checked;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -48,18 +46,6 @@ namespace WindowsFormsApplication1
         {
             menuForm.PlayThemeSong = chkPlayMusic.Checked;
             menuForm.playMusic();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            menuForm.Theme = 1;
-            menuForm.setTheme();
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            menuForm.Theme = 2;
-            menuForm.setTheme();
         }
     }
 }
