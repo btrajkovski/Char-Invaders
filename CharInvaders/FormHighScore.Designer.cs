@@ -87,7 +87,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormHighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "High Score";
+            this.Text = "7";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormHighScore_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
