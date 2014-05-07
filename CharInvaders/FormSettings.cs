@@ -30,13 +30,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            menuForm.Location = this.Location;
-            menuForm.Show();
-        }
-
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -46,6 +39,18 @@ namespace WindowsFormsApplication1
         {
             menuForm.PlayThemeSong = chkPlayMusic.Checked;
             menuForm.playMusic();
+        }
+
+        private void btnBack1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menuForm.Location = this.Location;
+            menuForm.Show();
+        }
+
+        private void FormSettings_Activated(object sender, EventArgs e)
+        {
+            this.Location = menuForm.Location;
         }
     }
 }

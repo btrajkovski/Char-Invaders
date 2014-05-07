@@ -17,6 +17,12 @@ namespace WindowsFormsApplication1
         public SoundCollection SoundCollection;
         public bool PlaySounds { set; get; }
         public bool PlayThemeSong;
+        public FormHighScore fhs;
+        public FormSettings fs;
+        public FormHowTo fh;
+        public FormCredits fc;
+        public Theme tema;
+
 
         public FormMenu()
         {
@@ -25,6 +31,12 @@ namespace WindowsFormsApplication1
             PlaySounds = true;
             PlayThemeSong = false;
             this.DoubleBuffered = true;
+            fhs = new FormHighScore(this);
+            fs = new FormSettings(this);
+            fh = new FormHowTo(this);
+            fc = new FormCredits(this);
+            tema = new Theme();
+            tema.addTheme(this);
             setTheme();
         }
 
@@ -38,14 +50,14 @@ namespace WindowsFormsApplication1
         
         private void btnHighScore_Click(object sender, EventArgs e)
         {
-            FormHighScore fhs = new FormHighScore(this);
+            tema.addTheme(fhs);
             this.Hide();
             fhs.Show();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            FormSettings fs = new FormSettings(this);
+            tema.addTheme(fs);
             this.Hide();
             fs.Show();
 
@@ -53,7 +65,7 @@ namespace WindowsFormsApplication1
 
         private void btnHowToPlay_Click(object sender, EventArgs e)
         {
-            FormHowTo fh = new FormHowTo(this);
+            tema.addTheme(fh);
             this.Hide();
             fh.Show();
         }
@@ -73,17 +85,13 @@ namespace WindowsFormsApplication1
 
         private void btnCredits_Click(object sender, EventArgs e)
         {
-            FormCredits fc = new FormCredits(this);
+            tema.addTheme(fc);
             this.Hide();
             fc.Show();
         }
         
         private void setTheme() 
         { 
-            InitializeBackground();
-            TimerBackgroundLoop.Start();
-            this.BackgroundImage = Properties.Resources.main_background1;
-
             int W = 150;
             int H = 32;
             int T = 100;
@@ -145,6 +153,7 @@ namespace WindowsFormsApplication1
             btnExit.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+
         private void InitializeBackground()
         {
             BackgroundImages = new Queue<Bitmap>();
@@ -160,6 +169,7 @@ namespace WindowsFormsApplication1
                 this.CreateGraphics().DrawImage(b, 0, 0);
                 BackgroundImages.Enqueue(b);
         }
+
 
         private void btnPlay_MouseEnter(object sender, EventArgs e)
         {
@@ -224,6 +234,13 @@ namespace WindowsFormsApplication1
         private void btnExit_MouseLeave(object sender, EventArgs e)
         {
             btnExit.Image = Properties.Resources.exit_button;
+
+        }
+
+        private void FormMenu_Activated(object sender, EventArgs e)
+        {
+            tema.addTheme(this);
+
         }
     }
 }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCredits));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack1 = new WindowsFormsApplication1.BtnBack();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,29 +56,33 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Created By:";
             // 
-            // button1
+            // btnBack1
             // 
-            this.button1.Location = new System.Drawing.Point(56, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "<< Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBack1.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack1.Image = ((System.Drawing.Image)(resources.GetObject("btnBack1.Image")));
+            this.btnBack1.Location = new System.Drawing.Point(54, 404);
+            this.btnBack1.Name = "btnBack1";
+            this.btnBack1.Size = new System.Drawing.Size(101, 32);
+            this.btnBack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack1.TabIndex = 3;
+            this.btnBack1.TabStop = false;
+            this.btnBack1.Click += new System.EventHandler(this.btnBack1_Click);
             // 
             // FormCredits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 465);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCredits";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormCredits";
+            this.Activated += new System.EventHandler(this.FormCredits_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCredits_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,7 +92,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private BtnBack btnBack1;
 
     }
 }

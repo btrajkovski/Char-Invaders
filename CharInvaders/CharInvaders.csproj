@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BtnBack.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnClear.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Canon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -123,6 +129,7 @@
     </Compile>
     <Compile Include="ScoreItem.cs" />
     <Compile Include="SoundCollection.cs" />
+    <Compile Include="Theme.cs" />
     <EmbeddedResource Include="FormHowTo.resx">
       <DependentUpon>FormHowTo.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,12 +212,6 @@
     <None Include="Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\credits.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_credits.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\main_background1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +258,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit_button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear_button2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

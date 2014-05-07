@@ -80,13 +80,6 @@ namespace WindowsFormsApplication1
             return HighScore.checkScore(sc);
         }
 
-        private void back_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            menuForm.Location = this.Location;
-            menuForm.Show();
-        }
-
         private void updateHighScore()
         {
             lblScores.Text = HighScore.ToString();
@@ -117,6 +110,18 @@ namespace WindowsFormsApplication1
         private void FormHighScore_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnBack1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menuForm.Location = this.Location;
+            menuForm.Show();
+        }
+
+        private void FormHighScore_Activated(object sender, EventArgs e)
+        {
+            this.Location = menuForm.Location;
         }
     }
 }

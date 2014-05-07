@@ -20,18 +20,22 @@ namespace WindowsFormsApplication1
             this.menuForm = menuForm;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            menuForm.Location = this.Location;
-            menuForm.Show();
-        }
 
         private void FormCredits_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
+        private void btnBack1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menuForm.Location = this.Location;
+            menuForm.Show();
+        }
 
+        private void FormCredits_Activated(object sender, EventArgs e)
+        {
+            this.Location = menuForm.Location;
+        }
     }
 }
