@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
             TimerStrike = new Timer();
             TimerStrike.Interval = 100;
             TimerStrike.Tick += new EventHandler(TimerStrike_Tick);
-            this.shouldPlay = TheForm.MenuForm.shouldPlay;
+            this.shouldPlay = TheForm.MenuForm.PlaySounds;
         }
 
         private void InitializeCannons()

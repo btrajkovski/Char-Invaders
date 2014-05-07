@@ -91,6 +91,12 @@ namespace WindowsFormsApplication1
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Space)
+            {
+                PauseTheGame();
+                return;
+            }
+
             if (!IsPaused && e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
             {
                 if (TheGame.ShootEnemy(e.KeyCode.ToString().ToUpper()))
@@ -119,7 +125,7 @@ namespace WindowsFormsApplication1
 
         private void pbSound_Click(object sender, EventArgs e)
         {
-            MenuForm.shouldPlay = TheGame.shouldPlay = !TheGame.shouldPlay;
+            MenuForm.PlaySounds = TheGame.shouldPlay = !TheGame.shouldPlay;
             SetSoundImage();
         }
 
@@ -149,6 +155,11 @@ namespace WindowsFormsApplication1
         }
 
         private void pbPause_Click(object sender, EventArgs e)
+        {
+            PauseTheGame();
+        }
+
+        private void PauseTheGame()
         {
             lblPause.Visible = IsPaused = !IsPaused;
             SetPauseImage();

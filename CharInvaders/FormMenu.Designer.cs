@@ -36,11 +36,13 @@
             this.btnHowToPlay = new System.Windows.Forms.PictureBox();
             this.btnCredits = new System.Windows.Forms.PictureBox();
             this.TimerBackgroundLoop = new System.Windows.Forms.Timer(this.components);
+            this.btnExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHighScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHowToPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCredits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPlay
@@ -51,6 +53,8 @@
             this.btnPlay.TabIndex = 7;
             this.btnPlay.TabStop = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            this.btnPlay.MouseEnter += new System.EventHandler(this.btnPlay_MouseEnter);
+            this.btnPlay.MouseLeave += new System.EventHandler(this.btnPlay_MouseLeave);
             // 
             // btnHighScore
             // 
@@ -60,6 +64,8 @@
             this.btnHighScore.TabIndex = 8;
             this.btnHighScore.TabStop = false;
             this.btnHighScore.Click += new System.EventHandler(this.btnHighScore_Click);
+            this.btnHighScore.MouseEnter += new System.EventHandler(this.btnHighScore_MouseEnter);
+            this.btnHighScore.MouseLeave += new System.EventHandler(this.btnHighScore_MouseLeave);
             // 
             // btnSettings
             // 
@@ -69,6 +75,8 @@
             this.btnSettings.TabIndex = 9;
             this.btnSettings.TabStop = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.MouseEnter += new System.EventHandler(this.btnSettings_MouseEnter);
+            this.btnSettings.MouseLeave += new System.EventHandler(this.btnSettings_MouseLeave);
             // 
             // btnHowToPlay
             // 
@@ -78,6 +86,8 @@
             this.btnHowToPlay.TabIndex = 10;
             this.btnHowToPlay.TabStop = false;
             this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
+            this.btnHowToPlay.MouseEnter += new System.EventHandler(this.btnHowToPlay_MouseEnter);
+            this.btnHowToPlay.MouseLeave += new System.EventHandler(this.btnHowToPlay_MouseLeave);
             // 
             // btnCredits
             // 
@@ -87,11 +97,24 @@
             this.btnCredits.TabIndex = 11;
             this.btnCredits.TabStop = false;
             this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
+            this.btnCredits.MouseEnter += new System.EventHandler(this.btnCredits_MouseEnter);
+            this.btnCredits.MouseLeave += new System.EventHandler(this.btnCredits_MouseLeave);
             // 
             // TimerBackgroundLoop
             // 
-            this.TimerBackgroundLoop.Interval = 150;
+            this.TimerBackgroundLoop.Interval = 140;
             this.TimerBackgroundLoop.Tick += new System.EventHandler(this.TimerBackgroundLoop_Tick);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(377, 396);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(177, 58);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
             // 
             // FormMenu
             // 
@@ -99,6 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(580, 475);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnSettings);
@@ -114,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHowToPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCredits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,5 +151,6 @@
         private System.Windows.Forms.PictureBox btnHowToPlay;
         private System.Windows.Forms.PictureBox btnCredits;
         private System.Windows.Forms.Timer TimerBackgroundLoop;
+        private System.Windows.Forms.PictureBox btnExit;
     }
 }

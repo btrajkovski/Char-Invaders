@@ -15,17 +15,18 @@ namespace WindowsFormsApplication1
     {
         private Queue<Bitmap> BackgroundImages;
         public SoundCollection SoundCollection;
-        public bool shouldPlay { set; get; }
-        public bool playThemeSong;
+        public bool PlaySounds { set; get; }
+        public bool PlayThemeSong;
         public int Theme;
 
         public FormMenu()
         {
             InitializeComponent();
             SoundCollection = new SoundCollection();
-            shouldPlay = true;
-            playThemeSong = true;
+            PlaySounds = true;
+            PlayThemeSong = false;
             Theme = 0;
+            this.DoubleBuffered = true;
             setTheme();
         }
 
@@ -61,7 +62,7 @@ namespace WindowsFormsApplication1
 
         public void playMusic()
         {
-            if (playThemeSong)
+            if (PlayThemeSong)
                 SoundCollection.PlayerThemeSong.PlayLooping();
             else
                 SoundCollection.PlayerThemeSong.Stop();
@@ -142,8 +143,8 @@ namespace WindowsFormsApplication1
             this.BackgroundImage = Properties.Resources.main_background1;
 
             int W = 150;
-            int H = 30;
-            int T = 150;
+            int H = 32;
+            int T = 100;
             int L = this.Width / 2 - W / 2;
 
             Image play_img = Properties.Resources.play_button;
@@ -158,7 +159,7 @@ namespace WindowsFormsApplication1
             Image highscore_img = Properties.Resources.score_button;
             btnHighScore.Image = highscore_img;
             btnHighScore.Left = L;
-            btnHighScore.Top = T+30;
+            btnHighScore.Top = T += H;
             btnHighScore.Width = W;
             btnHighScore.Height = H;
             btnHighScore.BackColor = Color.Transparent;
@@ -167,7 +168,7 @@ namespace WindowsFormsApplication1
             Image settings_img = Properties.Resources.settings_button;
             btnSettings.Image = settings_img;
             btnSettings.Left = L;
-            btnSettings.Top = T+60;
+            btnSettings.Top = T += H;
             btnSettings.Width = W;
             btnSettings.Height = H;
             btnSettings.BackColor = Color.Transparent;
@@ -176,7 +177,7 @@ namespace WindowsFormsApplication1
             Image howtoplay_img = Properties.Resources.howto_button;
             btnHowToPlay.Image = howtoplay_img;
             btnHowToPlay.Left = L;
-            btnHowToPlay.Top = T+90;
+            btnHowToPlay.Top = T += H;
             btnHowToPlay.Width = W;
             btnHowToPlay.Height = H;
             btnHowToPlay.BackColor = Color.Transparent;
@@ -186,11 +187,20 @@ namespace WindowsFormsApplication1
             Image credits_img = Properties.Resources.credits_button;
             btnCredits.Image = credits_img;
             btnCredits.Left = L;
-            btnCredits.Top = T+120;
+            btnCredits.Top = T += H;
             btnCredits.Width = W;
             btnCredits.Height = H;
             btnCredits.BackColor = Color.Transparent;
             btnCredits.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            Image exit_img = Properties.Resources.exit_button;
+            btnExit.Image = exit_img;
+            btnExit.Left = L;
+            btnExit.Top = T += H;
+            btnExit.Width = W;
+            btnExit.Height = H;
+            btnExit.BackColor = Color.Transparent;
+            btnExit.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void InitializeBackground()
@@ -212,6 +222,71 @@ namespace WindowsFormsApplication1
             }
             else
                 TimerBackgroundLoop.Stop();
+        }
+
+        private void btnPlay_MouseEnter(object sender, EventArgs e)
+        {
+            btnPlay.Image = Properties.Resources.play_button2;
+        }
+
+        private void btnHighScore_MouseEnter(object sender, EventArgs e)
+        {
+            btnHighScore.Image = Properties.Resources.score_button2;
+        }
+
+        private void btnSettings_MouseEnter(object sender, EventArgs e)
+        {
+            btnSettings.Image = Properties.Resources.settings_button2;
+        }
+
+        private void btnHowToPlay_MouseEnter(object sender, EventArgs e)
+        {
+            btnHowToPlay.Image = Properties.Resources.howto_button2;
+        }
+
+        private void btnCredits_MouseEnter(object sender, EventArgs e)
+        {
+            btnCredits.Image = Properties.Resources.credits_button2;
+        }
+
+        private void btnPlay_MouseLeave(object sender, EventArgs e)
+        {
+            btnPlay.Image = Properties.Resources.play_button;
+        }
+
+        private void btnHighScore_MouseLeave(object sender, EventArgs e)
+        {
+            btnHighScore.Image = Properties.Resources.score_button;
+        }
+
+        private void btnSettings_MouseLeave(object sender, EventArgs e)
+        {
+            btnSettings.Image = Properties.Resources.settings_button;
+        }
+
+        private void btnHowToPlay_MouseLeave(object sender, EventArgs e)
+        {
+            btnHowToPlay.Image = Properties.Resources.howto_button;
+        }
+
+        private void btnCredits_MouseLeave(object sender, EventArgs e)
+        {
+            btnCredits.Image = Properties.Resources.credits_button;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnExit_MouseEnter(object sender, EventArgs e)
+        {
+            btnExit.Image = Properties.Resources.exit_button2;
+        }
+
+        private void btnExit_MouseLeave(object sender, EventArgs e)
+        {
+            btnExit.Image = Properties.Resources.exit_button;
         }
     }
 }

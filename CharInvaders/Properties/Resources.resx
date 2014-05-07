@@ -127,11 +127,23 @@
   <data name="credits_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\credits_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="credits_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\credits_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exit_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exit_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="explosion_iceman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explosion_iceman.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="howto_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\howto_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="howto_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\howto_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main_background1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,6 +165,9 @@
   </data>
   <data name="play_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="protect_my_balls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\protect_my_balls.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -196,8 +211,14 @@
   <data name="score_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\score_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="score_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\score_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="testCometResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testCometResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

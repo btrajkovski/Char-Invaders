@@ -19,8 +19,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             this.Location = menuForm.Location;
             this.menuForm = menuForm;
-            chkPlayMusic.Checked = menuForm.playThemeSong;
-            chkSound.Checked = menuForm.shouldPlay;
+            chkPlayMusic.Checked = menuForm.PlayThemeSong;
+            chkSound.Checked = menuForm.PlaySounds;
             radioButton1.Checked = menuForm.Theme == 1;
             radioButton2.Checked = !radioButton1.Checked;
         }
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             shouldPlay = chkSound.Checked;
-            menuForm.shouldPlay = shouldPlay;
+            menuForm.PlaySounds = shouldPlay;
 
         }
 
@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
 
         private void chkPlayMusic_CheckedChanged(object sender, EventArgs e)
         {
-            menuForm.playThemeSong = chkPlayMusic.Checked;
+            menuForm.PlayThemeSong = chkPlayMusic.Checked;
             menuForm.playMusic();
         }
 
