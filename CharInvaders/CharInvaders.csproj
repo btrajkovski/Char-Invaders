@@ -117,8 +117,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ScoreItem.cs" />
@@ -188,9 +188,6 @@
     <None Include="Resources\explosion_iceman.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\testCometResized.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\tower2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -199,7 +196,6 @@
     <None Include="Resources\rsz_exit3.png" />
     <None Include="Resources\rsz_exit.png" />
     <None Include="Resources\rsz_pause3.png" />
-    <None Include="Resources\rsz_pause2.png" />
     <None Include="Resources\rsz_soundoff.png" />
     <None Include="Resources\rsz_soundon.png" />
     <None Include="Resources\protect_my_balls.wav" />
@@ -209,40 +205,10 @@
     <None Include="Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\credits.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\highscore.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\howtoplay.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\rsz_credits.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_highscore.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_howtoplay.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\b5_2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\main_background1.png" />

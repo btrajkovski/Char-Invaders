@@ -17,7 +17,6 @@ namespace WindowsFormsApplication1
         public SoundCollection SoundCollection;
         public bool PlaySounds { set; get; }
         public bool PlayThemeSong;
-        public int Theme;
 
         public FormMenu()
         {
@@ -25,7 +24,6 @@ namespace WindowsFormsApplication1
             SoundCollection = new SoundCollection();
             PlaySounds = true;
             PlayThemeSong = false;
-            Theme = 0;
             this.DoubleBuffered = true;
             setTheme();
         }
@@ -79,65 +77,9 @@ namespace WindowsFormsApplication1
             this.Hide();
             fc.Show();
         }
-        public void setTheme() {
-            if (Theme == 1) setTheme1();
-            else setTheme2();
-        }
-        private void setTheme1() 
-        {
-            Image i = Properties.Resources.background2;
-            this.BackgroundImage = i;
-
-            Image play_img = Properties.Resources.rsz_play;
-            btnPlay.Image = play_img;
-            btnPlay.Left = 182;
-            btnPlay.Top = 13;
-            btnPlay.Width = 250;
-            btnPlay.Height = 90;
-            btnPlay.BackColor = Color.Transparent;
-            btnPlay.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            Image highscore_img = Properties.Resources.rsz_highscore;
-            btnHighScore.Image = highscore_img;
-            btnHighScore.Left = 178;
-            btnHighScore.Top = 102;
-            btnHighScore.Width = 250;
-            btnHighScore.Height = 90;
-            btnHighScore.BackColor = Color.Transparent;
-            btnHighScore.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            Image settings_img = Properties.Resources.rsz_settings;
-            btnSettings.Image = settings_img;
-            btnSettings.Left = 182;
-            btnSettings.Top = 187;
-            btnSettings.Width = 250;
-            btnSettings.Height = 90;
-            btnSettings.BackColor = Color.Transparent;
-            btnSettings.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            Image howtoplay_img = Properties.Resources.rsz_howtoplay;
-            btnHowToPlay.Image = howtoplay_img;
-            btnHowToPlay.Left = 178;
-            btnHowToPlay.Top = 272;
-            btnHowToPlay.Width = 250;
-            btnHowToPlay.Height = 90;
-            btnHowToPlay.BackColor = Color.Transparent;
-            btnHowToPlay.SizeMode = PictureBoxSizeMode.StretchImage;
-
-
-            Image credits_img = Properties.Resources.rsz_credits;
-            btnCredits.Image = credits_img;
-            btnCredits.Left = 178;
-            btnCredits.Top = 361;
-            btnCredits.Width = 250;
-            btnCredits.Height = 90;
-            btnCredits.BackColor = Color.Transparent;
-            btnCredits.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
         
-        private void setTheme2() 
+        private void setTheme() 
         { 
-            //ovoj tema za Martina
             InitializeBackground();
             TimerBackgroundLoop.Start();
             this.BackgroundImage = Properties.Resources.main_background1;
@@ -214,14 +156,9 @@ namespace WindowsFormsApplication1
 
         private void TimerBackgroundLoop_Tick(object sender, EventArgs e)
         {
-            if (Theme != 1)
-            {
                 Bitmap b = BackgroundImages.Dequeue();
                 this.CreateGraphics().DrawImage(b, 0, 0);
                 BackgroundImages.Enqueue(b);
-            }
-            else
-                TimerBackgroundLoop.Stop();
         }
 
         private void btnPlay_MouseEnter(object sender, EventArgs e)
