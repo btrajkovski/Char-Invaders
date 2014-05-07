@@ -102,7 +102,9 @@
             // TimerBackgroundLoop
             // 
             this.TimerBackgroundLoop.Interval = 140;
+
             this.TimerBackgroundLoop.Tick += new System.EventHandler(this.TimerBackgroundLoop_Tick);
+
             // 
             // btnExit
             // 
@@ -119,6 +121,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.main_background1;
+
             this.ClientSize = new System.Drawing.Size(580, 475);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCredits);
@@ -130,6 +135,7 @@
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Activated += new System.EventHandler(this.FormMenu_Activated);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHighScore)).EndInit();
