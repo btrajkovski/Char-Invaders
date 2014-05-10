@@ -29,38 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCredits));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack1 = new WindowsFormsApplication1.CustomButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 72);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bojan Trajkovski\r\nBeti Spasovska\r\nMartin Stojkovski";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(185, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Created By:";
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.credits_back;
+            this.pictureBox1.Location = new System.Drawing.Point(44, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(490, 328);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // btnBack1
             // 
             this.btnBack1.BackColor = System.Drawing.Color.Transparent;
             this.btnBack1.Image = ((System.Drawing.Image)(resources.GetObject("btnBack1.Image")));
-            this.btnBack1.Location = new System.Drawing.Point(54, 404);
+            this.btnBack1.Location = new System.Drawing.Point(44, 405);
             this.btnBack1.Name = "btnBack1";
             this.btnBack1.Size = new System.Drawing.Size(101, 32);
             this.btnBack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -72,16 +61,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 465);
+            this.ClientSize = new System.Drawing.Size(580, 475);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCredits";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormCredits";
             this.Activated += new System.EventHandler(this.FormCredits_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCredits_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,9 +79,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private CustomButton btnBack1;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }
