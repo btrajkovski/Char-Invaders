@@ -92,9 +92,9 @@
             // 
             // pbSound
             // 
-            this.pbSound.Location = new System.Drawing.Point(45, 12);
+            this.pbSound.Location = new System.Drawing.Point(45, 13);
             this.pbSound.Name = "pbSound";
-            this.pbSound.Size = new System.Drawing.Size(28, 28);
+            this.pbSound.Size = new System.Drawing.Size(28, 27);
             this.pbSound.TabIndex = 12;
             this.pbSound.TabStop = false;
             this.pbSound.Click += new System.EventHandler(this.pbSound_Click);
@@ -153,7 +153,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Char Ivaders";
             this.TransparencyKey = System.Drawing.Color.White;
-            this.Activated += new System.EventHandler(this.FormGame_Activated);
             this.Deactivate += new System.EventHandler(this.FormGame_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGame_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

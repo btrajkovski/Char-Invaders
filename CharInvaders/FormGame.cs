@@ -191,11 +191,6 @@ namespace WindowsFormsApplication1
             lblPause.Visible = IsPaused = true;
         }
 
-        private void FormGame_Activated(object sender, EventArgs e)
-        {
-            lblPause.Visible = IsPaused = false;
-        }
-
         private void pbExit_MouseEnter(object sender, EventArgs e)
         {
             Image i = Properties.Resources.rsz_exit3;
