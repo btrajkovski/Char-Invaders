@@ -34,6 +34,10 @@ namespace WindowsFormsApplication1
         public void DrawEnemy(Graphics g)
         {
             g.DrawImage(Image, Left, Top);
+        }
+
+        public void DrawLetter(Graphics g)
+        {
             g.DrawString(Letter, Font, Brush, Left + 7, Top + 23);
         }
 

@@ -29,7 +29,8 @@ namespace WindowsFormsApplication1
         {
             LEVEL++;
             ENEMY_APPEAR = ENEMY_APPEAR < 50 ? (int)(ENEMY_APPEAR / 1.25) : ENEMY_APPEAR;
-            MOVE_PIXELS += 1;
+            if (MOVE_PIXELS < 4)
+                MOVE_PIXELS += 1;
             POINTS_HIT = (int)(POINTS_HIT * 1.25);
             POINTS_MISS = POINTS_HIT * 3;
         }

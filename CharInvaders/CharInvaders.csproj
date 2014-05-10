@@ -209,9 +209,6 @@
     <None Include="Resources\rsz_pause.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\main_background1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -270,6 +267,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clear_button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_cannon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\middle_cannon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_cannon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,14 +11,18 @@ namespace WindowsFormsApplication1
     {
         public Canon(int left, int formHeight) 
         {
-            this.Height = 100;
-            this.Width = 40;
             this.Left = left;
-            
-            this.Top = formHeight - this.Height - 50;
+            this.Width = 75;
+            this.Height = 95;
+            this.Top = formHeight - this.Height - 54;
             this.Image = Properties.Resources.tower2;
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.BackColor = Color.Transparent;
+        }
+
+        public void SetImage(Image image)
+        {
+            this.Image = image;
         }
     }
 }

@@ -7,9 +7,6 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-
-
-
     public class Theme
     {
         private Queue<Bitmap> BackgroundImages;

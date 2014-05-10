@@ -73,6 +73,7 @@ namespace WindowsFormsApplication1
                 TheGame.MoveEnemies();
                 Invalidate();
             }
+            Invalidate();
         }
 
         void TimerCreateLetter_Tick(object sender, EventArgs e)

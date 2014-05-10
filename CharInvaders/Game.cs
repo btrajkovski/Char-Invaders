@@ -42,7 +42,13 @@ namespace WindowsFormsApplication1
             Cannons = new List<Canon>();
             Cannons.Add(new Canon(20, TheForm.Height));
             Cannons.Add(new Canon((TheForm.Width - 30)/2, TheForm.Height));
-            Cannons.Add(new Canon(TheForm.Width - 50, TheForm.Height));
+            Cannons.Add(new Canon(TheForm.Width - 90, TheForm.Height));
+            Cannons[0].SetImage(Properties.Resources.left_cannon);
+            Cannons[1].SetImage(Properties.Resources.middle_cannon);
+            Cannons[1].Width = 67;
+            Cannons[1].Height = 91;
+            Cannons[1].Top = TheForm.Height - Cannons[1].Height - 54;
+            Cannons[2].SetImage(Properties.Resources.right_cannon);
             foreach (Canon cannon in Cannons)
             {
                 TheForm.GetControls().Add(cannon);
@@ -99,12 +105,12 @@ namespace WindowsFormsApplication1
         {
             Canon cannon = CannonToShot(res);
             Graphics graphics = TheForm.CreateGraphics();
-            Point[] points = { new Point(cannon.Left + cannon.Width/2 - 8, cannon.Top), new Point(cannon.Left + cannon.Width/2 + 8, cannon.Top), new Point(res.Left + res.Width / 2 + 5, res.Top + res.Height / 2),
-                             new Point(res.Left + res.Width / 2 - 5, res.Top + res.Height / 2)};
+            Point[] points = { new Point(cannon.Left + 20, cannon.Top), new Point(cannon.Left + cannon.Width, cannon.Top), new Point(res.Left + res.Width / 2 + 5, res.Top + res.Height / 2 + 10),
+                             new Point(res.Left + res.Width / 2 - 5, res.Top + res.Height / 2 + 10)};
             PathGradientBrush brush = new PathGradientBrush(points);
             brush.CenterPoint = new Point(cannon.Left + cannon.Width / 2, cannon.Top);
-            brush.CenterColor = Color.DarkBlue;
-            brush.SurroundColors = new[] { Color.White, Color.Violet};
+            brush.CenterColor = Color.Red;
+            brush.SurroundColors = new[] { Color.Orange, Color.OrangeRed};
             FillMode fillMode = FillMode.Winding;
             graphics.FillPolygon(brush, points, fillMode);
             brush.Dispose();
@@ -146,11 +152,11 @@ namespace WindowsFormsApplication1
 
             if (activateHighScore)
             {
-                FormHighScore fhs = new FormHighScore(TheForm.MenuForm);
-                fhs.Show();
+                TheForm.MenuForm.fhs.Show();
+                TheForm.MenuForm.tema.addTheme(TheForm.MenuForm.fhs);
                 TheForm.Hide();
 
-                if (fhs.checkIfHighscore(TheForm.CurrentScore))
+                if (TheForm.MenuForm.fhs.checkIfHighscore(TheForm.CurrentScore))
                 {
                     FormAddScore fm = new FormAddScore();
                     DialogResult result = fm.ShowDialog();
@@ -158,7 +164,7 @@ namespace WindowsFormsApplication1
                     {
                         string x = fm.playerName;
                         ScoreItem sc = new ScoreItem(x, TheForm.CurrentScore);
-                        fhs.addScore(sc);
+                        TheForm.MenuForm.fhs.addScore(sc);
                     }
                 }
                 else MessageBox.Show("You did not make it in the first 5 :(");
@@ -265,6 +271,8 @@ namespace WindowsFormsApplication1
             foreach (Enemy e in Enemies)
             {
                 e.DrawEnemy(g);
+                if(!TheForm.IsPaused)
+                    e.DrawLetter(g);
             }
         }
     }
