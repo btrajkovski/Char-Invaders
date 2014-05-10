@@ -2,18 +2,20 @@ Char Invaders
 ==========
 
 > <b>TODO list</b>
-> * <del> Replace labels with graphics - Enemies.cs</del>
-> * <del> Refactor menu code </del>
-> * Change visual apperance of menus
-> * Change sound effects, also add sound effect for miss
-> * <del> Test and change game level logic </del>
-> * Add nice icon
-> * Refactor rest of the code
-> * Change visual appearnce of in-game buttons
-> * Add HowTo play?
-> * <del>Try to optimize the game???</del>
-> * <del>Add Documentation</del>
 
+> * [ ] Change sound effects, also add sound effect for miss
+> * [ ] Add nice icon
+> * [ ] Add kind of a boss
+> * [ ] Add achivments?
+> * [x] Refactor rest of the code
+> * [x] Change visual appearnce of in-game buttons
+> * [x] Add HowTo play?
+> * [x] Try to optimize the game???
+> * [x] Add Documentation
+> * [x] Test and change game level logic 
+> * [x] Replace labels with graphics - Enemies.cs
+> * [x] Refactor menu code
+> * [x] Change visual apperance of menus
 
 Опис на играта
 ------------
