@@ -95,6 +95,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblScores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormHighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "High Score";

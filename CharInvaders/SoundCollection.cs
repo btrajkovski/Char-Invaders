@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         {
             PlayerLaserSound = new SoundPlayer(Properties.Resources.mywavfile);
             PlayerCannonCrush = new SoundPlayer(Properties.Resources.explosion_iceman);
-            PlayerThemeSong = new SoundPlayer(Properties.Resources.protect_my_balls);
+            PlayerThemeSong = new SoundPlayer(Properties.Resources.theme_song);
         }
     }
 }

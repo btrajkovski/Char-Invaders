@@ -149,9 +149,10 @@
             this.Controls.Add(this.lblLevel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Char Ivaders";
+            this.Text = "Char Invaders";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Deactivate += new System.EventHandler(this.FormGame_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGame_FormClosing);

@@ -84,6 +84,7 @@
             this.Controls.Add(this.chkPlayMusic);
             this.Controls.Add(this.chkSound);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Settings";

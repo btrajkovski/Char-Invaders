@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             SoundCollection = new SoundCollection();
             PlaySounds = true;
-            PlayThemeSong = false;
+            PlayThemeSong = true;
             this.DoubleBuffered = true;
             fhs = new FormHighScore(this);
             fs = new FormSettings(this);

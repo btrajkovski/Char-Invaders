@@ -198,7 +198,6 @@
     <None Include="Resources\rsz_pause3.png" />
     <None Include="Resources\rsz_soundoff.png" />
     <None Include="Resources\rsz_soundon.png" />
-    <None Include="Resources\protect_my_balls.wav" />
     <None Include="Resources\rsz_pause.png" />
   </ItemGroup>
   <ItemGroup>
@@ -278,6 +277,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\credits_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Char-Invaders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\theme.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

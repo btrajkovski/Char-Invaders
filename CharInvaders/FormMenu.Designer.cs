@@ -36,19 +36,21 @@
             this.btnCredits = new System.Windows.Forms.PictureBox();
             this.TimerBackgroundLoop = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHighScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHowToPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCredits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(182, 13);
+            this.btnPlay.Location = new System.Drawing.Point(244, 123);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(175, 56);
+            this.btnPlay.Size = new System.Drawing.Size(100, 25);
             this.btnPlay.TabIndex = 7;
             this.btnPlay.TabStop = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -57,9 +59,9 @@
             // 
             // btnHighScore
             // 
-            this.btnHighScore.Location = new System.Drawing.Point(178, 102);
+            this.btnHighScore.Location = new System.Drawing.Point(244, 154);
             this.btnHighScore.Name = "btnHighScore";
-            this.btnHighScore.Size = new System.Drawing.Size(177, 53);
+            this.btnHighScore.Size = new System.Drawing.Size(100, 25);
             this.btnHighScore.TabIndex = 8;
             this.btnHighScore.TabStop = false;
             this.btnHighScore.Click += new System.EventHandler(this.btnHighScore_Click);
@@ -68,9 +70,9 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(182, 187);
+            this.btnSettings.Location = new System.Drawing.Point(244, 185);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(175, 57);
+            this.btnSettings.Size = new System.Drawing.Size(100, 25);
             this.btnSettings.TabIndex = 9;
             this.btnSettings.TabStop = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
@@ -79,9 +81,9 @@
             // 
             // btnHowToPlay
             // 
-            this.btnHowToPlay.Location = new System.Drawing.Point(178, 272);
+            this.btnHowToPlay.Location = new System.Drawing.Point(244, 216);
             this.btnHowToPlay.Name = "btnHowToPlay";
-            this.btnHowToPlay.Size = new System.Drawing.Size(177, 57);
+            this.btnHowToPlay.Size = new System.Drawing.Size(100, 25);
             this.btnHowToPlay.TabIndex = 10;
             this.btnHowToPlay.TabStop = false;
             this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
@@ -90,9 +92,9 @@
             // 
             // btnCredits
             // 
-            this.btnCredits.Location = new System.Drawing.Point(178, 361);
+            this.btnCredits.Location = new System.Drawing.Point(244, 247);
             this.btnCredits.Name = "btnCredits";
-            this.btnCredits.Size = new System.Drawing.Size(177, 58);
+            this.btnCredits.Size = new System.Drawing.Size(100, 25);
             this.btnCredits.TabIndex = 11;
             this.btnCredits.TabStop = false;
             this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
@@ -102,29 +104,37 @@
             // TimerBackgroundLoop
             // 
             this.TimerBackgroundLoop.Interval = 140;
-
             this.TimerBackgroundLoop.Tick += new System.EventHandler(this.TimerBackgroundLoop_Tick);
-
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(377, 396);
+            this.btnExit.Location = new System.Drawing.Point(244, 278);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(177, 58);
+            this.btnExit.Size = new System.Drawing.Size(100, 25);
             this.btnExit.TabIndex = 12;
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
             this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(46, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(491, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.main_background1;
-
             this.ClientSize = new System.Drawing.Size(580, 475);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnHowToPlay);
@@ -132,9 +142,10 @@
             this.Controls.Add(this.btnHighScore);
             this.Controls.Add(this.btnPlay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "Char Invaders";
             this.Activated += new System.EventHandler(this.FormMenu_Activated);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
@@ -143,7 +154,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHowToPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCredits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,5 +169,6 @@
         private System.Windows.Forms.PictureBox btnCredits;
         private System.Windows.Forms.Timer TimerBackgroundLoop;
         private System.Windows.Forms.PictureBox btnExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

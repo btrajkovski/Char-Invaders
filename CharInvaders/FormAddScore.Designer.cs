@@ -83,9 +83,11 @@
             this.Controls.Add(this.btnSaveHighscore);
             this.Controls.Add(this.igrac);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAddScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Add score";
             this.ResumeLayout(false);
             this.PerformLayout();
 
