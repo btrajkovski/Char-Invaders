@@ -195,9 +195,6 @@
     <None Include="Resources\explosion_iceman.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tower2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\meteor2.png" />
     <None Include="Resources\meteor.png" />
     <None Include="Resources\rsz_exit3.png" />

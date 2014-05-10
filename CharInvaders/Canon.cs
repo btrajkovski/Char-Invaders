@@ -15,7 +15,6 @@ namespace WindowsFormsApplication1
             this.Width = 75;
             this.Height = 95;
             this.Top = formHeight - this.Height - 54;
-            this.Image = Properties.Resources.tower2;
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.BackColor = Color.Transparent;
         }
