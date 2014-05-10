@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHowTo));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBack1 = new WindowsFormsApplication1.BtnBack();
+            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private BtnBack btnBack1;
+        private CustomButton btnBack1;
 
     }
 }

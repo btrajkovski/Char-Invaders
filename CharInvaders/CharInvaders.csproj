@@ -65,10 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BtnBack.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BtnClear.cs">
+    <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Canon.cs">
@@ -196,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\meteor2.png" />
-    <None Include="Resources\meteor.png" />
     <None Include="Resources\rsz_exit3.png" />
     <None Include="Resources\rsz_exit.png" />
     <None Include="Resources\rsz_pause3.png" />

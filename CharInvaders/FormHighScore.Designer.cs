@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHighScore));
             this.lblScores = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClear1 = new WindowsFormsApplication1.BtnClear();
-            this.btnBack1 = new WindowsFormsApplication1.BtnBack();
+            this.btnClear1 = new WindowsFormsApplication1.CustomButton();
+            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnClear1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +111,7 @@
 
         private System.Windows.Forms.Label lblScores;
         private System.Windows.Forms.Label label1;
-        private BtnBack btnBack1;
-        private BtnClear btnClear1;
+        private CustomButton btnBack1;
+        private CustomButton btnClear1;
     }
 }

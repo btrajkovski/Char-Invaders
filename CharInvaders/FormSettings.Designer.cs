@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             this.chkSound = new System.Windows.Forms.CheckBox();
             this.chkPlayMusic = new System.Windows.Forms.CheckBox();
-            this.btnBack1 = new WindowsFormsApplication1.BtnBack();
+            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +99,6 @@
 
         private System.Windows.Forms.CheckBox chkSound;
         private System.Windows.Forms.CheckBox chkPlayMusic;
-        private BtnBack btnBack1;
+        private CustomButton btnBack1;
     }
 }

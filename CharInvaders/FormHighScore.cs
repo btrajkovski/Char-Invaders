@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             this.menuForm = menuForm;
+            this.btnClear1.SetImages(Properties.Resources.clear_button, Properties.Resources.clear_button2);
             HighScore = BinaryDeserializeScores();
             updateHighScore();
             this.Location = menuForm.Location;

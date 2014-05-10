@@ -7,33 +7,40 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    class BtnBack : PictureBox
+    class CustomButton : PictureBox
     {
         int W = 101;
         int H = 32;
+        Image PlainImage;
+        Image FocusImage;
 
-        public BtnBack()
+        public CustomButton()
         {
-            Image back_img = Properties.Resources.back_button;
-            this.Image = back_img;
             this.Width = W;
             this.Height = H;
             this.BackColor = Color.Transparent;
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             base.MouseEnter += new EventHandler(BtnBack_MouseEnter);
             base.MouseLeave += new EventHandler(BtnBack_MouseLeave);
+            PlainImage = Properties.Resources.back_button;
+            FocusImage = Properties.Resources.back_button2;
+        }
+
+        public void SetImages(Image plain, Image focus)
+        {
+            PlainImage = plain;
+            FocusImage = focus;
         }
 
         void BtnBack_MouseLeave(object sender, EventArgs e)
         {
-            this.Image = Properties.Resources.back_button;
+            this.Image = PlainImage;
         }
 
         void BtnBack_MouseEnter(object sender, EventArgs e)
         {
-            this.Image = Properties.Resources.back_button2;
+            this.Image = FocusImage;
         }
-
     }
 
 }
