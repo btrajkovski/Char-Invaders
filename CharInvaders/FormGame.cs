@@ -73,7 +73,6 @@ namespace WindowsFormsApplication1
                 TheGame.MoveEnemies();
                 Invalidate();
             }
-            Invalidate();
         }
 
         void TimerCreateLetter_Tick(object sender, EventArgs e)
@@ -175,6 +174,7 @@ namespace WindowsFormsApplication1
                 pbPause.Width = iii.Width;
                 pbPause.Height = iii.Height;
                 pbPause.BackColor = Color.Transparent;
+                Invalidate();
             }
             else
             {

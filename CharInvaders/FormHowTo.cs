@@ -37,6 +37,5 @@ namespace WindowsFormsApplication1
             this.Location = menuForm.Location;
         }
 
-
     }
 }
