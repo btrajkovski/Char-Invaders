@@ -12,11 +12,11 @@ namespace WindowsFormsApplication1
         public string Letter { get; set; }
         public int Top { get; set; }
         public int Left { get; set; }
-        public Image Image { get; set; }
+        static Image Image = Properties.Resources.meteor2;
         public int Width { get; set; }
         public int Height { get; set; }
         private Font Font;
-        private Brush Brush;
+        private static Brush brush = new SolidBrush(Color.Snow);
 
         public Enemy(Form f, int left, char letter)
         {
@@ -24,10 +24,8 @@ namespace WindowsFormsApplication1
             this.Top = 40;
             this.Left = left;
 
-            Image = Properties.Resources.meteor2;
             this.Width = Image.Width;
             this.Height = Image.Height;
-            Brush = Brushes.Snow;
             Font = new Font("Verdana", 15, FontStyle.Bold);
         }
 
@@ -38,7 +36,7 @@ namespace WindowsFormsApplication1
 
         public void DrawLetter(Graphics g)
         {
-            g.DrawString(Letter, Font, Brush, Left + 7, Top + 23);
+            g.DrawString(Letter, Font, brush, Left + 7, Top + 23);
         }
 
         public void MoveEnemy(int value)

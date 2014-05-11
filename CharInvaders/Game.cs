@@ -17,9 +17,10 @@ namespace WindowsFormsApplication1
         public Random Random { get; set; }
         public GameLevel gameLevel;
         public List<Canon> Cannons { get; set; }
-        public Timer TimerStrike  { get; set; }
         private SoundCollection SoundCollection;
         public bool shouldPlay { set; get; }
+        private Graphics graphics;
+        private PathGradientBrush brush;
 
         public Game(FormGame form)
         {
@@ -31,34 +32,8 @@ namespace WindowsFormsApplication1
             gameLevel = new GameLevel();
             InitializeCannons();
             SoundCollection = new SoundCollection();
-            TimerStrike = new Timer();
-            TimerStrike.Interval = 100;
-            TimerStrike.Tick += new EventHandler(TimerStrike_Tick);
             this.shouldPlay = TheForm.MenuForm.PlaySounds;
-        }
-
-        private void InitializeCannons()
-        {
-            Cannons = new List<Canon>();
-            Cannons.Add(new Canon(20, TheForm.Height));
-            Cannons.Add(new Canon((TheForm.Width - 30)/2, TheForm.Height));
-            Cannons.Add(new Canon(TheForm.Width - 90, TheForm.Height));
-            Cannons[0].SetImage(Properties.Resources.left_cannon);
-            Cannons[1].SetImage(Properties.Resources.middle_cannon);
-            Cannons[1].Width = 67;
-            Cannons[1].Height = 91;
-            Cannons[1].Top = TheForm.Height - Cannons[1].Height - 54;
-            Cannons[2].SetImage(Properties.Resources.right_cannon);
-            foreach (Canon cannon in Cannons)
-            {
-                TheForm.GetControls().Add(cannon);
-            }
-        }
-
-        void TimerStrike_Tick(object sender, EventArgs e)
-        {
-            TheForm.Invalidate();
-            TimerStrike.Stop();
+            graphics = TheForm.CreateGraphics();
         }
 
         public void AddEnemy()
@@ -104,17 +79,33 @@ namespace WindowsFormsApplication1
         private void DrawStrike(Enemy res)
         {
             Canon cannon = CannonToShot(res);
-            Graphics graphics = TheForm.CreateGraphics();
-            Point[] points = { new Point(cannon.Left + 20, cannon.Top), new Point(cannon.Left + cannon.Width, cannon.Top), new Point(res.Left + res.Width / 2 + 5, res.Top + res.Height / 2 + 10),
-                             new Point(res.Left + res.Width / 2 - 5, res.Top + res.Height / 2 + 10)};
-            PathGradientBrush brush = new PathGradientBrush(points);
+            Point[] points = { cannon.leftPoint, cannon.rightPoint, new Point(res.Left + res.Width / 2 + 3, res.Top + res.Height / 2 + 10),
+                             new Point(res.Left + res.Width / 2 - 3, res.Top + res.Height / 2 + 10)};
+            brush = new PathGradientBrush(points);
             brush.CenterPoint = new Point(cannon.Left + cannon.Width / 2, cannon.Top);
             brush.CenterColor = Color.Red;
-            brush.SurroundColors = new[] { Color.Orange, Color.OrangeRed};
-            FillMode fillMode = FillMode.Winding;
-            graphics.FillPolygon(brush, points, fillMode);
+            brush.SurroundColors = new[] { Color.Orange, Color.Orange};
+            graphics.FillPolygon(brush, points, FillMode.Winding);
             brush.Dispose();
-            TimerStrike.Start();
+        }
+
+        private void InitializeCannons()
+        {
+            int h = TheForm.Height;
+            int w = TheForm.Width;
+            Cannons = new List<Canon>();
+            //left cannon
+            Cannons.Add(new Canon(20, TheForm.Height, 35, h - 149, 87, h - 138));
+            Cannons[0].SetImage(Properties.Resources.left_cannon);
+            //middle cannon
+            Cannons.Add(new Canon((TheForm.Width - 30) / 2, TheForm.Height, w/2 - 8, h - 145, w/2+46, h - 145));
+            Cannons[1].SetImage(Properties.Resources.middle_cannon);
+            Cannons[1].Width = 67;
+            Cannons[1].Height = 91;
+            Cannons[1].Top = TheForm.Height - Cannons[1].Height - 54;
+            //right cannon
+            Cannons.Add(new Canon(TheForm.Width - 90, TheForm.Height, w-84, h - 139, w-33, h - 149));
+            Cannons[2].SetImage(Properties.Resources.right_cannon);
         }
 
         public void MoveEnemies()
@@ -135,7 +126,6 @@ namespace WindowsFormsApplication1
         private void RemoveCannon(int i)
         {
             Canon cannon = ClosestCannon(Enemies[i]);
-            TheForm.GetControls().Remove(cannon);
             Cannons.Remove(cannon);
             Enemies.RemoveAt(i);
             if(shouldPlay)
@@ -155,8 +145,6 @@ namespace WindowsFormsApplication1
                 TheForm.MenuForm.frmScore.Show();
                 TheForm.MenuForm.Tema.addTheme(TheForm.MenuForm.frmScore);
                 TheForm.Hide();
-                
-
                 if (TheForm.MenuForm.frmScore.checkIfHighscore(TheForm.CurrentScore))
                 {
                     FormAddScore fm = new FormAddScore();
@@ -275,6 +263,11 @@ namespace WindowsFormsApplication1
                 if(!TheForm.IsPaused)
                     e.DrawLetter(g);
             }
+            foreach (Canon c in Cannons)
+            {
+                c.DrawCannon(g);
+            }
+
         }
     }
 }

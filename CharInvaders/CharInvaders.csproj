@@ -68,9 +68,7 @@
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Canon.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Canon.cs" />
     <Compile Include="FormHowTo.cs">
       <SubType>Form</SubType>
     </Compile>

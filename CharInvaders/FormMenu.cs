@@ -13,7 +13,6 @@ namespace WindowsFormsApplication1
 {
     public partial class FormMenu : Form
     {
-        private Queue<Bitmap> BackgroundImages;
         public SoundCollection SoundCollection;
         public bool PlaySounds { set; get; }
         public bool PlayThemeSong;
@@ -41,10 +40,10 @@ namespace WindowsFormsApplication1
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            TimerBackgroundLoop.Stop();
+            Theme.TimerBackgroundLoop.Stop();
             SoundCollection.PlayerThemeSong.Stop();
-            FormGame fg = new FormGame(this);
-            fg.Show();
+            FormGame frmGame = new FormGame(this);
+            frmGame.Show();
             this.Hide();
         }
         
@@ -89,9 +88,9 @@ namespace WindowsFormsApplication1
             this.Hide();
             frmCredits.Show();
         }
-        
-        private void setTheme() 
-        { 
+
+        private void setTheme()
+        {
             int W = 150;
             int H = 32;
             int T = 100;
@@ -152,24 +151,6 @@ namespace WindowsFormsApplication1
             btnExit.BackColor = Color.Transparent;
             btnExit.SizeMode = PictureBoxSizeMode.StretchImage;
         }
-
-
-        private void InitializeBackground()
-        {
-            BackgroundImages = new Queue<Bitmap>();
-            BackgroundImages.Enqueue(Properties.Resources.main_background1);
-            BackgroundImages.Enqueue(Properties.Resources.main_background2);
-            BackgroundImages.Enqueue(Properties.Resources.main_background3);
-            BackgroundImages.Enqueue(Properties.Resources.main_background4);
-        }
-
-        private void TimerBackgroundLoop_Tick(object sender, EventArgs e)
-        {
-                Bitmap b = BackgroundImages.Dequeue();
-                this.CreateGraphics().DrawImage(b, 0, 0);
-                BackgroundImages.Enqueue(b);
-        }
-
 
         private void btnPlay_MouseEnter(object sender, EventArgs e)
         {

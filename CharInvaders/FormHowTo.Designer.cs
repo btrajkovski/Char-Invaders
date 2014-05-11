@@ -81,8 +81,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
         private CustomButton btnBack1;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

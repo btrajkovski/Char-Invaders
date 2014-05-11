@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnPlay = new System.Windows.Forms.PictureBox();
             this.btnHighScore = new System.Windows.Forms.PictureBox();
             this.btnSettings = new System.Windows.Forms.PictureBox();
             this.btnHowToPlay = new System.Windows.Forms.PictureBox();
             this.btnCredits = new System.Windows.Forms.PictureBox();
-            this.TimerBackgroundLoop = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
@@ -101,11 +99,6 @@
             this.btnCredits.MouseEnter += new System.EventHandler(this.btnCredits_MouseEnter);
             this.btnCredits.MouseLeave += new System.EventHandler(this.btnCredits_MouseLeave);
             // 
-            // TimerBackgroundLoop
-            // 
-            this.TimerBackgroundLoop.Interval = 140;
-            this.TimerBackgroundLoop.Tick += new System.EventHandler(this.TimerBackgroundLoop_Tick);
-            // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(244, 278);
@@ -167,7 +160,6 @@
         private System.Windows.Forms.PictureBox btnSettings;
         private System.Windows.Forms.PictureBox btnHowToPlay;
         private System.Windows.Forms.PictureBox btnCredits;
-        private System.Windows.Forms.Timer TimerBackgroundLoop;
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
