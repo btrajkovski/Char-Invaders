@@ -3,10 +3,12 @@ Char Invaders
 
 > <b>TODO list</b>
 
-> * [ ] Change sound effects, also add sound effect for miss
+> * [ ] Powerup - shoot all
+> * [ ] Powerup - x3 points
+> * [x] Powerup - slowdown
+> * [ ] Change sound effects
 > * [ ] Add nice icon
-> * [ ] Add kind of a boss
-> * [ ] Add achivments?
+> * [ ] Add kind of a boss ?
 > * [x] Refactor rest of the code
 > * [x] Change visual appearnce of in-game buttons
 > * [x] Add HowTo play?
