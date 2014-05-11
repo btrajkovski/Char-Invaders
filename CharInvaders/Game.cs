@@ -21,6 +21,9 @@ namespace WindowsFormsApplication1
         public bool shouldPlay { set; get; }
         private Graphics graphics;
         private PathGradientBrush brush;
+        private Timer TimerSlowMotion;
+        private int SecoundsLeft = 5;
+        public bool isSlowMotionActive;
 
         public Game(FormGame form)
         {
@@ -34,6 +37,27 @@ namespace WindowsFormsApplication1
             SoundCollection = new SoundCollection();
             this.shouldPlay = TheForm.MenuForm.PlaySounds;
             graphics = TheForm.CreateGraphics();
+            TimerSlowMotion = new Timer();
+            TimerSlowMotion.Interval = 1000;
+            TimerSlowMotion.Tick += new EventHandler(TimerSlowMotion_Tick);
+            isSlowMotionActive = false;
+        }
+
+        void TimerSlowMotion_Tick(object sender, EventArgs e)
+        {
+            if (SecoundsLeft > 1)
+            {
+                SecoundsLeft--;
+            }
+            else
+            {
+                TimerSlowMotion.Dispose();
+                //TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
+                TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR;
+                SecoundsLeft = 5;
+                
+                isSlowMotionActive = false;
+            }
         }
 
         public void AddEnemy()
@@ -48,7 +72,19 @@ namespace WindowsFormsApplication1
             int i = Random.Next(0, CharPool.Count);
             Char selected = CharPool[i];
             CharPool.RemoveAt(i);
-            Enemy enemy = new Enemy(TheForm, findValidSpawn(), selected);
+            Enemy enemy = enemy = new Enemy(TheForm, findValidSpawn(), selected);
+            bool thereIsPower = false;
+            foreach (Enemy e in Enemies)
+            {
+                if (e.Name == "SlowMotion")
+                    thereIsPower = true;
+            }
+
+            if (Enemies.Count > 1 && !thereIsPower && !isSlowMotionActive)
+                if (Random.Next(0, 6) == 0) {
+                    enemy = new PowerUp_SlowMotion(TheForm, findValidSpawn(), selected);
+                    }
+            
             Enemies.Add(enemy);
         }
 
@@ -65,6 +101,14 @@ namespace WindowsFormsApplication1
             }
             if (res != null)
             {
+                if (res.Name == "SlowMotion")
+                {
+                    //TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED_SLOW_MOTION;
+                    TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR_SLOW_MOTION;
+                    isSlowMotionActive = true;
+                    TimerSlowMotion.Start();
+                   
+                } 
                 Enemies.Remove(res);
                 DrawStrike(res);
                 if(shouldPlay)
@@ -119,7 +163,7 @@ namespace WindowsFormsApplication1
                         EndGame(true);
                 }
                 else
-                    Enemies[i].MoveEnemy(gameLevel.MOVE_PIXELS);
+                    Enemies[i].MoveEnemy(isSlowMotionActive ? gameLevel.MOVE_PIXELS_SLOW_MOTION : gameLevel.MOVE_PIXELS);
             }
         }
 
@@ -268,6 +312,10 @@ namespace WindowsFormsApplication1
                 c.DrawCannon(g);
             }
 
+            if (isSlowMotionActive)
+            {
+                graphics.DrawString(SecoundsLeft.ToString(), new Font("Verdana", 40, FontStyle.Bold), new SolidBrush(Color.Snow), 10, 50);
+            }
         }
     }
 }

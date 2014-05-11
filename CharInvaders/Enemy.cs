@@ -9,10 +9,11 @@ namespace WindowsFormsApplication1
 {
     public class Enemy
     {
+        public string Name { get; set; }
         public string Letter { get; set; }
         public int Top { get; set; }
         public int Left { get; set; }
-        static Image Image = Properties.Resources.meteor2;
+        protected Image Image = Properties.Resources.meteor2;
         public int Width { get; set; }
         public int Height { get; set; }
         private Font Font;
@@ -20,6 +21,7 @@ namespace WindowsFormsApplication1
 
         public Enemy(Form f, int left, char letter)
         {
+            Name = "Meteor";
             this.Letter = letter.ToString().ToUpper();
             this.Top = 40;
             this.Left = left;

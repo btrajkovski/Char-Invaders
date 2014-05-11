@@ -13,6 +13,9 @@ namespace WindowsFormsApplication1
         public int POINTS_HIT;
         public int POINTS_MISS;
         public int MOVE_PIXELS;
+        public int ENEMY_SPEED_SLOW_MOTION;
+        public int ENEMY_APPEAR_SLOW_MOTION;
+        public int MOVE_PIXELS_SLOW_MOTION;
 
         public GameLevel()
         {
@@ -23,6 +26,9 @@ namespace WindowsFormsApplication1
             POINTS_HIT = 100;
             POINTS_MISS = 300;
             MOVE_PIXELS = 2;
+            ENEMY_SPEED_SLOW_MOTION = 60;
+            ENEMY_APPEAR_SLOW_MOTION = 1100;
+            MOVE_PIXELS_SLOW_MOTION = 1;
         }
 
         public void levelUp()
