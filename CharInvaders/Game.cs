@@ -152,11 +152,12 @@ namespace WindowsFormsApplication1
 
             if (activateHighScore)
             {
-                TheForm.MenuForm.fhs.Show();
-                TheForm.MenuForm.tema.addTheme(TheForm.MenuForm.fhs);
+                TheForm.MenuForm.frmScore.Show();
+                TheForm.MenuForm.Tema.addTheme(TheForm.MenuForm.frmScore);
                 TheForm.Hide();
+                
 
-                if (TheForm.MenuForm.fhs.checkIfHighscore(TheForm.CurrentScore))
+                if (TheForm.MenuForm.frmScore.checkIfHighscore(TheForm.CurrentScore))
                 {
                     FormAddScore fm = new FormAddScore();
                     DialogResult result = fm.ShowDialog();
@@ -164,7 +165,7 @@ namespace WindowsFormsApplication1
                     {
                         string x = fm.playerName;
                         ScoreItem sc = new ScoreItem(x, TheForm.CurrentScore);
-                        TheForm.MenuForm.fhs.addScore(sc);
+                        TheForm.MenuForm.frmScore.addScore(sc);
                     }
                 }
                 else MessageBox.Show("You did not make it in the first 5 :(");

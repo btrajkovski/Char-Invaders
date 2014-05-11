@@ -37,6 +37,7 @@
             // igrac
             // 
             this.igrac.Location = new System.Drawing.Point(28, 46);
+            this.igrac.MaxLength = 15;
             this.igrac.Name = "igrac";
             this.igrac.Size = new System.Drawing.Size(339, 20);
             this.igrac.TabIndex = 0;
@@ -54,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 24);
+            this.label1.Location = new System.Drawing.Point(25, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 2;
@@ -63,7 +64,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(221, 86);
+            this.btnCancel.Location = new System.Drawing.Point(240, 87);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 27);
             this.btnCancel.TabIndex = 3;

@@ -21,24 +21,12 @@ namespace WindowsFormsApplication1
             this.menuForm = menuForm;
             chkPlayMusic.Checked = menuForm.PlayThemeSong;
             chkSound.Checked = menuForm.PlaySounds;
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            shouldPlay = chkSound.Checked;
-            menuForm.PlaySounds = shouldPlay;
-
+            this.BackgroundImage = Properties.Resources.main_background1;
         }
 
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void chkPlayMusic_CheckedChanged(object sender, EventArgs e)
-        {
-            menuForm.PlayThemeSong = chkPlayMusic.Checked;
-            menuForm.playMusic();
         }
 
         private void btnBack1_Click(object sender, EventArgs e)
@@ -51,6 +39,18 @@ namespace WindowsFormsApplication1
         private void FormSettings_Activated(object sender, EventArgs e)
         {
             this.Location = menuForm.Location;
+        }
+
+        private void chkSound_CheckedChanged(object sender, EventArgs e)
+        {
+            shouldPlay = chkSound.Checked;
+            menuForm.PlaySounds = shouldPlay;
+        }
+
+        private void chkPlayMusic_CheckedChanged(object sender, EventArgs e)
+        {
+            menuForm.PlayThemeSong = chkPlayMusic.Checked;
+            menuForm.playMusic();
         }
     }
 }

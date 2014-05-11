@@ -11,18 +11,17 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApplication1
 {
-    public  partial  class FormMenu : Form
+    public partial class FormMenu : Form
     {
         private Queue<Bitmap> BackgroundImages;
         public SoundCollection SoundCollection;
         public bool PlaySounds { set; get; }
         public bool PlayThemeSong;
-        public FormHighScore fhs;
-        public FormSettings fs;
-        public FormHowTo fh;
-        public FormCredits fc;
-        public Theme tema;
-
+        public FormHighScore frmScore;
+        public FormSettings frmSettings;
+        public FormHowTo frmHowTo;
+        public FormCredits frmCredits;
+        public Theme Tema;
 
         public FormMenu()
         {
@@ -31,17 +30,18 @@ namespace WindowsFormsApplication1
             PlaySounds = true;
             PlayThemeSong = true;
             this.DoubleBuffered = true;
-            fhs = new FormHighScore(this);
-            fs = new FormSettings(this);
-            fh = new FormHowTo(this);
-            fc = new FormCredits(this);
-            tema = new Theme();
-            tema.addTheme(this);
+            frmScore = new FormHighScore(this);
+            frmSettings = new FormSettings(this);
+            frmHowTo = new FormHowTo(this);
+            frmCredits = new FormCredits(this);
+            Tema = new Theme();
+            Tema.addTheme(this);
             setTheme();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            TimerBackgroundLoop.Stop();
             SoundCollection.PlayerThemeSong.Stop();
             FormGame fg = new FormGame(this);
             fg.Show();
@@ -50,24 +50,24 @@ namespace WindowsFormsApplication1
         
         private void btnHighScore_Click(object sender, EventArgs e)
         {
-            tema.addTheme(fhs);
+            Tema.addTheme(frmScore);
             this.Hide();
-            fhs.Show();
+            frmScore.Show();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            tema.addTheme(fs);
+            Tema.addTheme(frmSettings);
             this.Hide();
-            fs.Show();
+            frmSettings.Show();
 
         }
 
         private void btnHowToPlay_Click(object sender, EventArgs e)
         {
-            tema.addTheme(fh);
+            Tema.addTheme(frmHowTo);
             this.Hide();
-            fh.Show();
+            frmHowTo.Show();
         }
 
         public void playMusic()
@@ -85,9 +85,9 @@ namespace WindowsFormsApplication1
 
         private void btnCredits_Click(object sender, EventArgs e)
         {
-            tema.addTheme(fc);
+            Tema.addTheme(frmCredits);
             this.Hide();
-            fc.Show();
+            frmCredits.Show();
         }
         
         private void setTheme() 
@@ -239,8 +239,7 @@ namespace WindowsFormsApplication1
 
         private void FormMenu_Activated(object sender, EventArgs e)
         {
-            tema.addTheme(this);
-
+            Tema.addTheme(this);
         }
     }
 }

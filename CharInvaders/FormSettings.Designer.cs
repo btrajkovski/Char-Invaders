@@ -29,39 +29,44 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
-            this.chkSound = new System.Windows.Forms.CheckBox();
             this.chkPlayMusic = new System.Windows.Forms.CheckBox();
+            this.chkSound = new System.Windows.Forms.CheckBox();
             this.btnBack1 = new WindowsFormsApplication1.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
             // 
-            // chkSound
-            // 
-            this.chkSound.AutoSize = true;
-            this.chkSound.Checked = true;
-            this.chkSound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSound.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSound.Location = new System.Drawing.Point(59, 82);
-            this.chkSound.Name = "chkSound";
-            this.chkSound.Size = new System.Drawing.Size(122, 27);
-            this.chkSound.TabIndex = 0;
-            this.chkSound.Text = "Play Sound";
-            this.chkSound.UseVisualStyleBackColor = true;
-            this.chkSound.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // chkPlayMusic
             // 
             this.chkPlayMusic.AutoSize = true;
+            this.chkPlayMusic.BackColor = System.Drawing.Color.Transparent;
+            this.chkPlayMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chkPlayMusic.Checked = true;
             this.chkPlayMusic.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkPlayMusic.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.chkPlayMusic.Location = new System.Drawing.Point(58, 136);
+            this.chkPlayMusic.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold);
+            this.chkPlayMusic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.chkPlayMusic.Location = new System.Drawing.Point(193, 189);
             this.chkPlayMusic.Name = "chkPlayMusic";
-            this.chkPlayMusic.Size = new System.Drawing.Size(115, 27);
-            this.chkPlayMusic.TabIndex = 7;
+            this.chkPlayMusic.Size = new System.Drawing.Size(204, 37);
+            this.chkPlayMusic.TabIndex = 11;
             this.chkPlayMusic.Text = "Play Music";
-            this.chkPlayMusic.UseVisualStyleBackColor = true;
+            this.chkPlayMusic.UseVisualStyleBackColor = false;
             this.chkPlayMusic.CheckedChanged += new System.EventHandler(this.chkPlayMusic_CheckedChanged);
+            // 
+            // chkSound
+            // 
+            this.chkSound.AutoSize = true;
+            this.chkSound.BackColor = System.Drawing.Color.Transparent;
+            this.chkSound.Checked = true;
+            this.chkSound.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSound.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold);
+            this.chkSound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.chkSound.Location = new System.Drawing.Point(193, 134);
+            this.chkSound.Name = "chkSound";
+            this.chkSound.Size = new System.Drawing.Size(204, 37);
+            this.chkSound.TabIndex = 10;
+            this.chkSound.Text = "Play Sound";
+            this.chkSound.UseVisualStyleBackColor = false;
+            this.chkSound.CheckedChanged += new System.EventHandler(this.chkSound_CheckedChanged);
             // 
             // btnBack1
             // 
@@ -80,9 +85,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 475);
-            this.Controls.Add(this.btnBack1);
             this.Controls.Add(this.chkPlayMusic);
             this.Controls.Add(this.chkSound);
+            this.Controls.Add(this.btnBack1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormSettings";
@@ -98,8 +103,8 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox chkSound;
-        private System.Windows.Forms.CheckBox chkPlayMusic;
         private CustomButton btnBack1;
+        private System.Windows.Forms.CheckBox chkPlayMusic;
+        private System.Windows.Forms.CheckBox chkSound;
     }
 }
