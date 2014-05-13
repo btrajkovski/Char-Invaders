@@ -17,8 +17,8 @@ namespace WindowsFormsApplication1
         public Random Random { get; set; }
         public GameLevel gameLevel;
         public List<Canon> Cannons { get; set; }
-        private SoundCollection SoundCollection;
-        public bool shouldPlay { set; get; }
+        //private SoundCollection SoundCollection;
+        //public bool shouldPlay { set; get; }
         private Graphics graphics;
         private PathGradientBrush brush;
         private Timer TimerSlowMotion;
@@ -36,8 +36,8 @@ namespace WindowsFormsApplication1
             Random = new Random();
             gameLevel = new GameLevel();
             InitializeCannons();
-            SoundCollection = new SoundCollection();
-            this.shouldPlay = TheForm.MenuForm.PlaySounds;
+            //SoundCollection.Initialize();
+            //this.shouldPlay = TheForm.MenuForm.PlaySounds;
             graphics = TheForm.CreateGraphics();
             TimerSlowMotion = new Timer();
             TimerSlowMotion.Interval = 1000;
@@ -156,8 +156,8 @@ namespace WindowsFormsApplication1
                     
                 Enemies.Remove(res);
                 DrawStrike(res);
-                if(shouldPlay)
-                    SoundCollection.PlayerLaserSound.Play();
+                //if (shouldPlay)
+                    SoundCollection.PlayLaserSound();
                 return true;
             }
             else
@@ -218,8 +218,8 @@ namespace WindowsFormsApplication1
             Canon cannon = ClosestCannon(Enemies[i]);
             Cannons.Remove(cannon);
             Enemies.RemoveAt(i);
-            if(shouldPlay)
-                SoundCollection.PlayerCannonCrush.Play();
+            //if (shouldPlay)
+                SoundCollection.PlayCrushSound();
             ShakeForm();
         }
 
@@ -228,7 +228,7 @@ namespace WindowsFormsApplication1
             TheForm.IsPaused = true;
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
-            TheForm.MenuForm.playMusic();
+            //TheForm.MenuForm.playMusic();
 
             if (activateHighScore)
             {

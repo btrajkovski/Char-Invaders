@@ -13,9 +13,9 @@ namespace WindowsFormsApplication1
 {
     public partial class FormMenu : Form
     {
-        public SoundCollection SoundCollection;
-        public bool PlaySounds { set; get; }
-        public bool PlayThemeSong;
+        //public SoundCollection SoundCollection;
+        //public bool PlaySounds { set; get; }
+        //public bool PlayThemeSong;
         public FormHighScore frmScore;
         public FormSettings frmSettings;
         public FormHowTo frmHowTo;
@@ -25,9 +25,9 @@ namespace WindowsFormsApplication1
         public FormMenu()
         {
             InitializeComponent();
-            SoundCollection = new SoundCollection();
-            PlaySounds = false;
-            PlayThemeSong = false;
+            SoundCollection.Initialize();
+            //PlaySounds = false;
+            //PlayThemeSong = false;
             this.DoubleBuffered = true;
             frmScore = new FormHighScore(this);
             frmSettings = new FormSettings(this);
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
         private void btnPlay_Click(object sender, EventArgs e)
         {
             Theme.TimerBackgroundLoop.Stop();
-            SoundCollection.PlayerThemeSong.Stop();
+            //SoundCollection.PlayerThemeSong.Stop();
             FormGame frmGame = new FormGame(this);
             frmGame.Show();
             this.Hide();
@@ -69,17 +69,18 @@ namespace WindowsFormsApplication1
             frmHowTo.Show();
         }
 
-        public void playMusic()
+        /*public void playMusic()
         {
             if (PlayThemeSong)
-                SoundCollection.PlayerThemeSong.PlayLooping();
+                SoundCollection.PlayThemeSong();
             else
-                SoundCollection.PlayerThemeSong.Stop();
-        }
+                SoundCollection.StopThemeSong();
+        }*/
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            playMusic();
+            //playMusic();
+            SoundCollection.PlayThemeSong();
         }
 
         private void btnCredits_Click(object sender, EventArgs e)

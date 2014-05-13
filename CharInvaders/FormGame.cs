@@ -123,15 +123,20 @@ namespace WindowsFormsApplication1
 
         private void pbSound_Click(object sender, EventArgs e)
         {
-            MenuForm.PlaySounds = TheGame.shouldPlay = !TheGame.shouldPlay;
+            if (SoundCollection.PlayerLaserSound.settings.volume > 0)
+            {
+                SoundCollection.PlayerLaserSound.settings.volume = 0;
+            }
+            else
+                SoundCollection.PlayerLaserSound.settings.volume = 40;
             SetSoundImage();
         }
 
         private void SetSoundImage()
         {
-            if (TheGame.shouldPlay)
+            if (SoundCollection.PlayerLaserSound.settings.volume == 0)
             {
-                Image ii = Properties.Resources.rsz_soundon;
+                Image ii = Properties.Resources.rsz_soundoff;
                 pbSound.Image = ii;
                 pbSound.Width = ii.Width;
                 pbSound.Height = ii.Height;
@@ -139,7 +144,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                Image ii = Properties.Resources.rsz_soundoff;
+                
+                Image ii = Properties.Resources.rsz_soundon;
                 pbSound.Image = ii;
                 pbSound.Width = ii.Width;
                 pbSound.Height = ii.Height;

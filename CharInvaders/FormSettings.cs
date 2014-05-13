@@ -18,8 +18,6 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             this.menuForm = menuForm;
-            chkPlayMusic.Checked = menuForm.PlayThemeSong;
-            chkSound.Checked = menuForm.PlaySounds;
             this.BackgroundImage = Properties.Resources.main_background1;
         }
 
@@ -36,14 +34,72 @@ namespace WindowsFormsApplication1
 
         private void chkSound_CheckedChanged(object sender, EventArgs e)
         {
-            shouldPlay = chkSound.Checked;
-            menuForm.PlaySounds = shouldPlay;
+            if (chkSound.Checked)
+            {
+                SoundCollection.ChangeSoundVolume(0);
+                sldSound.Enabled = false;
+            }
+            else
+            {
+                SoundCollection.ChangeSoundVolume((int)sldSound.Value);
+                sldSound.Enabled = true;
+            }
         }
 
         private void chkPlayMusic_CheckedChanged(object sender, EventArgs e)
         {
-            menuForm.PlayThemeSong = chkPlayMusic.Checked;
-            menuForm.playMusic();
+            if (chkPlayMusic.Checked)
+            {
+                SoundCollection.ChangeMusicVolume(0);
+                sldMusic.Enabled = false;
+            }
+            else
+            {
+                SoundCollection.ChangeMusicVolume((int)sldMusic.Value);
+                sldMusic.Enabled = true;
+            }
+        }
+
+        private void sldSound_Scroll(object sender, EventArgs e)
+        {
+            SoundCollection.ChangeSoundVolume((int)sldSound.Value);
+
+        }
+
+        private void sldMusic_Scroll(object sender, EventArgs e)
+        {
+            SoundCollection.ChangeMusicVolume((int)sldMusic.Value);
+        }
+
+        private void FormSettings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormSettings_Activated(object sender, EventArgs e)
+        {
+            if (SoundCollection.PlayerLaserSound.settings.volume == 0)
+            {
+                chkSound.Checked = true;
+                sldSound.Enabled = false;
+            }
+            else
+            {
+                chkSound.Checked = false;
+                sldSound.Enabled = true;
+            }
+
+
+            if (SoundCollection.PlayerThemeSong.settings.volume == 0)
+            {
+                chkPlayMusic.Checked = true;
+                sldMusic.Enabled = false;
+            }
+            else
+            {
+                chkPlayMusic.Checked = false;
+                sldMusic.Enabled = true;
+            }
         }
     }
 }
