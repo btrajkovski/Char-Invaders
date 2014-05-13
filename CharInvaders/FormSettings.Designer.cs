@@ -47,7 +47,7 @@
             this.chkSound.BackColor = System.Drawing.Color.Transparent;
             this.chkSound.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chkSound.Location = new System.Drawing.Point(315, 139);
+            this.chkSound.Location = new System.Drawing.Point(349, 125);
             this.chkSound.Name = "chkSound";
             this.chkSound.Size = new System.Drawing.Size(73, 26);
             this.chkSound.TabIndex = 10;
@@ -59,7 +59,7 @@
             // 
             this.sldSound.BackColor = System.Drawing.Color.DarkRed;
             this.sldSound.LargeChange = 10;
-            this.sldSound.Location = new System.Drawing.Point(92, 129);
+            this.sldSound.Location = new System.Drawing.Point(126, 115);
             this.sldSound.Maximum = 100;
             this.sldSound.Name = "sldSound";
             this.sldSound.Size = new System.Drawing.Size(217, 45);
@@ -74,7 +74,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(86, 93);
+            this.label1.Location = new System.Drawing.Point(120, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(355, 33);
             this.label1.TabIndex = 13;
@@ -86,7 +86,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(86, 177);
+            this.label2.Location = new System.Drawing.Point(120, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(219, 33);
             this.label2.TabIndex = 16;
@@ -97,7 +97,7 @@
             this.sldMusic.BackColor = System.Drawing.Color.DarkRed;
             this.sldMusic.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.sldMusic.LargeChange = 10;
-            this.sldMusic.Location = new System.Drawing.Point(92, 213);
+            this.sldMusic.Location = new System.Drawing.Point(126, 199);
             this.sldMusic.Maximum = 100;
             this.sldMusic.Name = "sldMusic";
             this.sldMusic.Size = new System.Drawing.Size(217, 45);
@@ -112,7 +112,7 @@
             this.chkPlayMusic.BackColor = System.Drawing.Color.Transparent;
             this.chkPlayMusic.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPlayMusic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chkPlayMusic.Location = new System.Drawing.Point(315, 223);
+            this.chkPlayMusic.Location = new System.Drawing.Point(349, 209);
             this.chkPlayMusic.Name = "chkPlayMusic";
             this.chkPlayMusic.Size = new System.Drawing.Size(73, 26);
             this.chkPlayMusic.TabIndex = 14;
@@ -145,6 +145,7 @@
             this.Controls.Add(this.chkSound);
             this.Controls.Add(this.btnBack1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

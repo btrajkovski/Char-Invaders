@@ -188,12 +188,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mywavfile.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\explosion_iceman.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\rsz_exit3.png" />
     <None Include="Resources\rsz_exit.png" />
     <None Include="Resources\rsz_pause3.png" />
@@ -280,9 +274,6 @@
     <None Include="Resources\Char-Invaders.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\theme.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\powerup_slow_motion.png" />
   </ItemGroup>
   <ItemGroup>
@@ -352,9 +343,6 @@
     <None Include="Resources\19.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\howto_back.png" />
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -364,6 +352,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\howto_back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
