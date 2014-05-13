@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
             Explosions = new LinkedList<Explosion>();
             Explosion.InitializeImages();
             TimerExplosionLoop = new Timer();
-            TimerExplosionLoop.Interval = 40;
+            TimerExplosionLoop.Interval = 50;
             TimerExplosionLoop.Tick += new EventHandler(TimerExplosionLoop_Tick);
             TimerExplosionLoop.Start();
         }
@@ -60,7 +60,6 @@ namespace WindowsFormsApplication1
                     foreach (Explosion explosion in Explosions)
                         explosion.NextImage();
                 }
-                
             }
         }
 
@@ -104,15 +103,14 @@ namespace WindowsFormsApplication1
                     thereIsPower = true;
             }
 
-            if (!thereIsPower && !isSlowMotionActive && gameLevel.LEVEL > 2)
+            if (!thereIsPower && !isSlowMotionActive && gameLevel.LEVEL > 1)
             {
                 int rnd = Random.Next(0, 30);
                 if (rnd == 7 && gameLevel.LEVEL > 4)
                     enemy = new PowerUp_SlowMotion(TheForm, findValidSpawn(), selected);
                 else if (rnd == 13)
                     enemy = new PowerUP_Bonus(TheForm, findValidSpawn(), selected);
-                else if (rnd == 23
-                    && gameLevel.LEVEL > 6)
+                else if (rnd == 23 && gameLevel.LEVEL > 4)
                     enemy = new PowerUp_Destroyer(TheForm, findValidSpawn(), selected);
             }
             Enemies.Add(enemy);
@@ -148,6 +146,11 @@ namespace WindowsFormsApplication1
                 {
                     TheForm.CurrentScore += gameLevel.POINTS_HIT * Enemies.Count;
                     TheForm.UpdateScore();
+                    foreach (Enemy e in Enemies)
+                    {
+                        if (e.Name != "Destroyer")
+                            Explosions.AddLast(new Explosion(e.Left - 50, e.Top - 25));
+                    }
                     Enemies = new List<Enemy>();
                 }
                     
@@ -172,7 +175,7 @@ namespace WindowsFormsApplication1
             brush.CenterColor = Color.Red;
             brush.SurroundColors = new[] { Color.Orange, Color.Orange};
             graphics.FillPolygon(brush, points, FillMode.Winding);
-            Explosions.AddFirst(new Explosion(res.Left - 50, res.Top - 25));
+            Explosions.AddLast(new Explosion(res.Left - 50, res.Top - 25));
             brush.Dispose();
         }
 
@@ -356,7 +359,7 @@ namespace WindowsFormsApplication1
                 if (Explosion.Dispose > 0)
                 {
                     for (int i = 0; i < Explosion.Dispose; i++)
-                        Explosions.RemoveLast();
+                        Explosions.RemoveFirst();
                     Explosion.Dispose = 0;
                 }
                 foreach (Explosion e in Explosions)
