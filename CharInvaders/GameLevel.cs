@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
         public void levelUp()
         {
             LEVEL++;
-            ENEMY_APPEAR = ENEMY_APPEAR < 50 ? (int)(ENEMY_APPEAR / 1.25) : ENEMY_APPEAR;
+            ENEMY_APPEAR = ENEMY_APPEAR < 10 ? (int)(ENEMY_APPEAR / 1.25) : ENEMY_APPEAR;
             if (MOVE_PIXELS < 4)
                 MOVE_PIXELS += 1;
             POINTS_HIT = (int)(POINTS_HIT * 1.25);

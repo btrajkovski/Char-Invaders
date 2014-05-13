@@ -47,7 +47,7 @@
             this.chkSound.BackColor = System.Drawing.Color.Transparent;
             this.chkSound.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chkSound.Location = new System.Drawing.Point(315, 129);
+            this.chkSound.Location = new System.Drawing.Point(315, 139);
             this.chkSound.Name = "chkSound";
             this.chkSound.Size = new System.Drawing.Size(73, 26);
             this.chkSound.TabIndex = 10;
@@ -95,6 +95,7 @@
             // sldMusic
             // 
             this.sldMusic.BackColor = System.Drawing.Color.DarkRed;
+            this.sldMusic.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.sldMusic.LargeChange = 10;
             this.sldMusic.Location = new System.Drawing.Point(92, 213);
             this.sldMusic.Maximum = 100;
@@ -111,7 +112,7 @@
             this.chkPlayMusic.BackColor = System.Drawing.Color.Transparent;
             this.chkPlayMusic.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPlayMusic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chkPlayMusic.Location = new System.Drawing.Point(315, 213);
+            this.chkPlayMusic.Location = new System.Drawing.Point(315, 223);
             this.chkPlayMusic.Name = "chkPlayMusic";
             this.chkPlayMusic.Size = new System.Drawing.Size(73, 26);
             this.chkPlayMusic.TabIndex = 14;

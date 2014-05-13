@@ -13,9 +13,6 @@ namespace WindowsFormsApplication1
 {
     public partial class FormMenu : Form
     {
-        //public SoundCollection SoundCollection;
-        //public bool PlaySounds { set; get; }
-        //public bool PlayThemeSong;
         public FormHighScore frmScore;
         public FormSettings frmSettings;
         public FormHowTo frmHowTo;
@@ -26,8 +23,6 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             SoundCollection.Initialize();
-            //PlaySounds = false;
-            //PlayThemeSong = false;
             this.DoubleBuffered = true;
             frmScore = new FormHighScore(this);
             frmSettings = new FormSettings(this);
@@ -41,7 +36,6 @@ namespace WindowsFormsApplication1
         private void btnPlay_Click(object sender, EventArgs e)
         {
             Theme.TimerBackgroundLoop.Stop();
-            //SoundCollection.PlayerThemeSong.Stop();
             FormGame frmGame = new FormGame(this);
             frmGame.Show();
             this.Hide();
@@ -69,17 +63,8 @@ namespace WindowsFormsApplication1
             frmHowTo.Show();
         }
 
-        /*public void playMusic()
-        {
-            if (PlayThemeSong)
-                SoundCollection.PlayThemeSong();
-            else
-                SoundCollection.StopThemeSong();
-        }*/
-
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            //playMusic();
             SoundCollection.PlayThemeSong();
         }
 

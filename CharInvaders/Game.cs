@@ -17,8 +17,6 @@ namespace WindowsFormsApplication1
         public Random Random { get; set; }
         public GameLevel gameLevel;
         public List<Canon> Cannons { get; set; }
-        //private SoundCollection SoundCollection;
-        //public bool shouldPlay { set; get; }
         private Graphics graphics;
         private PathGradientBrush brush;
         private Timer TimerSlowMotion;
@@ -36,8 +34,6 @@ namespace WindowsFormsApplication1
             Random = new Random();
             gameLevel = new GameLevel();
             InitializeCannons();
-            //SoundCollection.Initialize();
-            //this.shouldPlay = TheForm.MenuForm.PlaySounds;
             graphics = TheForm.CreateGraphics();
             TimerSlowMotion = new Timer();
             TimerSlowMotion.Interval = 1000;
@@ -74,7 +70,6 @@ namespace WindowsFormsApplication1
                 else
                 {
                     TimerSlowMotion.Dispose();
-                    //TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
                     TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR;
                     SecoundsLeft = 5;
 
@@ -106,11 +101,11 @@ namespace WindowsFormsApplication1
             if (!thereIsPower && !isSlowMotionActive && gameLevel.LEVEL > 1)
             {
                 int rnd = Random.Next(0, 30);
-                if (rnd == 7 && gameLevel.LEVEL > 4)
+                if (rnd == 7 && gameLevel.LEVEL > 3)
                     enemy = new PowerUp_SlowMotion(TheForm, findValidSpawn(), selected);
-                else if (rnd == 13)
+                else if (rnd > 26)
                     enemy = new PowerUP_Bonus(TheForm, findValidSpawn(), selected);
-                else if (rnd == 23 && gameLevel.LEVEL > 4)
+                else if (rnd == 13 && gameLevel.LEVEL > 4)
                     enemy = new PowerUp_Destroyer(TheForm, findValidSpawn(), selected);
             }
             Enemies.Add(enemy);
@@ -131,7 +126,6 @@ namespace WindowsFormsApplication1
             {
                 if (res.Name == "SlowMotion")
                 {
-                    //TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED_SLOW_MOTION;
                     TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR_SLOW_MOTION;
                     isSlowMotionActive = true;
                     TimerSlowMotion.Start();
@@ -139,7 +133,7 @@ namespace WindowsFormsApplication1
                 }
                 if (res.Name == "Bonus")
                 {
-                    TheForm.CurrentScore += gameLevel.POINTS_HIT * 3;
+                    TheForm.CurrentScore += gameLevel.POINTS_HIT * 5;
                     TheForm.UpdateScore();
                 }
                 if (res.Name == "Destroyer")
@@ -156,8 +150,7 @@ namespace WindowsFormsApplication1
                     
                 Enemies.Remove(res);
                 DrawStrike(res);
-                //if (shouldPlay)
-                    SoundCollection.PlayLaserSound();
+                SoundCollection.PlayLaserSound();
                 return true;
             }
             else
@@ -218,8 +211,7 @@ namespace WindowsFormsApplication1
             Canon cannon = ClosestCannon(Enemies[i]);
             Cannons.Remove(cannon);
             Enemies.RemoveAt(i);
-            //if (shouldPlay)
-                SoundCollection.PlayCrushSound();
+            SoundCollection.PlayCrushSound();
             ShakeForm();
         }
 
@@ -228,7 +220,6 @@ namespace WindowsFormsApplication1
             TheForm.IsPaused = true;
             Enemies = new List<Enemy>();
             gameLevel = new GameLevel();
-            //TheForm.MenuForm.playMusic();
 
             if (activateHighScore)
             {
@@ -379,7 +370,7 @@ namespace WindowsFormsApplication1
             //drawing remaining time of powerup slow
             if (isSlowMotionActive)
             {
-                g.DrawString(("Slow Time Bonus\n" + SecoundsLeft + " seconds left").ToString(), new Font("Verdana", 13, FontStyle.Bold), new SolidBrush(Color.LightBlue), 10, 45);
+                g.DrawString(("Slow Time Bonus\n   " + SecoundsLeft + " seconds left").ToString(), new Font("Verdana", 13, FontStyle.Bold), new SolidBrush(Color.LightBlue), 100, 10);
             }
         }
     }
