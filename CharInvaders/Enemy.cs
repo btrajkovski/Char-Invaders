@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         public string Letter { get; set; }
         public int Top { get; set; }
         public int Left { get; set; }
-        protected Image Image = Properties.Resources.meteor2;
+        protected Image Image = Properties.Resources.meteor;
         public int Width { get; set; }
         public int Height { get; set; }
         private Font Font;

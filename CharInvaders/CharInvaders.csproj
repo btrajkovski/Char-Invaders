@@ -115,6 +115,8 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameLevel.cs" />
     <Compile Include="HighScores.cs" />
+    <Compile Include="PowerUP_Bonus.cs" />
+    <Compile Include="PowerUp_Destroyer.cs" />
     <Compile Include="PowerUp_SlowMotion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -191,7 +193,6 @@
     <None Include="Resources\explosion_iceman.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\meteor2.png" />
     <None Include="Resources\rsz_exit3.png" />
     <None Include="Resources\rsz_exit.png" />
     <None Include="Resources\rsz_pause3.png" />
@@ -285,6 +286,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\powerup_slow_motion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powerup_3x_bonus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meteor_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meteor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powerup_destroy_all.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

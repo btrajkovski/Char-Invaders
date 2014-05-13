@@ -26,8 +26,8 @@ namespace WindowsFormsApplication1
             POINTS_HIT = 100;
             POINTS_MISS = 300;
             MOVE_PIXELS = 2;
-            ENEMY_SPEED_SLOW_MOTION = 60;
-            ENEMY_APPEAR_SLOW_MOTION = 1100;
+            ENEMY_SPEED_SLOW_MOTION = 40;
+            ENEMY_APPEAR_SLOW_MOTION = 900;
             MOVE_PIXELS_SLOW_MOTION = 1;
         }
 

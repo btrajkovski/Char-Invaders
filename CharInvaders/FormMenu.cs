@@ -26,8 +26,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             SoundCollection = new SoundCollection();
-            PlaySounds = true;
-            PlayThemeSong = true;
+            PlaySounds = false;
+            PlayThemeSong = false;
             this.DoubleBuffered = true;
             frmScore = new FormHighScore(this);
             frmSettings = new FormSettings(this);

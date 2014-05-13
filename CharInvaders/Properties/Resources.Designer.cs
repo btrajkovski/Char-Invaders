@@ -262,9 +262,9 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap meteor2 {
+        internal static System.Drawing.Bitmap meteor {
             get {
-                object obj = ResourceManager.GetObject("meteor2", resourceCulture);
+                object obj = ResourceManager.GetObject("meteor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -304,6 +304,26 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap play_button2 {
             get {
                 object obj = ResourceManager.GetObject("play_button2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap powerup_3x_bonus {
+            get {
+                object obj = ResourceManager.GetObject("powerup_3x_bonus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap powerup_destroy_all {
+            get {
+                object obj = ResourceManager.GetObject("powerup_destroy_all", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

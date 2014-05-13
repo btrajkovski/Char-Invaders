@@ -76,15 +76,20 @@ namespace WindowsFormsApplication1
             bool thereIsPower = false;
             foreach (Enemy e in Enemies)
             {
-                if (e.Name == "SlowMotion")
+                if (e.Name == "SlowMotion" || e.Name == "Bonus" || e.Name == "Destroyer")
                     thereIsPower = true;
             }
 
-            if (Enemies.Count > 1 && !thereIsPower && !isSlowMotionActive)
-                if (Random.Next(0, 6) == 0) {
+            if (!thereIsPower && !isSlowMotionActive && gameLevel.LEVEL > 2)
+            {
+                int rnd = Random.Next(0, 30);
+                if (rnd == 7 && gameLevel.LEVEL > 4)
                     enemy = new PowerUp_SlowMotion(TheForm, findValidSpawn(), selected);
-                    }
-            
+                else if (rnd == 13)
+                    enemy = new PowerUP_Bonus(TheForm, findValidSpawn(), selected);
+                else if (rnd == 23 && gameLevel.LEVEL > 6)
+                    enemy = new PowerUp_Destroyer(TheForm, findValidSpawn(), selected);
+            }
             Enemies.Add(enemy);
         }
 
@@ -108,7 +113,19 @@ namespace WindowsFormsApplication1
                     isSlowMotionActive = true;
                     TimerSlowMotion.Start();
                    
-                } 
+                }
+                if (res.Name == "Bonus")
+                {
+                    TheForm.CurrentScore += gameLevel.POINTS_HIT * 3;
+                    TheForm.UpdateScore();
+                }
+                if (res.Name == "Destroyer")
+                {
+                    TheForm.CurrentScore += gameLevel.POINTS_HIT * Enemies.Count;
+                    TheForm.UpdateScore();
+                    Enemies = new List<Enemy>();
+                }
+                    
                 Enemies.Remove(res);
                 DrawStrike(res);
                 if(shouldPlay)
@@ -314,7 +331,7 @@ namespace WindowsFormsApplication1
 
             if (isSlowMotionActive)
             {
-                graphics.DrawString(SecoundsLeft.ToString(), new Font("Verdana", 40, FontStyle.Bold), new SolidBrush(Color.Snow), 10, 50);
+                g.DrawString(SecoundsLeft.ToString(), new Font("Verdana", 40, FontStyle.Bold), new SolidBrush(Color.Snow), 10, 50);
             }
         }
     }

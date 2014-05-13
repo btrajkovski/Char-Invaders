@@ -100,23 +100,21 @@ namespace WindowsFormsApplication1
             if (!IsPaused && e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
             {
                 if (TheGame.ShootEnemy(e.KeyCode.ToString().ToUpper()))
-                {
                     CurrentScore += TheGame.gameLevel.POINTS_HIT;
-                    lblScore.Text = CurrentScore.ToString();
-                }
                 else
                 {
                     CurrentScore -= TheGame.gameLevel.POINTS_MISS;
-                    lblScore.Text = CurrentScore.ToString();
-                    if (int.Parse(lblScore.Text) < 0)
-                    {
+                    if (CurrentScore < 0)
                         CurrentScore = 0;
-                        lblScore.Text = "0";
-                    }
                 }
+                UpdateScore();
             }
         }
 
+        public void UpdateScore()
+        {
+            lblScore.Text = CurrentScore.ToString();
+        }
 
         private void FormGame_FormClosing(object sender, FormClosingEventArgs e)
         {
