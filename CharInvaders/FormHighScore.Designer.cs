@@ -97,9 +97,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormHighScore";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "High Score";
-            this.Activated += new System.EventHandler(this.FormHighScore_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormHighScore_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.btnClear1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).EndInit();

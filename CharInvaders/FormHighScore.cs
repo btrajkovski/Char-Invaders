@@ -23,7 +23,6 @@ namespace WindowsFormsApplication1
             this.btnClear1.SetImages(Properties.Resources.clear_button, Properties.Resources.clear_button2);
             HighScore = BinaryDeserializeScores();
             updateHighScore();
-            this.Location = menuForm.Location;
         }
 
         public void addScore(ScoreItem sc)
@@ -116,13 +115,7 @@ namespace WindowsFormsApplication1
         private void btnBack1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menuForm.Location = this.Location;
             menuForm.Show();
-        }
-
-        private void FormHighScore_Activated(object sender, EventArgs e)
-        {
-            this.Location = menuForm.Location;
         }
     }
 }

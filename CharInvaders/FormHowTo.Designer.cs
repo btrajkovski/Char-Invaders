@@ -29,18 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHowTo));
-            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
+            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.howto_back;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(980, 515);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // btnBack1
             // 
             this.btnBack1.BackColor = System.Drawing.Color.Transparent;
             this.btnBack1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.main_background1;
             this.btnBack1.Image = ((System.Drawing.Image)(resources.GetObject("btnBack1.Image")));
-            this.btnBack1.Location = new System.Drawing.Point(39, 399);
+            this.btnBack1.Location = new System.Drawing.Point(43, 449);
             this.btnBack1.Name = "btnBack1";
             this.btnBack1.Size = new System.Drawing.Size(101, 32);
             this.btnBack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -48,34 +58,23 @@
             this.btnBack1.TabStop = false;
             this.btnBack1.Click += new System.EventHandler(this.btnBack1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.main_background1;
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.howto_keys;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(498, 275);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormHowTo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 475);
+            this.ClientSize = new System.Drawing.Size(979, 514);
             this.Controls.Add(this.btnBack1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormHowTo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "How To Play";
-            this.Activated += new System.EventHandler(this.FormHowTo_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCredits_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -271,9 +271,6 @@
     <None Include="Resources\right_cannon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\howto_keys.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +350,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\howto_back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

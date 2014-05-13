@@ -17,7 +17,6 @@ namespace WindowsFormsApplication1
         public FormSettings(FormMenu menuForm)
         {
             InitializeComponent();
-            this.Location = menuForm.Location;
             this.menuForm = menuForm;
             chkPlayMusic.Checked = menuForm.PlayThemeSong;
             chkSound.Checked = menuForm.PlaySounds;
@@ -32,13 +31,7 @@ namespace WindowsFormsApplication1
         private void btnBack1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menuForm.Location = this.Location;
             menuForm.Show();
-        }
-
-        private void FormSettings_Activated(object sender, EventArgs e)
-        {
-            this.Location = menuForm.Location;
         }
 
         private void chkSound_CheckedChanged(object sender, EventArgs e)

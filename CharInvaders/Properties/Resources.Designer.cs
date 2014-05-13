@@ -352,6 +352,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap howto_back {
+            get {
+                object obj = ResourceManager.GetObject("howto_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap howto_button {
             get {
                 object obj = ResourceManager.GetObject("howto_button", resourceCulture);
@@ -365,16 +375,6 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap howto_button2 {
             get {
                 object obj = ResourceManager.GetObject("howto_button2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap howto_keys {
-            get {
-                object obj = ResourceManager.GetObject("howto_keys", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

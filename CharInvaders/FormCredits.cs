@@ -16,7 +16,6 @@ namespace WindowsFormsApplication1
         public FormCredits(FormMenu menuForm)
         {
             InitializeComponent();
-            this.Location = menuForm.Location;
             this.menuForm = menuForm;
         }
 
@@ -29,13 +28,7 @@ namespace WindowsFormsApplication1
         private void btnBack1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menuForm.Location = this.Location;
             menuForm.Show();
-        }
-
-        private void FormCredits_Activated(object sender, EventArgs e)
-        {
-            this.Location = menuForm.Location;
         }
     }
 }
