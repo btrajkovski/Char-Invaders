@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
         private Timer TimerSlowMotion;
         private int SecoundsLeft = 5;
         public bool isSlowMotionActive;
+        private LinkedList<Explosion> Explosions;
+        private Timer TimerExplosionLoop;
 
         public Game(FormGame form)
         {
@@ -41,22 +43,44 @@ namespace WindowsFormsApplication1
             TimerSlowMotion.Interval = 1000;
             TimerSlowMotion.Tick += new EventHandler(TimerSlowMotion_Tick);
             isSlowMotionActive = false;
+            Explosions = new LinkedList<Explosion>();
+            Explosion.InitializeImages();
+            TimerExplosionLoop = new Timer();
+            TimerExplosionLoop.Interval = 40;
+            TimerExplosionLoop.Tick += new EventHandler(TimerExplosionLoop_Tick);
+            TimerExplosionLoop.Start();
+        }
+
+        void TimerExplosionLoop_Tick(object sender, EventArgs e)
+        {
+            if (!TheForm.IsPaused)
+            {
+                if (Explosions.Count > 0)
+                {
+                    foreach (Explosion explosion in Explosions)
+                        explosion.NextImage();
+                }
+                
+            }
         }
 
         void TimerSlowMotion_Tick(object sender, EventArgs e)
         {
-            if (SecoundsLeft > 1)
+            if (!TheForm.IsPaused)
             {
-                SecoundsLeft--;
-            }
-            else
-            {
-                TimerSlowMotion.Dispose();
-                //TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
-                TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR;
-                SecoundsLeft = 5;
-                
-                isSlowMotionActive = false;
+                if (SecoundsLeft > 1)
+                {
+                    SecoundsLeft--;
+                }
+                else
+                {
+                    TimerSlowMotion.Dispose();
+                    //TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
+                    TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR;
+                    SecoundsLeft = 5;
+
+                    isSlowMotionActive = false;
+                }
             }
         }
 
@@ -87,7 +111,8 @@ namespace WindowsFormsApplication1
                     enemy = new PowerUp_SlowMotion(TheForm, findValidSpawn(), selected);
                 else if (rnd == 13)
                     enemy = new PowerUP_Bonus(TheForm, findValidSpawn(), selected);
-                else if (rnd == 23 && gameLevel.LEVEL > 6)
+                else if (rnd == 23
+                    && gameLevel.LEVEL > 6)
                     enemy = new PowerUp_Destroyer(TheForm, findValidSpawn(), selected);
             }
             Enemies.Add(enemy);
@@ -147,6 +172,7 @@ namespace WindowsFormsApplication1
             brush.CenterColor = Color.Red;
             brush.SurroundColors = new[] { Color.Orange, Color.Orange};
             graphics.FillPolygon(brush, points, FillMode.Winding);
+            Explosions.AddFirst(new Explosion(res.Left - 50, res.Top - 25));
             brush.Dispose();
         }
 
@@ -318,20 +344,39 @@ namespace WindowsFormsApplication1
 
         public void Draw(Graphics g)
         {
+            //drawing cannons
+            foreach (Canon c in Cannons)
+            {
+                c.DrawCannon(g);
+            }
+
+            //drawing explosions
+            if (Explosions.Count > 0)
+            {
+                if (Explosion.Dispose > 0)
+                {
+                    for (int i = 0; i < Explosion.Dispose; i++)
+                        Explosions.RemoveLast();
+                    Explosion.Dispose = 0;
+                }
+                foreach (Explosion e in Explosions)
+                {
+                    e.DrawImage(g);
+                }
+            }
+
+            //drawing enemies
             foreach (Enemy e in Enemies)
             {
                 e.DrawEnemy(g);
                 if(!TheForm.IsPaused)
                     e.DrawLetter(g);
             }
-            foreach (Canon c in Cannons)
-            {
-                c.DrawCannon(g);
-            }
 
+            //drawing remaining time of powerup slow
             if (isSlowMotionActive)
             {
-                g.DrawString(SecoundsLeft.ToString(), new Font("Verdana", 40, FontStyle.Bold), new SolidBrush(Color.Snow), 10, 50);
+                g.DrawString(("Slow Time Bonus\n" + SecoundsLeft + " seconds left").ToString(), new Font("Verdana", 13, FontStyle.Bold), new SolidBrush(Color.LightBlue), 10, 45);
             }
         }
     }
