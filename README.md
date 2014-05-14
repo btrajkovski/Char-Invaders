@@ -3,11 +3,11 @@ Char Invaders
 
 > <b>TODO list</b>
 
-> * [ ] Powerup - shoot all
-> * [ ] Powerup - x3 points
+> * [x] Powerup - shoot all
+> * [x] Powerup - x3 points
 > * [x] Powerup - slowdown
-> * [ ] Change sound effects
-> * [ ] Add nice icon
+> * [x] Change sound effects
+> * [x] Add nice icon
 > * [ ] Add kind of a boss ?
 > * [x] Refactor rest of the code
 > * [x] Change visual appearnce of in-game buttons
