@@ -11,7 +11,7 @@ Char Invaders
 
 Како се зголемува нивото на играта така и метеорите паѓаат побргу и почесто се појавуваат. Поените кои се добиваат зависат од нивото на играта, исто така за погрешно внесена буква се одземаат x3 од поените кои се добиваат за погодок.
 
-![Gameplay screenshot](http://i.imgur.com/yuBe1gV.png)
+![Gameplay screenshot](http://i.imgur.com/5ksu91m.png)
 
 
 ### Кратко упатство
@@ -31,7 +31,7 @@ Char Invaders
 
 При стартување на играта се појавува мени со неколку опции:
 
-![Screenshot start](http://i.imgur.com/5APBJGr.png)
+![Screenshot start](http://i.imgur.com/omFytzM.png)
 
 Играта се стартува со клик на копчето`Play`. 
 
@@ -41,7 +41,7 @@ Char Invaders
 
 Во делот `How To Play` е дадено кратко упатство на англиски јазик за тоа како се игра играта и во делот `Credits` се сите кои учествувале во изработка на играта. Преку клик на `Exit` се исклучува играта.
 
-![Screenshot settings](http://i.imgur.com/CJGdvhT.png)
+![Screenshot settings](http://i.imgur.com/jt6N6x5.png)
 
 Решение на проблемот
 ------------
@@ -123,7 +123,7 @@ private static HighScores BinaryDeserializeScores()
 }
 ```
 
-![Screenshot High Score](http://i.imgur.com/tFHdamD.png)
+![Screenshot High Score](http://i.imgur.com/QOVR3Vg.png)
 
 ##Мени
 Останатите делови од менито се имплементирани во посебни форми при што сите чуваат референца од главното мени со цел да можат да се вратат назад. Се отваараат и затвараат со користење на методи `Hide()` и `Show()`
@@ -170,4 +170,4 @@ private Canon ClosestCannon(Enemy enemy)
 }
 ```
 
-![Screenshot credits](http://i.imgur.com/8kT0n1K.png)
+![Screenshot credits](http://i.imgur.com/3DLpY26.png)
