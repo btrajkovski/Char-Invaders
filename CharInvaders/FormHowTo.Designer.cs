@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormHowTo
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHowTo));
-            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
+            this.btnBack1 = new CharInvaders.CustomButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -38,7 +38,7 @@
             // btnBack1
             // 
             this.btnBack1.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.main_background1;
+            this.btnBack1.BackgroundImage = global::CharInvaders.Properties.Resources.main_background1;
             this.btnBack1.Image = ((System.Drawing.Image)(resources.GetObject("btnBack1.Image")));
             this.btnBack1.Location = new System.Drawing.Point(43, 449);
             this.btnBack1.Name = "btnBack1";
@@ -50,7 +50,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.howto_back;
+            this.pictureBox1.Image = global::CharInvaders.Properties.Resources.howto_back;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(980, 515);

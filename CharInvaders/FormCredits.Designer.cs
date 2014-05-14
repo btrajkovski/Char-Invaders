@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormCredits
     {
@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCredits));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
+            this.btnBack1 = new CharInvaders.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.credits_back;
+            this.pictureBox1.Image = global::CharInvaders.Properties.Resources.credits_back;
             this.pictureBox1.Location = new System.Drawing.Point(44, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(490, 328);

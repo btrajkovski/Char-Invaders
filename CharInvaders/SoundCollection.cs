@@ -5,7 +5,7 @@ using System.Text;
 using System.Media;
 using WMPLib;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
 
     public static class SoundCollection

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Drawing.Text;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     static class Program
     {

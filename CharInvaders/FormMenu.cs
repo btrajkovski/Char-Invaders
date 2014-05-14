@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     public partial class FormMenu : Form
     {

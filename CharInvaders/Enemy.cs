@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     public class Enemy
     {
@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         {
             Name = "Meteor";
             this.Letter = letter.ToString().ToUpper();
-            this.Top = 40;
+            this.Top = 30;
             this.Left = left;
 
             this.Width = Image.Width;
@@ -38,7 +38,12 @@ namespace WindowsFormsApplication1
 
         public void DrawLetter(Graphics g)
         {
-            g.DrawString(Letter, Font, brush, Left + 7, Top + 23);
+            if(Letter == "W")
+                g.DrawString(Letter, Font, brush, Left + 4, Top + 23);
+            else if(Letter == "I" || Letter == "J" || Letter == "L")
+                g.DrawString(Letter, Font, brush, Left + 9, Top + 23);
+            else    
+                g.DrawString(Letter, Font, brush, Left + 7, Top + 23);
         }
 
         public void MoveEnemy(int value)

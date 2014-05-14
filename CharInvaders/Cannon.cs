@@ -5,9 +5,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
-    public class Canon
+    public class Cannon
     {
         public int Top { get; set; }
         public int Left { get; set; }
@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         public int Height { get; set; }
         public Point leftPoint, rightPoint;
 
-        public Canon(int left, int formHeight, int pX, int pY, int p2X, int p2Y) 
+        public Cannon(int left, int formHeight, int pX, int pY, int p2X, int p2Y) 
         {
             this.Left = left;
             this.Width = 75;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     class CustomButton : PictureBox
     {

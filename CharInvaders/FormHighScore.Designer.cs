@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormHighScore
     {
@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHighScore));
             this.lblScores = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClear1 = new WindowsFormsApplication1.CustomButton();
-            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
+            this.btnClear1 = new CharInvaders.CustomButton();
+            this.btnBack1 = new CharInvaders.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnClear1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
             this.SuspendLayout();

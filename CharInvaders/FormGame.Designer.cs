@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormGame
     {
@@ -48,7 +48,7 @@
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.LightBlue;
-            this.lblScore.Location = new System.Drawing.Point(486, 21);
+            this.lblScore.Location = new System.Drawing.Point(477, 9);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(25, 25);
             this.lblScore.TabIndex = 9;
@@ -61,7 +61,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightBlue;
-            this.label5.Location = new System.Drawing.Point(402, 21);
+            this.label5.Location = new System.Drawing.Point(393, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 25);
             this.label5.TabIndex = 8;
@@ -73,7 +73,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label1.Location = new System.Drawing.Point(271, 21);
+            this.label1.Location = new System.Drawing.Point(271, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 7;
@@ -85,7 +85,7 @@
             this.lblLevel.BackColor = System.Drawing.Color.Transparent;
             this.lblLevel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevel.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lblLevel.Location = new System.Drawing.Point(351, 21);
+            this.lblLevel.Location = new System.Drawing.Point(351, 9);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(25, 25);
             this.lblLevel.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             this.pbSound.Location = new System.Drawing.Point(45, 13);
             this.pbSound.Name = "pbSound";
-            this.pbSound.Size = new System.Drawing.Size(28, 27);
+            this.pbSound.Size = new System.Drawing.Size(29, 27);
             this.pbSound.TabIndex = 12;
             this.pbSound.TabStop = false;
             this.pbSound.Click += new System.EventHandler(this.pbSound_Click);
@@ -113,9 +113,9 @@
             // 
             // pbPause
             // 
-            this.pbPause.Location = new System.Drawing.Point(79, 13);
+            this.pbPause.Location = new System.Drawing.Point(80, 13);
             this.pbPause.Name = "pbPause";
-            this.pbPause.Size = new System.Drawing.Size(32, 27);
+            this.pbPause.Size = new System.Drawing.Size(29, 27);
             this.pbPause.TabIndex = 14;
             this.pbPause.TabStop = false;
             this.pbPause.Click += new System.EventHandler(this.pbPause_Click);
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background;
+            this.BackgroundImage = global::CharInvaders.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(580, 475);
             this.Controls.Add(this.lblPause);

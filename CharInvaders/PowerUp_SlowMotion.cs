@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     public class PowerUp_SlowMotion : Enemy
     {

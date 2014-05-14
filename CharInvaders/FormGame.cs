@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Text;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     public partial class FormGame : Form
     {
@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
         {
             GameBackground.Initialize();
             this.BackgroundImage = GameBackground.NextImage();
+            changeColorLabel();
             this.KeyPreview = true;
             TheGame = new Game(this);
             InitializeTimers();
@@ -48,6 +49,21 @@ namespace WindowsFormsApplication1
             SetPauseImage();
 
             lblPause.Visible = IsPaused = false;
+        }
+
+        public void changeColorLabel()
+        {
+            Color c = GameBackground.NextColor();
+            label1.ForeColor = c;
+            label5.ForeColor = c;
+            lblLevel.ForeColor = c;
+            lblPause.ForeColor = c;
+            lblScore.ForeColor = c;
+        }
+
+        public Color getColorLabel()
+        {
+            return label5.ForeColor;
         }
 
         private void InitializeTimers()
@@ -83,11 +99,6 @@ namespace WindowsFormsApplication1
                 TheGame.AddEnemy();
                 lblLevel.Text = TheGame.gameLevel.LEVEL.ToString();
             }
-        }
-
-        public ControlCollection GetControls()
-        {
-            return (ControlCollection)this.Controls;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

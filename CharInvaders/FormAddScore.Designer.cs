@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormAddScore
     {

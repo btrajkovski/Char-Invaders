@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormMenu
     {
@@ -114,7 +114,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo;
+            this.pictureBox1.Image = global::CharInvaders.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(46, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(491, 46);
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.main_background1;
+            this.BackgroundImage = global::CharInvaders.Properties.Resources.main_background1;
             this.ClientSize = new System.Drawing.Size(580, 475);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);

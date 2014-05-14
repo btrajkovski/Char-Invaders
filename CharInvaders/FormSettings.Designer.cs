@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace CharInvaders
 {
     partial class FormSettings
     {
@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.sldMusic = new System.Windows.Forms.TrackBar();
             this.chkPlayMusic = new System.Windows.Forms.CheckBox();
-            this.btnBack1 = new WindowsFormsApplication1.CustomButton();
+            this.btnBack1 = new CharInvaders.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.sldSound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sldMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack1)).BeginInit();
@@ -57,7 +57,7 @@
             // 
             // sldSound
             // 
-            this.sldSound.BackColor = System.Drawing.Color.DarkRed;
+            this.sldSound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sldSound.LargeChange = 10;
             this.sldSound.Location = new System.Drawing.Point(126, 115);
             this.sldSound.Maximum = 100;
@@ -94,7 +94,7 @@
             // 
             // sldMusic
             // 
-            this.sldMusic.BackColor = System.Drawing.Color.DarkRed;
+            this.sldMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sldMusic.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.sldMusic.LargeChange = 10;
             this.sldMusic.Location = new System.Drawing.Point(126, 199);
@@ -136,6 +136,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CharInvaders.Properties.Resources.main_background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(580, 475);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sldMusic);

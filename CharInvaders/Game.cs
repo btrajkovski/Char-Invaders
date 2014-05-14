@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Media;
 
-namespace WindowsFormsApplication1
+namespace CharInvaders
 {
     public class Game
     {
@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         private FormGame TheForm;
         public Random Random { get; set; }
         public GameLevel gameLevel;
-        public List<Canon> Cannons { get; set; }
+        public List<Cannon> Cannons { get; set; }
         private Graphics graphics;
         private PathGradientBrush brush;
         private Timer TimerSlowMotion;
@@ -86,7 +86,11 @@ namespace WindowsFormsApplication1
                 TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR;
                 TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
                 generatePool();
-                TheForm.BackgroundImage = GameBackground.NextImage();
+                if (gameLevel.LEVEL % 3 == 0)
+                {
+                    TheForm.BackgroundImage = GameBackground.NextImage();
+                    TheForm.changeColorLabel();
+                }
             }
             int i = Random.Next(0, CharPool.Count);
             Char selected = CharPool[i];
@@ -105,7 +109,7 @@ namespace WindowsFormsApplication1
                 if (rnd == 7 && gameLevel.LEVEL > 3)
                     enemy = new PowerUp_SlowMotion(TheForm, findValidSpawn(), selected);
                 else if (rnd > 26)
-                    enemy = new PowerUP_Bonus(TheForm, findValidSpawn(), selected);
+                    enemy = new PowerUp_Bonus(TheForm, findValidSpawn(), selected);
                 else if (rnd == 13 && gameLevel.LEVEL > 4)
                     enemy = new PowerUp_Destroyer(TheForm, findValidSpawn(), selected);
             }
@@ -161,7 +165,7 @@ namespace WindowsFormsApplication1
 
         private void DrawStrike(Enemy res)
         {
-            Canon cannon = CannonToShot(res);
+            Cannon cannon = CannonToShot(res);
             Point[] points = { cannon.leftPoint, cannon.rightPoint, new Point(res.Left + res.Width / 2 + 3, res.Top + res.Height / 2 + 10),
                              new Point(res.Left + res.Width / 2 - 3, res.Top + res.Height / 2 + 10)};
             brush = new PathGradientBrush(points);
@@ -177,18 +181,18 @@ namespace WindowsFormsApplication1
         {
             int h = TheForm.Height;
             int w = TheForm.Width;
-            Cannons = new List<Canon>();
+            Cannons = new List<Cannon>();
             //left cannon
-            Cannons.Add(new Canon(20, TheForm.Height, 35, h - 149, 87, h - 138));
+            Cannons.Add(new Cannon(20, TheForm.Height, 35, h - 149, 87, h - 138));
             Cannons[0].SetImage(Properties.Resources.left_cannon);
             //middle cannon
-            Cannons.Add(new Canon((TheForm.Width - 30) / 2, TheForm.Height, w/2 - 8, h - 145, w/2+46, h - 145));
+            Cannons.Add(new Cannon((TheForm.Width - 30) / 2, TheForm.Height, w/2 - 8, h - 145, w/2+46, h - 145));
             Cannons[1].SetImage(Properties.Resources.middle_cannon);
             Cannons[1].Width = 67;
             Cannons[1].Height = 91;
             Cannons[1].Top = TheForm.Height - Cannons[1].Height - 54;
             //right cannon
-            Cannons.Add(new Canon(TheForm.Width - 90, TheForm.Height, w-84, h - 139, w-33, h - 149));
+            Cannons.Add(new Cannon(TheForm.Width - 90, TheForm.Height, w-84, h - 139, w-33, h - 149));
             Cannons[2].SetImage(Properties.Resources.right_cannon);
         }
 
@@ -209,7 +213,7 @@ namespace WindowsFormsApplication1
 
         private void RemoveCannon(int i)
         {
-            Canon cannon = ClosestCannon(Enemies[i]);
+            Cannon cannon = ClosestCannon(Enemies[i]);
             Cannons.Remove(cannon);
             Enemies.RemoveAt(i);
             SoundCollection.PlayCrushSound();
@@ -229,11 +233,13 @@ namespace WindowsFormsApplication1
                 TheForm.Hide();
                 if (TheForm.MenuForm.frmScore.checkIfHighscore(TheForm.CurrentScore))
                 {
-                    FormAddScore fm = new FormAddScore();
-                    DialogResult result = fm.ShowDialog();
+                    FormAddScore frmAddScore = new FormAddScore();
+                    DialogResult result = frmAddScore.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        string x = fm.playerName;
+                        string x = frmAddScore.playerName;
+                        if (x.Length == 0)
+                            x = "NoName";
                         ScoreItem sc = new ScoreItem(x, TheForm.CurrentScore);
                         TheForm.MenuForm.frmScore.addScore(sc);
                     }
@@ -269,7 +275,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private Canon CannonToShot(Enemy enemy)
+        private Cannon CannonToShot(Enemy enemy)
         {
             if (enemy.Left <= TheForm.Width / 3)
                 return Cannons[Random.Next(Cannons.Count == 1 ? 0 : 1, Cannons.Count)];
@@ -279,11 +285,11 @@ namespace WindowsFormsApplication1
                 return Cannons[Random.Next(0, Cannons.Count)];
         }
 
-        private Canon ClosestCannon(Enemy enemy)
+        private Cannon ClosestCannon(Enemy enemy)
         {
             int min = int.MaxValue;
-            Canon minCannon = null;
-            foreach (Canon cannon in Cannons)
+            Cannon minCannon = null;
+            foreach (Cannon cannon in Cannons)
             {
                 if (Math.Abs(cannon.Left - enemy.Left) < min)
                 {
@@ -297,7 +303,7 @@ namespace WindowsFormsApplication1
         private bool CanonIsHit(Enemy enemy)
         {
             if (Cannons.Count > 0)
-                return enemy.Top + enemy.Height >= Cannons[0].Top;
+                return enemy.Top + enemy.Height >= Cannons[0].Top + 5;
             else
                 return false;
         }
@@ -334,13 +340,14 @@ namespace WindowsFormsApplication1
         private static bool checkInvalidSpawn(int left, Enemy enemy)
         {
             return ((left >= enemy.Left) && (left <= (enemy.Left + enemy.Width)) ||
-                   (left <= enemy.Left) && (left >= (enemy.Left - enemy.Width))) && (enemy.Top <= ( enemy.Height + 56));
+                   (left <= enemy.Left) && (left >= (enemy.Left - enemy.Width))) &&
+                   (enemy.Top <= ( enemy.Height + 56));
         }
 
         public void Draw(Graphics g)
         {
             //drawing cannons
-            foreach (Canon c in Cannons)
+            foreach (Cannon c in Cannons)
             {
                 c.DrawCannon(g);
             }
@@ -371,7 +378,7 @@ namespace WindowsFormsApplication1
             //drawing remaining time of powerup slow
             if (isSlowMotionActive)
             {
-                g.DrawString(("Slow Time Bonus\n   " + SecoundsLeft + " seconds left").ToString(), new Font("Verdana", 13, FontStyle.Bold), new SolidBrush(Color.LightBlue), 100, 10);
+                g.DrawString(("Slow Time Bonus\n   " + SecoundsLeft + " seconds left").ToString(), new Font("Verdana", 13, FontStyle.Bold), new SolidBrush(TheForm.getColorLabel()), 100, 10);
             }
         }
     }
