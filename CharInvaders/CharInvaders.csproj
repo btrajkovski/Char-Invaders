@@ -362,7 +362,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
-    <None Include="Resources\background8.jpg" />
     <None Include="Resources\background7.jpg" />
     <None Include="Resources\background6.jpg" />
     <None Include="Resources\background5.jpg" />
