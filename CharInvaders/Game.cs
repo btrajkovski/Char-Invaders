@@ -86,6 +86,7 @@ namespace WindowsFormsApplication1
                 TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR;
                 TheForm.TimerMoveEnemies.Interval = gameLevel.ENEMY_SPEED;
                 generatePool();
+                TheForm.BackgroundImage = GameBackground.NextImage();
             }
             int i = Random.Next(0, CharPool.Count);
             Char selected = CharPool[i];

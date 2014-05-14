@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
             ENEMY_APPEAR = ENEMY_APPEAR < 10 ? (int)(ENEMY_APPEAR / 1.25) : ENEMY_APPEAR;
             if (MOVE_PIXELS < 4)
                 MOVE_PIXELS += 1;
-            POINTS_HIT = (int)(POINTS_HIT * 1.25);
+            POINTS_HIT = (int)(POINTS_HIT * 1.05);
             POINTS_MISS = POINTS_HIT * 3;
         }
     }

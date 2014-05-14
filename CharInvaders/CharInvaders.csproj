@@ -117,6 +117,7 @@
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="GameBackground.cs" />
     <Compile Include="GameLevel.cs" />
     <Compile Include="HighScores.cs" />
     <Compile Include="PowerUP_Bonus.cs" />
@@ -361,6 +362,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\background8.jpg" />
+    <None Include="Resources\background7.jpg" />
+    <None Include="Resources\background6.jpg" />
+    <None Include="Resources\background5.jpg" />
+    <None Include="Resources\background4.jpg" />
+    <None Include="Resources\background3.jpg" />
+    <None Include="Resources\background2.jpg" />
+    <None Include="Resources\background1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
