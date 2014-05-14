@@ -56,7 +56,7 @@ Char Invaders
 
 ```
 public List<Enemy> Enemies { get; set; }
-public List<Char> CharPool { get; set; }
+public List<Cannon> Cannons { get; set; }
 ```
 
 ###Cannon
