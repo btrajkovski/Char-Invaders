@@ -66,6 +66,8 @@ namespace CharInvaders
                 if (SecoundsLeft > 1)
                 {
                     SecoundsLeft--;
+                    if (SecoundsLeft == 1)
+                        SoundCollection.PlaySlowMotionFinish();
                 }
                 else
                 {
@@ -134,7 +136,7 @@ namespace CharInvaders
                     TheForm.TimerCreateLetter.Interval = gameLevel.ENEMY_APPEAR_SLOW_MOTION;
                     isSlowMotionActive = true;
                     TimerSlowMotion.Start();
-                   
+                    SoundCollection.PlaySlowMotionStart();
                 }
                 if (res.Name == "Bonus")
                 {
@@ -214,6 +216,7 @@ namespace CharInvaders
         private void RemoveCannon(int i)
         {
             Cannon cannon = ClosestCannon(Enemies[i]);
+            Explosions.AddLast(new Explosion(cannon.Left - 35, cannon.Top));
             Cannons.Remove(cannon);
             Enemies.RemoveAt(i);
             SoundCollection.PlayCrushSound();

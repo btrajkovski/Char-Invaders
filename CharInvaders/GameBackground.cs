@@ -22,6 +22,10 @@ namespace CharInvaders
             backgrounds.AddLast(Properties.Resources.background5);
             backgrounds.AddLast(Properties.Resources.background6);
             backgrounds.AddLast(Properties.Resources.background7);
+            backgrounds.AddLast(Properties.Resources.background6);
+            backgrounds.AddLast(Properties.Resources.background5);
+            backgrounds.AddLast(Properties.Resources.background4);
+            backgrounds.AddLast(Properties.Resources.background3);
 
             labelColor = new LinkedList<Color>();
             //labelColor.AddLast(Color.DarkCyan);
@@ -31,8 +35,10 @@ namespace CharInvaders
             labelColor.AddLast(Color.LightBlue);
             labelColor.AddLast(Color.SkyBlue);
             labelColor.AddLast(Color.MediumAquamarine);
-
-
+            labelColor.AddLast(Color.SkyBlue);
+            labelColor.AddLast(Color.LightBlue);
+            labelColor.AddLast(Color.DarkBlue);
+            labelColor.AddLast(Color.Blue);
         }
         public static Color NextColor()
         {

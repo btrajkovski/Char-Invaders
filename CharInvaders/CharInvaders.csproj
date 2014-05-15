@@ -120,7 +120,7 @@
     <Compile Include="GameBackground.cs" />
     <Compile Include="GameLevel.cs" />
     <Compile Include="HighScores.cs" />
-    <Compile Include="PowerUP_Bonus.cs" />
+    <Compile Include="PowerUp_Bonus.cs" />
     <Compile Include="PowerUp_Destroyer.cs" />
     <Compile Include="PowerUp_SlowMotion.cs" />
     <Compile Include="Program.cs" />
