@@ -25,7 +25,7 @@ namespace CharInvaders
             LEVEL = 1;
             POINTS_HIT = 100;
             POINTS_MISS = 300;
-            MOVE_PIXELS = 2;
+            MOVE_PIXELS = 1;
             ENEMY_SPEED_SLOW_MOTION = 40;
             ENEMY_APPEAR_SLOW_MOTION = 900;
             MOVE_PIXELS_SLOW_MOTION = 1;
@@ -34,10 +34,10 @@ namespace CharInvaders
         public void levelUp()
         {
             LEVEL++;
-            ENEMY_APPEAR = ENEMY_APPEAR < 10 ? (int)(ENEMY_APPEAR / 1.25) : ENEMY_APPEAR;
-            if (MOVE_PIXELS < 4)
+            ENEMY_APPEAR = ENEMY_APPEAR > 10 ? (int)(ENEMY_APPEAR / 1.02) : ENEMY_APPEAR;
+            if (LEVEL % 3 == 0 && MOVE_PIXELS < 4)
                 MOVE_PIXELS += 1;
-            POINTS_HIT = (int)(POINTS_HIT * 1.05);
+            POINTS_HIT = (int)(POINTS_HIT * 1.1);
             POINTS_MISS = POINTS_HIT * 3;
         }
     }
