@@ -204,7 +204,7 @@ namespace CharInvaders
 
         private void FormGame_Deactivate(object sender, EventArgs e)
         {
-            lblPause.Visible = IsPaused = true;
+            PauseTheGame();
         }
 
         private void pbExit_MouseEnter(object sender, EventArgs e)
